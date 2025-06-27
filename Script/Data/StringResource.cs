@@ -3,5 +3,4 @@ using System;
 
 public static class StringResource
 {
-    
 }

@@ -16,7 +16,7 @@ public partial class ResManager : Node
             this.QueueFree();
         }
     }
-    public T? CreateInstance<T>(string path,Node parent,string name) where T : Node
+    public T? CreateInstance<T>(string path,Node parent = null,string name = "") where T : Node
     {
         // 加载场景资源
         PackedScene packedScene = ResourceLoader.Load<PackedScene>(path);
@@ -25,7 +25,6 @@ public partial class ResManager : Node
             GD.PrintErr($"Failed to load scene at path: {path}");
             return null;
         }
-
         // 实例化场景
         T instance = packedScene.Instantiate<T>();
         if (instance == null)
@@ -33,7 +32,8 @@ public partial class ResManager : Node
             GD.PrintErr($"Failed to instantiate scene from path: {path}");
             return null;
         }
-        instance.Name = name;
+        if(name!="")
+            instance.Name = name;
         if(parent != null)
             parent.AddChild(instance);
         return instance;
