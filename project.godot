@@ -12,7 +12,6 @@ config_version=5
 
 config/name="2025Ciga"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -20,6 +19,14 @@ ResManager="*res://Tscn/Global/res_manager.tscn"
 SceneChangerManager="*res://Tscn/Global/scene_changer_manager.tscn"
 SignalEventCenter="*res://Tscn/Global/signal_event_center.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="2025Ciga"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
