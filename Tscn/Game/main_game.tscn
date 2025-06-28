@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=9 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="2_4gfll"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
 [ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="4_mjouf"]
+[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="5_y7c32"]
+[ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="6_2g8v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tw52"]
 size = Vector2(1271.5, 14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwlpg"]
+shader = ExtResource("5_y7c32")
+shader_parameter/color = Vector3(0.33, 0.15, 0.82)
 
 [node name="MainGame" type="Node2D"]
 
@@ -38,3 +44,9 @@ scale = Vector2(3, 3)
 
 [node name="BuildingCreater" parent="." instance=ExtResource("2_4gfll")]
 position = Vector2(904, 470)
+
+[node name="Smoke" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jwlpg")
+position = Vector2(441, 354)
+scale = Vector2(0.902344, 0.902344)
+texture = ExtResource("6_2g8v7")
