@@ -3,6 +3,23 @@ using System;
 
 public partial class BagFlowUi : FlowUi
 {
+    public static BagFlowUi Instance { get; private set; }
+    public override void _Ready()
+    {
+        base._Ready();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
     [Export]
     public Godot.Collections.Array<bool> bag;
     [Export]

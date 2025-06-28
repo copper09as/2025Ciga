@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=12 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
@@ -10,10 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Background.png" id="8_jwlpg"]
 [ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="10_xiu63"]
+[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
 
-[node name="Node" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Node" type="Node2D"]
 
 [node name="MainGame" type="Node2D" parent="."]
 
@@ -24,47 +23,6 @@ position = Vector2(211, 593)
 position = Vector2(1871, 97)
 scale = Vector2(1.40846, 0.793612)
 polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 446.587, -250.752, 309.558, -248.232, 176.789, -262.093, 3.54993, -249.492, -32.6598, -304.935, -68.8696, -331.396, -128.509, -437.241, -237.139, -396.919, -255.598, -369.198, -290.388, -354.077, -348.608, -354.077, -391.917, -320.056, -448.007, -253.272, -871.164, -255.792, -1011.74, -252.012, -1239.65, -250.752, -1332.66, -258.313, -1397.98, -264.613, -1479.73, -257.958, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
-
-[node name="Water_Body" parent="MainGame" instance=ExtResource("4_mjouf")]
-position = Vector2(1879, 460)
-scale = Vector2(3, 3)
-
-[node name="Background" type="Sprite2D" parent="MainGame"]
-z_index = -5
-position = Vector2(2180, 0)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_jwlpg")
-script = ExtResource("5_2730w")
-speed = 25.0
-autoSpeed = -10.0
-
-[node name="Background2" type="Sprite2D" parent="MainGame"]
-z_index = -5
-position = Vector2(6541, 0)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_jwlpg")
-script = ExtResource("5_2730w")
-speed = 25.0
-autoSpeed = -10.0
-
-[node name="Ground" type="Sprite2D" parent="MainGame"]
-z_index = 6
-position = Vector2(2176, 55)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_2g8v7")
-script = ExtResource("5_2730w")
-
-[node name="Mount" type="Sprite2D" parent="MainGame"]
-z_index = -4
-position = Vector2(2180, 53)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_2730w")
-script = ExtResource("5_2730w")
-
-[node name="Grass" parent="MainGame" instance=ExtResource("5_2fhvb")]
-z_index = 7
-position = Vector2(2331, 205)
-scale = Vector2(0.65, 0.65)
 
 [node name="Player" parent="MainGame" instance=ExtResource("1_4tw52")]
 position = Vector2(147, 415)
@@ -87,11 +45,8 @@ offset_right = -696.25
 offset_bottom = -455.0
 scale = Vector2(0.6, 0.6)
 
-[node name="Node2D" type="Node2D" parent="MainGame"]
-position = Vector2(1027, -102)
-
-[node name="NpcCreater" parent="MainGame" instance=ExtResource("10_5n2gx")]
-position = Vector2(891, 342)
+[node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
+current = true
 
 [node name="UiContain" type="Control" parent="MainGame"]
 layout_mode = 3
@@ -101,3 +56,59 @@ offset_top = 345.0
 offset_right = 1017.0
 offset_bottom = 345.0
 script = ExtResource("3_mjouf")
+
+[node name="Back" type="Node2D" parent="MainGame"]
+
+[node name="Background" type="Sprite2D" parent="MainGame/Back"]
+z_index = -5
+position = Vector2(2180, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_jwlpg")
+script = ExtResource("5_2730w")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Background2" type="Sprite2D" parent="MainGame/Back"]
+z_index = -5
+position = Vector2(6541, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_jwlpg")
+script = ExtResource("5_2730w")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Ground" type="Sprite2D" parent="MainGame/Back"]
+z_index = 6
+position = Vector2(2176, 55)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2g8v7")
+script = ExtResource("5_2730w")
+
+[node name="Mount" type="Sprite2D" parent="MainGame/Back"]
+z_index = -4
+position = Vector2(2180, 53)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2730w")
+script = ExtResource("5_2730w")
+
+[node name="Grass" parent="MainGame/Back" instance=ExtResource("5_2fhvb")]
+z_index = 7
+position = Vector2(2331, 205)
+scale = Vector2(0.65, 0.65)
+
+[node name="Water_Body" parent="MainGame/Back" instance=ExtResource("4_mjouf")]
+position = Vector2(1879, 460)
+scale = Vector2(3, 3)
+
+[node name="Building" type="Node2D" parent="MainGame"]
+
+[node name="Npc" type="Node2D" parent="MainGame"]
+
+[node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("10_5n2gx")]
+position = Vector2(891, 342)
+
+[node name="Area2D" parent="MainGame" instance=ExtResource("11_xiu63")]
+position = Vector2(549, 311)
+
+[node name="Area2D2" parent="MainGame" instance=ExtResource("11_xiu63")]
+position = Vector2(0, 311)
