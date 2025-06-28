@@ -20,12 +20,14 @@ public partial class BeatGame : Node2D
     {
         base._Ready();
         timer.Timeout += OnTimerOut;
+        starIndex = new Godot.Collections.Array<int> { 0, 1, 2, 3 };
         OnTimerOut();
         foreach (var i in stars)
         {
             i.Modulate = initColor;
         }
         timer.Start();
+        GD.Print("开始锤星星");
     }
     public override void _Process(double delta)
     {
@@ -79,10 +81,10 @@ public partial class BeatGame : Node2D
                 timer.Start();
             }
         }
+        GD.Print(timer.TimeLeft);
     }
     private void OnTimerOut()
     {
-        int index = GD.RandRange(0, 3);
         TransStar();
     }
     private void TransStar()
@@ -91,6 +93,7 @@ public partial class BeatGame : Node2D
         {
             timer.Stop();
             SmallGameManager.Instance.FinishSmallGame();
+            GD.Print("删除小游戏");
             QueueFree();
             return;
         }

@@ -17,6 +17,7 @@ public partial class Building : Node2D
     private ProgressBar progress;
     [Export]
     private AppearShader appearShader;
+    
     private bool isChose;
     private bool inStay;
     public override void _Ready()
