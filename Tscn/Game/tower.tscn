@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv2a746k04nye"]
+[gd_scene load_steps=5 format=3 uid="uid://bv2a746k04nye"]
 
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="1_fyvrb"]
-[ext_resource type="Script" uid="uid://corxvfidb4tij" path="res://Script/Building/Tower.cs" id="1_yjcsd"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="2_5jr2b"]
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="3_ygrgi"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="4_fvy18"]
-[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="5_fvy18"]
-[ext_resource type="Script" uid="uid://du6v27m357p5" path="res://Tscn/Building/Wall.cs" id="7_2fem2"]
 
 [node name="Tower" type="StaticBody2D"]
-script = ExtResource("1_yjcsd")
 
 [node name="Inner" type="Sprite2D" parent="."]
 position = Vector2(725, -307)
@@ -47,30 +43,3 @@ scale = Vector2(0.6, 0.6)
 textures = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Player"]
-
-[node name="Wall" type="Node2D" parent="."]
-
-[node name="Area2D" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(340, 169)
-script = ExtResource("7_2fem2")
-
-[node name="Area2D2" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(712, 275)
-
-[node name="Area2D5" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(1004, 275)
-
-[node name="Area2D6" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(1083, -774)
-
-[node name="Area2D7" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(396, -935)
-
-[node name="Area2D8" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(1042, -1319)
-
-[node name="Area2D3" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(1183, -247)
-
-[node name="Area2D4" parent="Wall" instance=ExtResource("5_fvy18")]
-position = Vector2(407, -379)
