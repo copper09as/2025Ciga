@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=11 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="2_4gfll"]
@@ -9,17 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
 [ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="7_2730w"]
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Background.png" id="8_jwlpg"]
+[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 
 [node name="MainGame" type="Node2D"]
-
-[node name="UiContain" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1015.0
-offset_top = 170.0
-offset_right = 1055.0
-offset_bottom = 210.0
-script = ExtResource("3_mjouf")
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 position = Vector2(211, 593)
@@ -79,3 +71,15 @@ limit_bottom = 688
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1027, -102)
+
+[node name="NpcCreater" parent="." instance=ExtResource("10_5n2gx")]
+position = Vector2(891, 342)
+
+[node name="UiContain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1017.0
+offset_top = 345.0
+offset_right = 1017.0
+offset_bottom = 345.0
+script = ExtResource("3_mjouf")
