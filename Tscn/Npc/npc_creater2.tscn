@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dun70wqa8e3p8"]
+[gd_scene load_steps=8 format=3 uid="uid://bgcfk2t4houhd"]
 
-[ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="1_d3c20"]
-[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="3_h4cwu"]
-[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_knqam"]
-[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="5_arl1f"]
-[ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="5_ob11b"]
-[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="6_y2jj0"]
+[ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="1_v6wia"]
+[ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="2_6uxjv"]
+[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="3_8kevy"]
+[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_e8kdm"]
+[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="5_mbhoo"]
+[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="6_b1l56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
 size = Vector2(158, 141)
@@ -13,7 +13,7 @@ size = Vector2(158, 141)
 [node name="NpcCreater" type="Node2D"]
 
 [node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("audioStreamPlayer", "diaLabel", "timer", "area", "progress", "appearShader")]
-script = ExtResource("1_d3c20")
+script = ExtResource("1_v6wia")
 audioStreamPlayer = NodePath("../AudioStreamPlayer2D")
 diaLabel = NodePath("Diag")
 timer = NodePath("../AudioStreamPlayer2D3")
@@ -25,10 +25,10 @@ progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
 
 [node name="NpcTest" type="Sprite2D" parent="Npc"]
-material = ExtResource("5_ob11b")
-texture = ExtResource("3_h4cwu")
-script = ExtResource("4_knqam")
-shaderMaterial = ExtResource("5_ob11b")
+material = ExtResource("2_6uxjv")
+texture = ExtResource("3_8kevy")
+script = ExtResource("4_e8kdm")
+shaderMaterial = ExtResource("2_6uxjv")
 
 [node name="Diag" type="Label" parent="Npc"]
 visible = false
@@ -36,7 +36,7 @@ offset_left = 86.0
 offset_top = -184.0
 offset_right = 249.0
 offset_bottom = -55.0
-theme_override_fonts/font = ExtResource("5_arl1f")
+theme_override_fonts/font = ExtResource("5_mbhoo")
 theme_override_font_sizes/font_size = 40
 text = "111111111111111111111111111"
 autowrap_mode = 3
@@ -60,7 +60,7 @@ offset_bottom = -105.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, 2)
-stream = ExtResource("6_y2jj0")
+stream = ExtResource("6_b1l56")
 volume_db = 24.0
 autoplay = true
 max_distance = 300.0
