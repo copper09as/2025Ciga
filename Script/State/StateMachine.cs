@@ -9,6 +9,10 @@ public partial class StateMachine : Node
     public Godot.Collections.Array<PlayerState> states;
     public void Update(float delta)
     {
+        if (Input.IsActionJustPressed("Cock"))
+        {
+            TransState(State.PokeState);
+        }
         currentState.Update(delta);
     }
     public void TransState(State state)
@@ -25,6 +29,7 @@ public enum State
 {
     MoveState,
     JumpState,
-    IdleState
+    IdleState,
+    PokeState
 
 }

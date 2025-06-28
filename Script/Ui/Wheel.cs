@@ -7,7 +7,9 @@ public partial class Wheel : Control
     public int rightId = 0;
     public Godot.Collections.Array<int> buildings;
     [Export]
-    public Godot.Collections.Array<Texture2D> buildingTextures;
+    public Godot.Collections.Array<Texture2D> buildingTxt;
+    [Export]
+    public Godot.Collections.Array<Texture2D> textureRects;
     [Export]
     private WheelSelect select1;
     [Export]
@@ -73,8 +75,12 @@ public partial class Wheel : Control
     public void Init()
     {
         select1.id = buildings[0];
+        select1.Texture = textureRects[buildings[0]];
         select2.id = buildings[1];
+        select2.Texture = textureRects[buildings[1]];
         select3.id = buildings[2];
-        select4.id = buildings[3];
+        select3.Texture = textureRects[buildings[2]];
+        select4.id = buildings[3];;
+        select4.Texture = textureRects[buildings[3]];
     }
 }

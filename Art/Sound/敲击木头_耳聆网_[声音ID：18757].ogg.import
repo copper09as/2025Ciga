@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/敲击木头_耳聆网_[声音ID：18757].ogg
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
-bpm=0.0
+bpm=59.0
 beat_count=0
 bar_beats=4
