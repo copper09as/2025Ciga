@@ -25,7 +25,10 @@ public partial class SoundManager : AudioStreamPlayer
         var sound = ResourceLoader.Load<AudioStream>(path);
         soundPlayer.Stream = sound;
         soundPlayer.Play();
-
+    }
+    public void StopMusic()
+    {
+        soundPlayer.Stop();
     }
 
 }

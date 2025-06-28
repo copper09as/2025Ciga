@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbmbqk7a4mfki"]
+[gd_scene load_steps=47 format=3 uid="uid://cbmbqk7a4mfki"]
 
 [ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
 [ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
 [ext_resource type="Texture2D" uid="uid://o3lf3lvsxvjl" path="res://Art/Image/Character/WALK/Walk (1).png" id="6_35hdy"]
 [ext_resource type="Script" uid="uid://dybds5b230ret" path="res://Script/State/IdleState.cs" id="6_43qtk"]
+[ext_resource type="Script" uid="uid://dgjptcdylxbla" path="res://Script/State/CockState.cs" id="6_aklxw"]
 [ext_resource type="Texture2D" uid="uid://ddhjr77dtxvb6" path="res://Art/Image/Character/Poke/Poke (1).png" id="7_qbwk8"]
 [ext_resource type="Texture2D" uid="uid://d2v23moshtyef" path="res://Art/Image/Character/WALK/Walk (2).png" id="7_qgexl"]
 [ext_resource type="Texture2D" uid="uid://cf84hx7p2iwha" path="res://Art/Image/Character/Poke/Poke (2).png" id="8_aklxw"]
@@ -96,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_vjoqp")
 }],
-"loop": true,
+"loop": false,
 "name": &"Poke",
 "speed": 10.0
 }, {
@@ -196,7 +197,7 @@ shape = SubResource("CapsuleShape2D_35hdy")
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
 script = ExtResource("3_pgo6l")
 currentState = NodePath("MoveState")
-states = [NodePath("MoveState"), NodePath("JumpState"), NodePath("IdleState")]
+states = [NodePath("MoveState"), NodePath("JumpState"), NodePath("IdleState"), NodePath("CockState")]
 
 [node name="MoveState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
 script = ExtResource("5_43qtk")
@@ -213,6 +214,11 @@ script = ExtResource("6_43qtk")
 stateMachine = NodePath("..")
 player = NodePath("../..")
 
+[node name="CockState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+script = ExtResource("6_aklxw")
+stateMachine = NodePath("..")
+player = NodePath("../..")
+
 [node name="DetectWall" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectWall"]
@@ -224,7 +230,8 @@ position = Vector2(1, 0.999996)
 scale = Vector2(0.0556452, 0.0621437)
 sprite_frames = SubResource("SpriteFrames_va1xr")
 animation = &"Poke"
-frame_progress = 0.690226
+frame = 11
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 

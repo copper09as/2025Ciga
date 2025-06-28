@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lq64w40yk0b4"]
+[gd_scene load_steps=20 format=3 uid="uid://lq64w40yk0b4"]
 
 [ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="1_wwk7w"]
 [ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="2_8au8i"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="11_rlm7s"]
 [ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="12_v61yt"]
 [ext_resource type="PackedScene" uid="uid://rbtvcjb81ph6" path="res://Art/Shader/TestScene/Leaves.tscn" id="16_wwk7w"]
+[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="17_8au8i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3j7fw"]
 animations = [{
@@ -108,3 +109,10 @@ offset_left = -112.0
 offset_top = -132.0
 offset_right = 123.0
 offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 2)
+stream = ExtResource("17_8au8i")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0

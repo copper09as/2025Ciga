@@ -34,7 +34,7 @@ public partial class TowerArea : Area2D
             {
                 if (BagFlowUi.Instance.bag.Contains(false))
                     return;
-                player.isInTown = true;
+                player.isEnterTown = true;
                 player.Position = TowerPosition;
                 camera.LimitTop = -100000;
             }
