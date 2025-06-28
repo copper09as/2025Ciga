@@ -11,10 +11,10 @@ public partial class PlayerMove : CharacterBody2D
         if (Instance == null)
         {
             Instance = this;
-            GetChild(0).QueueFree();
+            wallDetect.AreaEntered += OnWallEnter;
+            wallDetect.AreaExited += OnWallExit;
         }
-        wallDetect.AreaEntered += OnWallEnter;
-        wallDetect.AreaExited += OnWallExit;
+
     }
     public override void _ExitTree()
     {
@@ -23,6 +23,7 @@ public partial class PlayerMove : CharacterBody2D
         {
             Instance = null;
         }
+
     }
     [Export]
     private Area2D wallDetect;
@@ -94,14 +95,14 @@ public partial class PlayerMove : CharacterBody2D
             animated.FlipH = true;
             wallCollision.Rotation = 90;
         }
-        if (Input.IsActionPressed("Confirm") && isInTown)
+        if (Input.IsActionJustPressed("Confirm") && isInTown)
         {
             if (isInWall)
             {
                 GD.Print("前面没路了");
             }
             else
-                GD.Print("前面还有路");
+                GD.PrintErr("前面还有路");
 
         }
         MoveAndSlide();

@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ucqtj38uahbs"]
+[gd_scene load_steps=8 format=3 uid="uid://ucqtj38uahbs"]
 
+[ext_resource type="Script" uid="uid://cjky7xf5eb13o" path="res://Tscn/Game/Tower.cs" id="1_044tg"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="1_fyvrb"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="2_5jr2b"]
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="3_ygrgi"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="4_fvy18"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="5_fvy18"]
 
-[node name="Tower" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjcsd"]
+size = Vector2(94, 197)
+
+[node name="Tower" type="StaticBody2D" node_paths=PackedStringArray("area", "areaWin")]
+script = ExtResource("1_044tg")
+area = NodePath("Area2D")
+areaWin = NodePath("Area2D2")
 
 [node name="Inner" type="Sprite2D" parent="."]
 position = Vector2(725, -307)
@@ -74,3 +81,15 @@ scale = Vector2(1, 0.5)
 [node name="Area2D4" parent="WallCheck" instance=ExtResource("5_fvy18")]
 position = Vector2(726, 371)
 scale = Vector2(1, 0.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(406, -1392)
+shape = SubResource("RectangleShape2D_yjcsd")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2(406, -1392)
+polygon = PackedVector2Array(-198, 165, -443, 1559, -406, 2256, 505, 2244, 1288, 2293, 1056, 532, 768, -202, 1759, 886, 1747, 2507, 267, 2623, -1232, 2220, -718, 55)
