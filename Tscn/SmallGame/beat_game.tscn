@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3plnogqe2eax"]
 
 [ext_resource type="Script" uid="uid://wnoek7gt8r8f" path="res://Script/SmallGame/BeatGame.cs" id="1_u8x3n"]
-[ext_resource type="Texture2D" uid="uid://cotfg78yn4m7j" path="res://Art/BeatGame/star.png" id="2_bjjcm"]
+[ext_resource type="Texture2D" uid="uid://cxmejp0q8k6vf" path="res://Art/Image/Shine.png" id="2_pm5hq"]
 [ext_resource type="Environment" uid="uid://cwjevm8mxha4n" path="res://Water/default_env.tres" id="3_pm5hq"]
 
 [node name="BeatGame" type="Node2D" node_paths=PackedStringArray("timer", "stars")]
@@ -14,27 +14,27 @@ transColor = Color(1, 1, 1, 1)
 winColor = Color(0.854902, 0, 0.682353, 1)
 
 [node name="Star1" type="Sprite2D" parent="."]
-position = Vector2(-203, 88)
-scale = Vector2(0.487605, 0.487605)
-texture = ExtResource("2_bjjcm")
+position = Vector2(-33, -1)
+scale = Vector2(2, -2.104)
+texture = ExtResource("2_pm5hq")
 
 [node name="Star2" type="Sprite2D" parent="."]
-position = Vector2(0, -87)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_bjjcm")
+position = Vector2(2, -35)
+scale = Vector2(-2, -2)
+texture = ExtResource("2_pm5hq")
 
 [node name="Star3" type="Sprite2D" parent="."]
-position = Vector2(202, 86)
-scale = Vector2(0.399999, 0.399999)
-texture = ExtResource("2_bjjcm")
+position = Vector2(38, -1)
+scale = Vector2(-2, -2)
+texture = ExtResource("2_pm5hq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Star3"]
 environment = ExtResource("3_pm5hq")
 
 [node name="Star4" type="Sprite2D" parent="."]
-position = Vector2(0, 293)
-scale = Vector2(0.56, 0.56)
-texture = ExtResource("2_bjjcm")
+position = Vector2(0, 34)
+scale = Vector2(-2, -2)
+texture = ExtResource("2_pm5hq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="10_xiu63"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
-[ext_resource type="PackedScene" uid="uid://bvejm6m32sgx2" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
+[ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
 
 [node name="Node" type="Node2D"]
 
