@@ -5,6 +5,7 @@ public partial class Wheel : Control
 {
     private static bool exsist;
     public int rightId = 0;
+    public Godot.Collections.Array<int> buildings;
     [Export]
     private WheelSelect select1;
     [Export]
@@ -67,4 +68,11 @@ public partial class Wheel : Control
         }
     }
 
+    public void Init()
+    {
+        select1.id = buildings[0];
+        select2.id = buildings[1];
+        select3.id = buildings[2];
+        select4.id = buildings[3];
+    }
 }

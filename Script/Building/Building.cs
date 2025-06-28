@@ -12,6 +12,8 @@ public partial class Building : Node2D
     [Export]
     private int id;
     [Export]
+    private Godot.Collections.Array<int> buildings;
+    [Export]
     private ProgressBar progress;
     [Export]
     private AppearShader appearShader;
@@ -30,7 +32,8 @@ public partial class Building : Node2D
         var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
         wheel.Position = Vector2.Zero;
         wheel.rightId = id;
-
+        wheel.buildings = buildings;
+        wheel.Init();
     }
     public void FinishChose(int id)
     {

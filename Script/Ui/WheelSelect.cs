@@ -6,7 +6,7 @@ public partial class WheelSelect : ColorRect
     private static bool inChose = false;
     private static int selectId;
     [Export]
-    private int id;
+    public int id;
     [Export]
     private Color transColor;
     [Export]
@@ -26,7 +26,7 @@ public partial class WheelSelect : ColorRect
         base._Process(delta);
         if (Input.IsActionPressed("Confirm") && selectId == id)
         {
-            FinishChose(0);
+            FinishChose(id);
         }
     }
     public void FinishChose(int id)
