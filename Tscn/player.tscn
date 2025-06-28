@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbmbqk7a4mfki"]
+[gd_scene load_steps=11 format=3 uid="uid://cbmbqk7a4mfki"]
 
 [ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
-[ext_resource type="Texture2D" uid="uid://duedxr6cj806q" path="res://Art/icon.svg" id="1_i1qcm"]
+[ext_resource type="Texture2D" uid="uid://t7u1m01anvi" path="res://Art/公主战车/立绘半身像骨骼组件/tnk2_01_001_01_3.png" id="2_43qtk"]
 [ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
 [ext_resource type="Script" uid="uid://0gqig1vjsnpd" path="res://Script/State/JumpState.cs" id="4_o78tl"]
 [ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
@@ -10,11 +10,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o78tl"]
 size = Vector2(152, 151)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_a0fxs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4sr1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i1qcm")
+"texture": ExtResource("2_43qtk")
 }],
 "loop": true,
 "name": &"default",
@@ -24,10 +24,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1qcm"]
 size = Vector2(127, 128)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated", "machine")]
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_43qtk"]
+length = 108.001
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("wallDetect", "animated", "wallCollision", "machine")]
 script = ExtResource("1_a0fxs")
+wallDetect = NodePath("Area2D")
 animated = NodePath("AnimatedSprite2D")
 speed = 200.0
+wallCollision = NodePath("DetectWall")
 machine = NodePath("StateMachine")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
@@ -37,7 +42,9 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_o78tl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_a0fxs")
+position = Vector2(-0.499998, 4)
+scale = Vector2(0.558594, 0.578125)
+sprite_frames = SubResource("SpriteFrames_l4sr1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1)
@@ -62,3 +69,9 @@ player = NodePath("../..")
 script = ExtResource("6_43qtk")
 stateMachine = NodePath("..")
 player = NodePath("../..")
+
+[node name="DetectWall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectWall"]
+rotation = -1.5708
+shape = SubResource("SeparationRayShape2D_43qtk")

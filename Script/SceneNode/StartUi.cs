@@ -14,6 +14,7 @@ public partial class StartUi : Control
     }
     public void OnServeBtn()
     {
+        ResManager.Instance.CreateInstance<GameManager>(StringResource.GameManagerPath, NetManager.Instance, "1");
         NetManager.Instance.netServe = new ServeNetServe(NetManager.Instance.Multiplayer, int.Parse(PortTxt.Text), 10);
     }
     public void OnClientBtn()

@@ -26,7 +26,7 @@ public class ClientNetServe : NetServe
     {
         GD.Print("成功连接到服务器。");
         SceneChangeManager.Instance.ChangeScene("res://Tscn/Game/main_game.tscn");
-        //NetManager.Instance.RpcId(1, "LoadGameManager", Multiplayer.GetUniqueId());
+        NetManager.Instance.RpcId(1, "LoadGameManager", Multiplayer.GetUniqueId());
     }
     private void OnConnectionFailed()
     {

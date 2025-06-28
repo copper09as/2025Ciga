@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 public partial class Npc : Node2D
 {
     [Export]
+    private AudioStreamPlayer2D audioStreamPlayer;
+    [Export]
     private Label diaLabel;
     [Export]
     private Timer timer;
