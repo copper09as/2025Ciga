@@ -11,6 +11,7 @@ public partial class PlayerMove : CharacterBody2D
     public float speed;
     [Export]
     private StateMachine machine;
+    public static float dir;
     private float grivity;
     [Export]
     public float Grivity
@@ -33,11 +34,11 @@ public partial class PlayerMove : CharacterBody2D
     {
         base._Process(delta);
         machine.Update((float)delta);
-        var dir = Input.GetAxis("Left", "Right");
+        dir = Input.GetAxis("Left", "Right");
         if (Input.IsActionJustPressed("Rush"))
         {
             var tween = GetTree().CreateTween();
-            tween.TweenProperty(this, "position", new Vector2(Position.X + 420*dir, Position.Y), 0.1);
+            tween.TweenProperty(this, "position", new Vector2(Position.X + 420 * dir, Position.Y), 0.1);
         }
         if (Input.IsActionJustPressed("Back"))
         {
