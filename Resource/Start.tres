@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b3fqrh5i5q50t"]
+
+[ext_resource type="Texture2D" uid="uid://c0huqwl6106ea" path="res://Art/公主战车/ui 啊/quest_ui.png" id="1_hewbi"]
+
+[resource]
+atlas = ExtResource("1_hewbi")
+region = Rect2(520.169, 63.0454, 165.419, 69.0454)

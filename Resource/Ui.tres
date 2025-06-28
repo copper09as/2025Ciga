@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d04v2yd0pf0k1"]
+
+[ext_resource type="Texture2D" uid="uid://dicr31f7g6r4k" path="res://Art/公主战车/ui 啊/eventBanner.png" id="1_aibs2"]
+
+[resource]
+atlas = ExtResource("1_aibs2")
+region = Rect2(0, 0, 465.636, 104.902)
