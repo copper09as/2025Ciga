@@ -50,7 +50,7 @@ public partial class Building : Node2D
         if (isFinish)
             return;
         if (!inStay)
-                return;
+            return;
         if (Input.IsActionJustPressed("OnChose"))
         {
             timer.Start();

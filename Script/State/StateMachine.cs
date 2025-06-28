@@ -19,7 +19,6 @@ public partial class StateMachine : Node
         }
         states[(int)state].Enter();
         currentState = states[(int)state];
-        GD.Print(state.ToString());
     }
 }
 public enum State

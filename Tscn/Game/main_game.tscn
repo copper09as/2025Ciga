@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=22 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
@@ -14,8 +14,17 @@
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
 [ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="14_kxjkl"]
+[ext_resource type="Script" uid="uid://cjky7xf5eb13o" path="res://Tscn/Game/Tower.cs" id="14_yeklp"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_05r5m"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="16_5o6ea"]
+[ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="17_05r5m"]
+[ext_resource type="PackedScene" uid="uid://bv2a746k04nye" path="res://Tscn/Game/tower.tscn" id="18_5o6ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxjkl"]
+size = Vector2(545, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05r5m"]
+size = Vector2(767, 1119)
 
 [node name="Node" type="Node2D"]
 
@@ -31,9 +40,9 @@ polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.
 
 [node name="Player" parent="MainGame" instance=ExtResource("1_4tw52")]
 z_index = 7
-position = Vector2(151, 438)
+position = Vector2(2651, 372)
 scale = Vector2(0.8, 0.8)
-speed = 190.0
+speed = 400.0
 Grivity = 200.0
 jumpHeight = 120.0
 
@@ -44,13 +53,12 @@ limit_left = 0
 limit_top = -421
 limit_bottom = 688
 
-[node name="Bag" parent="MainGame/Player/Camera2D" node_paths=PackedStringArray("textures") instance=ExtResource("10_xiu63")]
+[node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("10_xiu63")]
 offset_left = -696.25
 offset_top = -455.0
 offset_right = -696.25
 offset_bottom = -455.0
 scale = Vector2(0.6, 0.6)
-textures = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
@@ -124,6 +132,7 @@ position = Vector2(1346, 395)
 position = Vector2(866, 387)
 
 [node name="Tower" type="Node2D" parent="MainGame"]
+script = ExtResource("14_yeklp")
 
 [node name="DarkTower" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3741, -495)
@@ -136,3 +145,24 @@ texture = ExtResource("15_05r5m")
 [node name="Tower" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3737, -488)
 texture = ExtResource("16_5o6ea")
+
+[node name="Area2D" type="Area2D" parent="MainGame/Tower" node_paths=PackedStringArray("camera", "player")]
+script = ExtResource("17_05r5m")
+camera = NodePath("../../Player/Camera2D")
+player = NodePath("../../Player")
+TowerPosition = Vector2(9525, 0.00012207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/Area2D"]
+position = Vector2(3318.5, 160.5)
+shape = SubResource("RectangleShape2D_kxjkl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MainGame/Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
+position = Vector2(3974.5, -65.5)
+shape = SubResource("RectangleShape2D_05r5m")
+
+[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("18_5o6ea")]
+position = Vector2(9370, -614)
+player = NodePath("../Player")
+TowerPosition = Vector2(9525, 0.00012207)
