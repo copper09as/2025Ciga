@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3plnogqe2eax"]
+
+[ext_resource type="Script" uid="uid://wnoek7gt8r8f" path="res://Script/SmallGame/BeatGame.cs" id="1_u8x3n"]
+[ext_resource type="Texture2D" uid="uid://cotfg78yn4m7j" path="res://Art/BeatGame/star.png" id="2_bjjcm"]
+
+[node name="BeatGame" type="Node2D" node_paths=PackedStringArray("timer", "stars")]
+script = ExtResource("1_u8x3n")
+timer = NodePath("Timer")
+stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3"), NodePath("Star4")]
+starIndex = Array[int]([0, 1, 2, 3])
+initColor = Color(1, 1, 1, 0)
+transColor = Color(1, 1, 1, 1)
+winColor = Color(0.854902, 0, 0.682353, 1)
+
+[node name="Star1" type="Sprite2D" parent="."]
+position = Vector2(-203, 88)
+texture = ExtResource("2_bjjcm")
+
+[node name="Star2" type="Sprite2D" parent="."]
+position = Vector2(0, -87)
+texture = ExtResource("2_bjjcm")
+
+[node name="Star3" type="Sprite2D" parent="."]
+position = Vector2(202, 86)
+texture = ExtResource("2_bjjcm")
+
+[node name="Star4" type="Sprite2D" parent="."]
+position = Vector2(0, 293)
+texture = ExtResource("2_bjjcm")
+
+[node name="Timer" type="Timer" parent="."]

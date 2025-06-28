@@ -7,7 +7,6 @@ public partial class MoveState : PlayerState
     {
         player.animated.Play("Walk");
     }
-
     public override void Exit()
     {
         
