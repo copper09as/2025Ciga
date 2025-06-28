@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbmbqk7a4mfki"]
+
+[ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
+[ext_resource type="Texture2D" uid="uid://duedxr6cj806q" path="res://Art/icon.svg" id="1_i1qcm"]
+[ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
+[ext_resource type="Script" uid="uid://0gqig1vjsnpd" path="res://Script/State/JumpState.cs" id="4_o78tl"]
+[ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0fxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i1qcm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1qcm"]
+size = Vector2(127, 128)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated", "machine")]
+script = ExtResource("1_a0fxs")
+animated = NodePath("AnimatedSprite2D")
+speed = 200.0
+machine = NodePath("StateMachine")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a0fxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_i1qcm")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
+script = ExtResource("3_pgo6l")
+currentState = NodePath("MoveState")
+states = [NodePath("MoveState"), NodePath("JumpState")]
+
+[node name="MoveState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+script = ExtResource("5_43qtk")
+stateMachine = NodePath("..")
+player = NodePath("../..")
+
+[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+script = ExtResource("4_o78tl")
+stateMachine = NodePath("..")
+player = NodePath("../..")
