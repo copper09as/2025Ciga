@@ -25,6 +25,9 @@ public partial class Npc : Node2D
     private AppearShader appearShader;
     private bool isChose;
     private bool inStay;
+    public bool isFinishGame;
+    [Export]
+    public GameType gameType;
     public override void _Ready()
     {
         base._Ready();
@@ -35,7 +38,13 @@ public partial class Npc : Node2D
     }
     private void timerOut()
     {
-        if (!isFinish)
+        if (SmallGameManager.Instance.isStartSmallGame)
+            return;
+        if (!isFinishGame)
+        {
+            SmallGameManager.Instance.CreateSmallGame(this.gameType, this);
+        }
+        else if (!isFinish && isFinishGame)
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
             wheel.Position = new Vector2(this.Position.X, this.Position.Y);

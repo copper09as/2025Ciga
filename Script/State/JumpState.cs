@@ -4,9 +4,11 @@ using System;
 public partial class JumpState : PlayerState
 {
     private float curretnHeight;
+    private bool canDoubleJump;
     public override void Enter()
     {
         curretnHeight = player.jumpHeight;
+        canDoubleJump = true;
     }
 
     public override void Exit()
@@ -18,12 +20,17 @@ public partial class JumpState : PlayerState
     {
         var dir = Input.GetAxis("Left", "Right");
         player.Velocity = new Vector2(dir * player.speed, -curretnHeight);
-        if (curretnHeight < 0)
+        if (Input.IsActionJustPressed("Jump") &&canDoubleJump)
         {
-            curretnHeight -= player.Grivity * delta*3;
+            curretnHeight = player.jumpHeight;
+            canDoubleJump = false;
         }
-        else
-            curretnHeight -= player.Grivity * delta;
+        if (curretnHeight < 0)
+            {
+                curretnHeight -= player.Grivity * delta * 3;
+            }
+            else
+                curretnHeight -= player.Grivity * delta;
         if (player.IsOnFloor() && curretnHeight <0)
         {
             if (dir == 0)

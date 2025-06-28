@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://f7hpsjxtes34"]
+
+[ext_resource type="Script" uid="uid://bi5jr21rmj2kv" path="res://Script/Global/SmallGameManager.cs" id="1_qaspa"]
+
+[node name="SmallGameManager" type="Node"]
+script = ExtResource("1_qaspa")
