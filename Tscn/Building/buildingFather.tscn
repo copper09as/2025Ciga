@@ -71,8 +71,8 @@ visible = false
 script = ExtResource("2_kto5l")
 timer = NodePath("../Timer")
 area = NodePath("../Area2D")
-id = 4
-buildings = Array[int]([5, 2, 6, 4])
+id = 1
+buildings = Array[int]([1, 4, 5, 6])
 progress = NodePath("../ProgressBar")
 appearShader = NodePath("Node2D")
 
@@ -92,7 +92,7 @@ frame_progress = 0.74981
 [node name="Node2D" parent="Building/Node2D/AnimatedSprite2D" instance=ExtResource("16_wwk7w")]
 position = Vector2(50, 676.667)
 
-[node name="Area2D" type="Area2D" parent="." groups=["Building"]]
+[node name="Area2D" type="Area2D" parent="." groups=["Building", "Tree"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0.5)

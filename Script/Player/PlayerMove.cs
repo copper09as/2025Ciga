@@ -40,9 +40,10 @@ public partial class PlayerMove : CharacterBody2D
     [Export]
     private StateMachine machine;
     public static float dir;
-    public bool isInTown = false;
+    public bool isInTown = true;
     private bool isInWall;
     private float grivity;
+    private bool isIntree;
     [Export]
     public float Grivity
     {
@@ -61,12 +62,20 @@ public partial class PlayerMove : CharacterBody2D
         {
             isInWall = false;
         }
+        else if (area.IsInGroup("Tree"))
+        {
+            isIntree = false;
+        }
     }
     private void OnWallEnter(Area2D area)
     {
         if (area.IsInGroup("Wall"))
         {
             isInWall = true;
+        }
+        else if (area.IsInGroup("Tree"))
+        {
+            isIntree = true;
         }
     }
     private int UseGrivity;
@@ -107,7 +116,10 @@ public partial class PlayerMove : CharacterBody2D
             }
             else
                 GD.PrintErr("前面还有路");
-
+            if (isIntree)
+            {
+                SoundManager.Instance.Play("res://Art/Sound/敲击木头_耳聆网_[声音ID：18757].ogg");
+            }
         }
         MoveAndSlide();
     }

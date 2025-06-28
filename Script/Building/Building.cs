@@ -31,7 +31,7 @@ public partial class Building : Node2D
     private void timerOut()
     {
         var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
-        wheel.Position = Vector2.Zero;
+        wheel.Position = wheel.Position = new Vector2(PlayerMove.Instance.Position.X-1000, PlayerMove.Instance.Position.Y-600);
         wheel.rightId = id;
         wheel.buildings = buildings;
         wheel.Init();

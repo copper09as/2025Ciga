@@ -21,6 +21,7 @@ SceneChangerManager="*res://Tscn/Global/scene_changer_manager.tscn"
 SignalEventCenter="*res://Tscn/Global/signal_event_center.tscn"
 NetManager="*res://Tscn/Global/net_manager.tscn"
 SmallGameManager="*res://Tscn/Global/small_game_manager.tscn"
+SoundManager="*res://Tscn/sound_manager.tscn"
 
 [display]
 
@@ -43,6 +44,7 @@ folder_colors={
 Building=""
 Player=""
 Wall=""
+Tree=""
 
 [input]
 

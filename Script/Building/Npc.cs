@@ -56,7 +56,7 @@ public partial class Npc : Node2D
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
             GD.Print(id.ToString() + "可以开始轮盘");
-            wheel.Position = new Vector2(this.Position.X, this.Position.Y);
+            wheel.Position = wheel.Position = new Vector2(PlayerMove.Instance.Position.X-1000, PlayerMove.Instance.Position.Y-600);
             wheel.rightId = id;
             wheel.buildings = buildings;
             wheel.Init();

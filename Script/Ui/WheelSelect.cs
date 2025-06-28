@@ -16,7 +16,6 @@ public partial class WheelSelect : TextureRect
     public override void _Ready()
     {
         base._Ready();
-        initColor = this.Modulate;
         MouseEntered += OnMouseEnter;
         MouseExited += OnMouseExit;
         
