@@ -1,12 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfip4qt35kfuv"]
 
-[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="1_daojc"]
-[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="1_i5t5r"]
+[ext_resource type="Shader" uid="uid://dpeuh02k67oir" path="res://Art/Shader/appearShader.gdshader" id="1_p0nsv"]
 [ext_resource type="Texture2D" uid="uid://cr8tuta4k8h2e" path="res://Art/Image/TestChaara.png" id="2_fgjyg"]
 
-[node name="Sprite2D" type="Sprite2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgjyg"]
+shader = ExtResource("1_p0nsv")
+shader_parameter/progress = 0.0
+shader_parameter/base_direction = Vector2(0, 0)
+shader_parameter/pixel_scale = 0.286
+shader_parameter/base_dir_rand_factor = 0.355
+shader_parameter/regionEnabled = false
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = ExtResource("1_i5t5r")
+material = SubResource("ShaderMaterial_fgjyg")
+position = Vector2(-529, -741)
+scale = Vector2(0.283714, 0.283714)
 texture = ExtResource("2_fgjyg")
-script = ExtResource("1_daojc")
-shaderMaterial = ExtResource("1_i5t5r")

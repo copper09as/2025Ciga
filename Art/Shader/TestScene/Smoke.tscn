@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://1oq6i7s0ub1f"]
+
+[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="1_mohct"]
+[ext_resource type="Texture2D" uid="uid://bvad6epph27ld" path="res://Art/Image/Noise.png" id="2_mohct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hd2qn"]
+shader = ExtResource("1_mohct")
+shader_parameter/color = Vector3(1, 1, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Smoke" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hd2qn")
+position = Vector2(441, 353)
+scale = Vector2(0.902344, 0.902344)
+texture = ExtResource("2_mohct")
