@@ -28,6 +28,23 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="2025Ciga"
 
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Art/Font/": "red",
+"res://Art/Image/": "orange",
+"res://Art/Shader/": "yellow",
+"res://Art/Sound/": "green",
+"res://Art/Ui/": "teal",
+"res://Art/Water/": "purple",
+"res://Scenes/": "orange",
+"res://Script/": "yellow",
+"res://Sprites/": "green",
+"res://Tscn/": "teal",
+"res://Water/": "pink"
+}
+
 [global_group]
 
 Building=""
