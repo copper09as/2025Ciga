@@ -188,33 +188,33 @@ wallDetect = NodePath("DetectWall")
 animated = NodePath("AnimatedSprite2D")
 speed = 200.0
 wallCollision = NodePath("Area2D")
-machine = NodePath("StateMachine")
+machine = NodePath("state_machine")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -14)
 shape = SubResource("CapsuleShape2D_35hdy")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
 script = ExtResource("3_pgo6l")
-currentState = NodePath("MoveState")
-states = [NodePath("MoveState"), NodePath("JumpState"), NodePath("IdleState"), NodePath("CockState")]
+currentState = NodePath("move_state")
+states = [NodePath("move_state"), NodePath("jump_state"), NodePath("idle_state"), NodePath("cock_state")]
 
-[node name="MoveState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+[node name="move_state" type="Node" parent="state_machine" node_paths=PackedStringArray("stateMachine", "player")]
 script = ExtResource("5_43qtk")
 stateMachine = NodePath("..")
 player = NodePath("../..")
 
-[node name="JumpState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+[node name="jump_state" type="Node" parent="state_machine" node_paths=PackedStringArray("stateMachine", "player")]
 script = ExtResource("4_o78tl")
 stateMachine = NodePath("..")
 player = NodePath("../..")
 
-[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+[node name="idle_state" type="Node" parent="state_machine" node_paths=PackedStringArray("stateMachine", "player")]
 script = ExtResource("6_43qtk")
 stateMachine = NodePath("..")
 player = NodePath("../..")
 
-[node name="CockState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stateMachine", "player")]
+[node name="cock_state" type="Node" parent="state_machine" node_paths=PackedStringArray("stateMachine", "player")]
 script = ExtResource("6_aklxw")
 stateMachine = NodePath("..")
 player = NodePath("../..")
