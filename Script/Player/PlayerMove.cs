@@ -33,6 +33,17 @@ public partial class PlayerMove : CharacterBody2D
     {
         base._Process(delta);
         machine.Update((float)delta);
+        var dir = Input.GetAxis("Left", "Right");
+        if (Input.IsActionJustPressed("Rush"))
+        {
+            var tween = GetTree().CreateTween();
+            tween.TweenProperty(this, "position", new Vector2(Position.X + 420*dir, Position.Y), 0.1);
+        }
+        if (Input.IsActionJustPressed("Back"))
+        {
+            var tween = GetTree().CreateTween();
+            tween.TweenProperty(this, "position", new Vector2(Position.X + 420*(-dir), Position.Y), 0.1);
+        }
         SetGrivity(IsOnFloor());
         MoveAndSlide();
     }

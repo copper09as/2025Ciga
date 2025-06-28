@@ -10,11 +10,23 @@ size = Vector2(1271.5, 14)
 
 [node name="MainGame" type="Node2D"]
 
+[node name="UiContain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1015.0
+offset_top = 170.0
+offset_right = 1055.0
+offset_bottom = 210.0
+script = ExtResource("3_mjouf")
+
 [node name="Player" parent="." instance=ExtResource("1_4tw52")]
 position = Vector2(210, 440)
 speed = 190.0
 Grivity = 200.0
 jumpHeight = 120.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(352, -102)
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 position = Vector2(211, 593)
@@ -22,15 +34,6 @@ position = Vector2(211, 593)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(424.25, 2)
 shape = SubResource("RectangleShape2D_4tw52")
-
-[node name="UiContain" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1011.0
-offset_top = 83.0
-offset_right = 1051.0
-offset_bottom = 123.0
-script = ExtResource("3_mjouf")
 
 [node name="Water_Body" parent="." instance=ExtResource("4_mjouf")]
 position = Vector2(675, 564)
