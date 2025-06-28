@@ -64,6 +64,7 @@ public partial class Npc : Node2D
     {
         if (id == this.id)
         {
+            GD.Print(this.id);
             StartAppear();
             isFinish = true;
             progress.Hide();

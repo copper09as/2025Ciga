@@ -28,7 +28,7 @@ public partial class AppearShader : Node2D
         }
         value -= (float)delta*2;
         shaderMaterial.SetShaderParameter("progress", value);
-        GD.Print(value);
+
     }
 
 }
