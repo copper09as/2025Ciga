@@ -1,29 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=6 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="2_4gfll"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
+[ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="4_mjouf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tw52"]
-size = Vector2(869, 14)
+size = Vector2(1271.5, 14)
 
 [node name="MainGame" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4tw52")]
-position = Vector2(224, 516)
+position = Vector2(210, 440)
 speed = 190.0
-Grivity = 100.0
-jumpHeight = 50.0
+Grivity = 200.0
+jumpHeight = 120.0
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
-position = Vector2(225, 627)
+position = Vector2(211, 593)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(223, 2)
+position = Vector2(424.25, 2)
 shape = SubResource("RectangleShape2D_4tw52")
-
-[node name="BuildingTest" parent="." instance=ExtResource("2_4gfll")]
-position = Vector2(503, 529)
 
 [node name="UiContain" type="Control" parent="."]
 layout_mode = 3
@@ -33,3 +31,10 @@ offset_top = 83.0
 offset_right = 1051.0
 offset_bottom = 123.0
 script = ExtResource("3_mjouf")
+
+[node name="Water_Body" parent="." instance=ExtResource("4_mjouf")]
+position = Vector2(675, 564)
+scale = Vector2(3, 3)
+
+[node name="BuildingCreater" parent="." instance=ExtResource("2_4gfll")]
+position = Vector2(818, 482)

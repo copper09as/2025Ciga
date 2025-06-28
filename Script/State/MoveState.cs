@@ -12,7 +12,6 @@ public partial class MoveState : PlayerState
     {
         
     }
-
     public override void Update(float delta)
     {
         var dir = Input.GetAxis("Left", "Right");

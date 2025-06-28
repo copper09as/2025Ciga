@@ -4,6 +4,7 @@ using System;
 public partial class Wheel : Control
 {
     private static bool exsist;
+    public int rightId = 0;
     [Export]
     private WheelSelect select1;
     [Export]
@@ -18,8 +19,9 @@ public partial class Wheel : Control
         if (exsist)
         {
             QueueFree();
+            return;
         }
-        else  
+        else
             exsist = true;
     }
     public void Delete()
@@ -27,6 +29,7 @@ public partial class Wheel : Control
         exsist = false;
         this.QueueFree();
     }
+
     public override void _Process(double delta)
     {
         base._Process(delta);

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mahklncnlnld"
-path="res://.godot/imported/Sprite.png-437a78436247c8630e4558a72c25d04a.ctex"
+uid="uid://bhkw51384wvaa"
+path="res://.godot/imported/joint.png-b648f4cce2aefca11e442a7ad4269ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite.png"
-dest_files=["res://.godot/imported/Sprite.png-437a78436247c8630e4558a72c25d04a.ctex"]
+source_file="res://Water/Sprites/joint.png"
+dest_files=["res://.godot/imported/joint.png-b648f4cce2aefca11e442a7ad4269ada.ctex"]
 
 [params]
 

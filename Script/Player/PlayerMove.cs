@@ -35,9 +35,7 @@ public partial class PlayerMove : CharacterBody2D
         machine.Update((float)delta);
         SetGrivity(IsOnFloor());
         MoveAndSlide();
-    
     }
-
     private void SetGrivity(bool inCeil)
     {
         if (inCeil)

@@ -1,29 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://lq64w40yk0b4"]
+[gd_scene load_steps=7 format=3 uid="uid://lq64w40yk0b4"]
 
 [ext_resource type="Texture2D" uid="uid://duedxr6cj806q" path="res://Art/icon.svg" id="1_owjfl"]
+[ext_resource type="Script" uid="uid://bu1ihlteqf2nx" path="res://Script/Building/BuildingCreate.cs" id="1_upsdm"]
+[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="2_eu35g"]
 [ext_resource type="Script" uid="uid://dkqk7xvkie4fx" path="res://Script/Building/Building.cs" id="2_kto5l"]
+[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_upsdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
 size = Vector2(181, 141)
 
-[node name="BuildingTest" type="Sprite2D" node_paths=PackedStringArray("timer", "area", "progress")]
-texture = ExtResource("1_owjfl")
+[node name="BuildingCreater" type="Node2D"]
+script = ExtResource("1_upsdm")
+
+[node name="Building" type="Node2D" parent="." node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
 script = ExtResource("2_kto5l")
-timer = NodePath("Timer")
-area = NodePath("Area2D")
-progress = NodePath("ProgressBar")
+timer = NodePath("BuildingTest/Timer")
+area = NodePath("BuildingTest/Area2D")
+progress = NodePath("BuildingTest/ProgressBar")
+appearShader = NodePath("BuildingTest")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Building"]]
+[node name="BuildingTest" type="Sprite2D" parent="Building"]
+material = ExtResource("2_eu35g")
+texture = ExtResource("1_owjfl")
+script = ExtResource("4_upsdm")
+shaderMaterial = ExtResource("2_eu35g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Area2D" type="Area2D" parent="Building/BuildingTest" groups=["Building"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/BuildingTest/Area2D"]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_owjfl")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Building/BuildingTest"]
 wait_time = 2.0
 one_shot = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Building/BuildingTest"]
 offset_left = -112.0
 offset_top = -132.0
 offset_right = 123.0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b61sv0c27ro27"]
 
-[ext_resource type="Shader" uid="uid://bdbc26m2vxg7w" path="res://water_shader.gdshader" id="1"]
-[ext_resource type="Script" uid="uid://c1xp56jtgdgae" path="res://Scenes/Water_Body.gd" id="2"]
-[ext_resource type="Script" uid="uid://cqiocsikfcjdi" path="res://smooth_path_modified.gd" id="3"]
+[ext_resource type="Shader" path="res://Water/water_shader.gdshader" id="1"]
+[ext_resource type="Script" uid="uid://c1xp56jtgdgae" path="res://Water/Scenes/Water_Body.gd" id="2"]
+[ext_resource type="Script" path="res://Water/smooth_path_modified.gd" id="3"]
 
 [sub_resource type="ShaderMaterial" id="4"]
 shader = ExtResource("1")

@@ -18,7 +18,12 @@ public partial class JumpState : PlayerState
     {
         var dir = Input.GetAxis("Left", "Right");
         player.Velocity = new Vector2(dir * player.speed, -curretnHeight);
-        curretnHeight -= player.Grivity * delta;
+        if (curretnHeight < 0)
+        {
+            curretnHeight -= player.Grivity * delta*3;
+        }
+        else
+            curretnHeight -= player.Grivity * delta;
         if (player.IsOnFloor() && curretnHeight <0)
         {
             stateMachine.TransState(State.MoveState);

@@ -10,6 +10,8 @@ public partial class SignalEventCenter : Node
     private delegate void StartGameIntEventHandler(int i);
     [Signal]
     private delegate void UpdateRoomUiEventHandler();
+    [Signal]
+    private delegate void FinishChoseEventHandler(int id);
     public static SignalEventCenter Instance;
     public override void _Ready()
     {
