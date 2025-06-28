@@ -19,7 +19,7 @@ timer = NodePath("../AudioStreamPlayer2D3")
 dialog = "我曾经和你一样是个勇者"
 area = NodePath("../AudioStreamPlayer2D2")
 id = 3
-buildings = Array[int]([5, 2, 3, 4])
+buildings = Array[int]([5, 2, 3, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
 

@@ -1,9 +1,64 @@
-[gd_scene load_steps=6 format=3 uid="uid://lq64w40yk0b4"]
+[gd_scene load_steps=18 format=3 uid="uid://lq64w40yk0b4"]
 
-[ext_resource type="Texture2D" uid="uid://duedxr6cj806q" path="res://Art/icon.svg" id="1_owjfl"]
-[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="2_eu35g"]
+[ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="1_wwk7w"]
+[ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="2_8au8i"]
+[ext_resource type="Material" uid="uid://c88uqyisv0tcv" path="res://Art/Shader/appearShader3.tres" id="2_61e7t"]
 [ext_resource type="Script" uid="uid://dkqk7xvkie4fx" path="res://Script/Building/Building.cs" id="2_kto5l"]
+[ext_resource type="Texture2D" uid="uid://ccf2dwm04mg8p" path="res://Art/Image/Tree/Tree3.png" id="3_dpjq6"]
+[ext_resource type="Texture2D" uid="uid://dku1xv343vr5o" path="res://Art/Image/Tree/Tree4.png" id="4_0plej"]
 [ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_upsdm"]
+[ext_resource type="Texture2D" uid="uid://uj705mo8jmms" path="res://Art/Image/Tree/Tree5.png" id="5_xvuus"]
+[ext_resource type="Texture2D" uid="uid://bjv66k8bsh1rh" path="res://Art/Image/Tree/Tree6.png" id="6_spsh1"]
+[ext_resource type="Texture2D" uid="uid://bjjfe2ue6if5" path="res://Art/Image/Tree/Tree7.png" id="7_vi3h8"]
+[ext_resource type="Texture2D" uid="uid://cue7tuwfh0uel" path="res://Art/Image/Tree/Tree8.png" id="8_gd3me"]
+[ext_resource type="Texture2D" uid="uid://q1gra7wgn3mq" path="res://Art/Image/Tree/Tree9.png" id="9_vbeun"]
+[ext_resource type="Texture2D" uid="uid://b4fv50b85wqjn" path="res://Art/Image/Tree/Tree10.png" id="10_x3y3o"]
+[ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="11_rlm7s"]
+[ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="12_v61yt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j7fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wwk7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8au8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dpjq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0plej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xvuus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_spsh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vi3h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gd3me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vbeun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x3y3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rlm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v61yt")
+}],
+"loop": false,
+"name": &"Grow",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
 size = Vector2(158, 141)
@@ -11,20 +66,25 @@ size = Vector2(158, 141)
 [node name="BuildingCreater" type="Node2D"]
 
 [node name="Building" type="Node2D" parent="." node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
-visible = false
 script = ExtResource("2_kto5l")
 timer = NodePath("../Timer")
 area = NodePath("../Area2D")
-id = 1
-buildings = Array[int]([1, 2, 3, 4])
+id = 4
+buildings = Array[int]([5, 2, 6, 4])
 progress = NodePath("../ProgressBar")
-appearShader = NodePath("BuildingTest")
+appearShader = NodePath("Node2D")
 
-[node name="BuildingTest" type="Sprite2D" parent="Building"]
-material = ExtResource("2_eu35g")
-texture = ExtResource("1_owjfl")
+[node name="Node2D" type="Node2D" parent="Building" node_paths=PackedStringArray("animated")]
+position = Vector2(1, -231)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("4_upsdm")
-shaderMaterial = ExtResource("2_eu35g")
+shaderMaterial = ExtResource("2_61e7t")
+animated = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Building/Node2D"]
+material = ExtResource("2_61e7t")
+sprite_frames = SubResource("SpriteFrames_3j7fw")
+animation = &"Grow"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Building"]]
 
