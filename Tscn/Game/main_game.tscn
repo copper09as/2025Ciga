@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="4_mjouf"]
 [ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="5_2fhvb"]
 [ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_2730w"]
-[ext_resource type="Texture2D" uid="uid://rx8yrje5hv1k" path="res://Art/Image/Back/Mount.png" id="6_y7c32"]
 [ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
+[ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="7_2730w"]
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Background.png" id="8_jwlpg"]
 [ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 
@@ -17,19 +17,20 @@
 position = Vector2(211, 593)
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="RigidBody2D"]
-position = Vector2(1864.14, -22.2814)
+position = Vector2(1871, 97)
 scale = Vector2(1.40846, 0.793612)
-polygon = PackedVector2Array(544.471, -45.0077, 452.881, -225.197, 283.902, -148.333, 29.0131, -91.63, -125.056, -154.633, -299.005, -62.6486, -789.613, -21.0665, -969.952, -89.1099, -1090.65, -95.4102, -1177.98, -130.692, -1266.73, -150.853, -1462.69, -264.259, -1477.6, -58.8684, -809.493, -26.1068, -794.583, -26.1068)
+polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 446.587, -250.752, 309.558, -248.232, 176.789, -262.093, 3.54993, -249.492, -32.6598, -304.935, -68.8696, -331.396, -128.509, -437.241, -237.139, -396.919, -255.598, -369.198, -290.388, -354.077, -348.608, -354.077, -391.917, -320.056, -448.007, -253.272, -871.164, -255.792, -1011.74, -252.012, -1239.65, -250.752, -1332.66, -258.313, -1397.98, -264.613, -1479.73, -257.958, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
 
 [node name="Water_Body" parent="." instance=ExtResource("4_mjouf")]
-position = Vector2(675, 564)
+position = Vector2(1879, 460)
 scale = Vector2(3, 3)
 
 [node name="BuildingCreater" parent="." instance=ExtResource("2_4gfll")]
 position = Vector2(904, 470)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(2179, 0)
+z_index = -5
+position = Vector2(2180, 0)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_jwlpg")
 script = ExtResource("5_2730w")
@@ -37,30 +38,32 @@ speed = 25.0
 autoSpeed = -10.0
 
 [node name="Ground" type="Sprite2D" parent="."]
-position = Vector2(2176, 45)
+z_index = 6
+position = Vector2(2176, 55)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_2g8v7")
 script = ExtResource("5_2730w")
-speed = 25.0
 
 [node name="Mount" type="Sprite2D" parent="."]
-position = Vector2(1446, 246)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_y7c32")
+z_index = -4
+position = Vector2(2180, 53)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2730w")
 script = ExtResource("5_2730w")
 
 [node name="Grass" parent="." instance=ExtResource("5_2fhvb")]
-position = Vector2(1411, 248)
-scale = Vector2(0.4, 0.4)
+z_index = 7
+position = Vector2(2331, 205)
+scale = Vector2(0.65, 0.65)
 
 [node name="Player" parent="." instance=ExtResource("1_4tw52")]
-position = Vector2(279, 285)
+position = Vector2(147, 415)
 speed = 190.0
 Grivity = 200.0
 jumpHeight = 120.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(689, -449)
+position = Vector2(689, -435)
 zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = -421
