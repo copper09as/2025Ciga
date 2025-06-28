@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://rbtvcjb81ph6"]
+
+[ext_resource type="Texture2D" uid="uid://bojyt0c7dcpbv" path="res://Art/Image/LEAVES.png" id="1_1k74h"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p1rlq"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_q415b"]
+offsets = PackedFloat32Array(0, 0.278215, 0.750656, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.996781, 1, 1, 1, 0.957346, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lptm3"]
+gradient = SubResource("Gradient_q415b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jbsu"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 200, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 50.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.3
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_lptm3")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_p1rlq")
+amount = 70
+texture = ExtResource("1_1k74h")
+visibility_rect = Rect2(-100, -200, 200, 400)
+process_material = SubResource("ParticleProcessMaterial_5jbsu")
