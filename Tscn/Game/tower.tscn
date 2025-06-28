@@ -1,17 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv2a746k04nye"]
+[gd_scene load_steps=6 format=3 uid="uid://ucqtj38uahbs"]
 
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="1_fyvrb"]
-[ext_resource type="Script" uid="uid://cjky7xf5eb13o" path="res://Tscn/Game/Tower.cs" id="1_ygrgi"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="2_5jr2b"]
+[ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="3_ygrgi"]
+[ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="4_fvy18"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="5_fvy18"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygrgi"]
-size = Vector2(84, 123)
-
-[node name="Tower" type="StaticBody2D" node_paths=PackedStringArray("area", "areaWin")]
-script = ExtResource("1_ygrgi")
-area = NodePath("Area2D")
-areaWin = NodePath("Area2D2")
+[node name="Tower" type="StaticBody2D"]
 
 [node name="Inner" type="Sprite2D" parent="."]
 position = Vector2(725, -307)
@@ -24,6 +19,31 @@ texture = ExtResource("2_5jr2b")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-1, 682, 294, 689, 578, 451, 392, 344, 341, 344, 343, 325, 391, 325, 480, 261, 1098, -68, 1120, -81, 415, -215, 416, -227, 441, -228, 464, -243, 493.386, -269.218, 744, -436, 1012, -603, 406, -766, 405, -779, 438, -787, 458, -809, 900, -1091, 963, -1133, 1003, -1159, 477, -1289, 470, -1298, 522, -1297, 964, -1184, 1012, -1166, 1042, -1165, 1043, -1155, 453, -779, 969, -638, 1033, -613, 1082, -612, 1082, -602, 484, -239, 450, -219, 1101, -106, 1136, -92, 1175, -90, 1176, -79, 426, 329, 604, 439, 713, 443, 707, 482, 604, 485, 338, 688, 252, 766)
 one_way_collision = true
+
+[node name="Player" parent="." instance=ExtResource("3_ygrgi")]
+z_index = 7
+position = Vector2(227, 618)
+scale = Vector2(0.8, 0.8)
+speed = 190.0
+Grivity = 200.0
+jumpHeight = 120.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(502.5, -63.75)
+zoom = Vector2(0.7, 0.7)
+limit_left = 0
+limit_top = -421
+limit_bottom = 688
+
+[node name="Bag" parent="Player/Camera2D" node_paths=PackedStringArray("textures") instance=ExtResource("4_fvy18")]
+offset_left = -696.25
+offset_top = -455.0
+offset_right = -696.25
+offset_bottom = -455.0
+scale = Vector2(0.6, 0.6)
+textures = []
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
 
 [node name="WallCheck" type="Node2D" parent="."]
 
@@ -54,14 +74,3 @@ scale = Vector2(1, 0.5)
 [node name="Area2D4" parent="WallCheck" instance=ExtResource("5_fvy18")]
 position = Vector2(726, 371)
 scale = Vector2(1, 0.5)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(34, -1259, -9, -544, -291, -1205, -182, 800, 1584, 930, 1486, -1541, 576, -1974, 2190, -1801, 1898, 2013, -962, 897, -226, -2072)
-
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(456, -1357.5)
-shape = SubResource("RectangleShape2D_ygrgi")
