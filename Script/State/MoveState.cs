@@ -17,7 +17,7 @@ public partial class MoveState : PlayerState
     {
         var dir = Input.GetAxis("Left", "Right");
         player.Velocity = new Vector2(dir * player.speed, player.Grivity);
-        if (Input.IsActionJustPressed("Up"))
+        if (Input.IsActionJustPressed("Jump"))
         {
             GD.Print("进入跳跃");
             stateMachine.TransState(State.JumpState);
