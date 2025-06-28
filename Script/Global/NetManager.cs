@@ -8,7 +8,8 @@ public partial class NetManager : Node
 {
     public static NetManager Instance { get; private set; }
     public NetServe netServe;
-    public int playerId;
+    public int playerId = -1;
+
     private NetManager() { }
     public override void _Ready()
     {

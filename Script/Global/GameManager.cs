@@ -12,6 +12,7 @@ public partial class GameManager : Node
         if (Instance == null)
         {
             Instance = this;
+            GetChild(0).QueueFree();
         }
     }
     public override void _ExitTree()
@@ -21,6 +22,35 @@ public partial class GameManager : Node
         {
             Instance = null;
         }
+    }
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (Instance != this || (NetManager.Instance.playerId ==-1&&NetManager.Instance.Multiplayer.IsServer()))
+        {
+            return;
+        }
+        if (NetManager.Instance.Multiplayer.IsServer())
+        {
+            RpcId(NetManager.Instance.playerId, MethodName.ServeUpdatePos, PlayerMove.Instance.Position);
+        }
+        else
+        {
+            RpcId(1, MethodName.ClientUpdatePos, PlayerMove.Instance.Position);
+        }
+    }
+
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void ClientUpdatePos(Vector2 pos)
+    {
+        var s = (Sprite2D)GetChild(0);
+        s.Position = pos;
+    }
+    [Rpc(MultiplayerApi.RpcMode.Authority)]
+    public void ServeUpdatePos(Vector2 pos)
+    {
+        var s = (Sprite2D)GetChild(0);
+        s.Position = pos;
     }
     [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
     public void ClientFinishGame()

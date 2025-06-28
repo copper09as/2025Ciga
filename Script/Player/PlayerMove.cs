@@ -4,7 +4,26 @@ using System.Security.Cryptography.X509Certificates;
 
 public partial class PlayerMove : CharacterBody2D
 {
-
+    public static PlayerMove Instance { get; private set; }
+    public override void _Ready()
+    {
+        base._Ready();
+        if (Instance == null)
+        {
+            Instance = this;
+            GetChild(0).QueueFree();
+        }
+        wallDetect.AreaEntered += OnWallEnter;
+        wallDetect.AreaExited += OnWallExit;
+    }
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
     [Export]
     private Area2D wallDetect;
     [Export]
@@ -31,13 +50,6 @@ public partial class PlayerMove : CharacterBody2D
             grivity = value;
         }
     }
-    public override void _Ready()
-    {
-        base._Ready();
-        wallDetect.AreaEntered += OnWallEnter;
-        wallDetect.AreaExited += OnWallExit;
-    }
-
     private void OnWallExit(Area2D area)
     {
         if (area.IsInGroup("Wall"))
