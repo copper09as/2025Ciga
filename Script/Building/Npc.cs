@@ -5,7 +5,11 @@ using System.Security.Cryptography.X509Certificates;
 public partial class Npc : Node2D
 {
     [Export]
+    private Label diaLabel;
+    [Export]
     private Timer timer;
+    [Export(PropertyHint.MultilineText)]
+    private string dialog;
     [Export]
     private Area2D area;
     private bool isFinish = false;
@@ -32,7 +36,7 @@ public partial class Npc : Node2D
         if (!isFinish)
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
-            wheel.Position = new Vector2(this.Position.X,this.Position.Y-900);
+            wheel.Position = new Vector2(this.Position.X, this.Position.Y);
             wheel.rightId = id;
             wheel.buildings = buildings;
             wheel.Init();
@@ -40,6 +44,8 @@ public partial class Npc : Node2D
         else
         {
             GD.Print("发起对话");
+            diaLabel.Show();
+            diaLabel.Text = dialog;
         }
 
     }

@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cykvplmv8p0e"]
+[gd_scene load_steps=7 format=3 uid="uid://cykvplmv8p0e"]
 
 [ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="1_7xg8k"]
 [ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="2_kndbl"]
 [ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="2_uaafs"]
 [ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_rafqi"]
+[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="5_uaafs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
 size = Vector2(158, 141)
 
 [node name="NpcCreater" type="Node2D"]
 
-[node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
-visible = false
+[node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
 script = ExtResource("1_7xg8k")
+diaLabel = NodePath("Diag")
 timer = NodePath("../Timer")
+dialog = "我曾经和你一样是个勇者"
 area = NodePath("../Area2D")
 id = 1
 buildings = Array[int]([1, 2, 3, 4])
@@ -25,6 +27,17 @@ material = ExtResource("2_uaafs")
 texture = ExtResource("2_kndbl")
 script = ExtResource("4_rafqi")
 shaderMaterial = ExtResource("2_uaafs")
+
+[node name="Diag" type="Label" parent="Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("5_uaafs")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
 
 [node name="Area2D" type="Area2D" parent="." groups=["Building"]]
 

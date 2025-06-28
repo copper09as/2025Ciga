@@ -7,6 +7,8 @@ public partial class Wheel : Control
     public int rightId = 0;
     public Godot.Collections.Array<int> buildings;
     [Export]
+    public Godot.Collections.Array<Texture2D> buildingTextures;
+    [Export]
     private WheelSelect select1;
     [Export]
     private WheelSelect select2;
