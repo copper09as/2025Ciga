@@ -32,7 +32,7 @@ public partial class Npc : Node2D
         if (!isFinish)
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
-            wheel.Position = new Vector2(this.Position.X,this.Position.Y-300);
+            wheel.Position = new Vector2(this.Position.X,this.Position.Y-900);
             wheel.rightId = id;
             wheel.buildings = buildings;
             wheel.Init();
