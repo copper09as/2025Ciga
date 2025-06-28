@@ -40,7 +40,7 @@ public partial class PlayerMove : CharacterBody2D
     [Export]
     private StateMachine machine;
     public static float dir;
-    public static bool isInTown = false;
+    public bool isInTown = false;
     private bool isInWall;
     private float grivity;
     [Export]

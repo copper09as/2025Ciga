@@ -1,0 +1,169 @@
+[gd_scene load_steps=22 format=3 uid="uid://fgumvla6y52r"]
+
+[ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="1_soxuq"]
+[ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="2_gwnju"]
+[ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="3_2ovdr"]
+[ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Image/Back/Background.png" id="4_0f4ol"]
+[ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_hc7w4"]
+[ext_resource type="Texture2D" uid="uid://c4by7t8ul3rvr" path="res://Art/Image/Back/Background3.tres" id="6_1svvq"]
+[ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_h63u0"]
+[ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="8_t5vcf"]
+[ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="9_wwv5y"]
+[ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="10_5rwiv"]
+[ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="11_q18k2"]
+[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="12_jmotp"]
+[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="13_c8c3c"]
+[ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="14_ntmho"]
+[ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="15_gke0f"]
+[ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="16_nkev7"]
+[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="17_dt147"]
+[ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="18_c7jky"]
+[ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="19_nulwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxjkl"]
+size = Vector2(777, 739)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05r5m"]
+size = Vector2(767, 1119)
+
+[node name="Node" type="Node2D"]
+
+[node name="UiContain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1017.0
+offset_top = 345.0
+offset_right = 1017.0
+offset_bottom = 345.0
+script = ExtResource("1_soxuq")
+
+[node name="MainGame" type="Node2D" parent="."]
+
+[node name="Player" parent="MainGame" instance=ExtResource("2_gwnju")]
+position = Vector2(410, 397)
+Grivity = 229.0
+jumpHeight = 130.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
+position = Vector2(2331, 293)
+scale = Vector2(0.8, 0.8)
+current = true
+
+[node name="Camera2D" type="Camera2D" parent="MainGame/Player"]
+position = Vector2(469, 58)
+scale = Vector2(0.8, 0.8)
+zoom = Vector2(0.7, 0.7)
+limit_left = 0
+limit_top = -421
+limit_bottom = 688
+
+[node name="Bag" parent="MainGame/Player" instance=ExtResource("3_2ovdr")]
+offset_left = -88.0
+offset_top = -538.0
+offset_right = -88.0
+offset_bottom = -538.0
+scale = Vector2(0.6, 0.6)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="MainGame"]
+position = Vector2(211, 593)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="MainGame/RigidBody2D"]
+position = Vector2(1873, 102)
+scale = Vector2(1.40846, 0.793612)
+polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 446.587, -250.752, 309.558, -248.232, 176.789, -262.093, 3.54993, -249.492, -32.6598, -304.935, -68.8696, -331.396, -128.509, -437.241, -237.139, -396.919, -255.598, -369.198, -290.388, -354.077, -348.608, -354.077, -391.917, -320.056, -448.007, -253.272, -871.164, -255.792, -1011.74, -252.012, -1239.65, -250.752, -1332.66, -258.313, -1397.98, -264.613, -1479.73, -257.958, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
+
+[node name="Back" type="Node2D" parent="MainGame"]
+
+[node name="Background" type="Sprite2D" parent="MainGame/Back"]
+z_index = -5
+position = Vector2(2180, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_0f4ol")
+script = ExtResource("5_hc7w4")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Background2" type="Sprite2D" parent="MainGame/Back"]
+z_index = -4
+position = Vector2(4507, -25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_1svvq")
+script = ExtResource("5_hc7w4")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Ground" type="Sprite2D" parent="MainGame/Back"]
+z_index = 6
+position = Vector2(2176, 55)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_h63u0")
+script = ExtResource("5_hc7w4")
+
+[node name="Mount" type="Sprite2D" parent="MainGame/Back"]
+z_index = -4
+position = Vector2(2180, 53)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_t5vcf")
+script = ExtResource("5_hc7w4")
+
+[node name="Grass" parent="MainGame/Back" instance=ExtResource("9_wwv5y")]
+z_index = 7
+position = Vector2(2331, 205)
+scale = Vector2(0.65, 0.65)
+
+[node name="Water_Body" parent="MainGame/Back" instance=ExtResource("10_5rwiv")]
+position = Vector2(1879, 460)
+scale = Vector2(3, 3)
+
+[node name="Building" type="Node2D" parent="MainGame"]
+
+[node name="BuildingCreater" parent="MainGame/Building" instance=ExtResource("11_q18k2")]
+position = Vector2(1093, 396)
+
+[node name="Area2D" parent="MainGame" instance=ExtResource("12_jmotp")]
+position = Vector2(549, 311)
+
+[node name="Area2D2" parent="MainGame" instance=ExtResource("12_jmotp")]
+position = Vector2(0, 311)
+
+[node name="Npc" type="Node2D" parent="MainGame"]
+
+[node name="NpcCreater2" parent="MainGame/Npc" instance=ExtResource("13_c8c3c")]
+position = Vector2(1532, 311)
+
+[node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("14_ntmho")]
+position = Vector2(754, 387)
+
+[node name="Tower" type="Node2D" parent="MainGame"]
+
+[node name="DarkTower" type="Sprite2D" parent="MainGame/Tower"]
+position = Vector2(3741, -495)
+texture = ExtResource("15_gke0f")
+
+[node name="Tower道路" type="Sprite2D" parent="MainGame/Tower"]
+position = Vector2(3698, -505)
+texture = ExtResource("16_nkev7")
+
+[node name="Tower" type="Sprite2D" parent="MainGame/Tower"]
+position = Vector2(3737, -488)
+texture = ExtResource("17_dt147")
+
+[node name="Area2D" type="Area2D" parent="MainGame/Tower" node_paths=PackedStringArray("camera", "player")]
+script = ExtResource("18_c7jky")
+camera = NodePath("../../Player/Camera2D")
+player = NodePath("../../Player")
+TowerPosition = Vector2(9525, 0.00012207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/Area2D"]
+position = Vector2(3202.5, 114.5)
+shape = SubResource("RectangleShape2D_kxjkl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MainGame/Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
+position = Vector2(3974.5, -65.5)
+shape = SubResource("RectangleShape2D_05r5m")
+
+[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("19_nulwt")]
+position = Vector2(9370, -614)
+player = NodePath("../Player")
