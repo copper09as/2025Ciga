@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfip4qt35kfuv"]
 
-[ext_resource type="Shader" uid="uid://d0fpq5uqpk2nk" path="res://WaveShader.gdshader" id="1_e24s5"]
+[ext_resource type="Shader" uid="uid://d0fpq5uqpk2nk" path="res://Art/Shader/WaveShader.gdshader" id="1_e24s5"]
 [ext_resource type="Texture2D" uid="uid://cr8tuta4k8h2e" path="res://Art/Image/TestChaara.png" id="2_fgjyg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fgjyg"]
