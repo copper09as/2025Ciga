@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgru5pqeverwa"]
+[gd_scene load_steps=8 format=3 uid="uid://cgru5pqeverwa"]
 
 [ext_resource type="Script" uid="uid://tgb8flomu2cy" path="res://Script/Ui/Wheel.cs" id="1_uwbs7"]
 [ext_resource type="Texture2D" uid="uid://3rm3lstg3erm" path="res://Art/Ui/Wheel.png" id="1_xep1j"]
 [ext_resource type="Script" uid="uid://cabm76k6ir4tr" path="res://Script/Ui/WheelSelect.cs" id="2_nkoln"]
-[ext_resource type="Texture2D" uid="uid://do3kl0bnup4w7" path="res://Art/公主战车/ui 啊/skill.tres" id="2_u2ep7"]
+[ext_resource type="Shader" uid="uid://x5pi6u74cmg3" path="res://Art/Shader/WaveText.gdshader" id="4_yq1o1"]
+[ext_resource type="FontFile" uid="uid://kjlgmw0604dr" path="res://Art/Font/思源黑体/SOURCEHANSANSCN-HEAVY.OTF" id="5_8awo5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyk2d"]
+shader = ExtResource("4_yq1o1")
+shader_parameter/height = 4.02
+shader_parameter/speed = 3.47
+shader_parameter/frequency = 7.805
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqcrj"]
+font_size = 48
 
 [node name="Wheel" type="Control" node_paths=PackedStringArray("select1", "select2", "select3", "select4")]
 layout_mode = 3
@@ -21,51 +31,105 @@ select2 = NodePath("ColorRect2")
 select3 = NodePath("ColorRect3")
 select4 = NodePath("ColorRect4")
 
+[node name="Wheel" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_xep1j")
+
 [node name="ColorRect4" type="TextureRect" parent="." node_paths=PackedStringArray("wheel")]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 70.0
 offset_bottom = 66.0
-texture = ExtResource("2_u2ep7")
 script = ExtResource("2_nkoln")
 id = 4
 transColor = Color(0.760784, 0.0705882, 0.47451, 1)
 initColor = Color(1, 1, 1, 1)
 wheel = NodePath("..")
 
+[node name="Label" type="Label" parent="ColorRect4"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_pyk2d")
+offset_left = 20.0
+offset_top = 4.0
+offset_right = 75.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("5_8awo5")
+text = "树"
+label_settings = SubResource("LabelSettings_oqcrj")
+horizontal_alignment = 3
+vertical_alignment = 1
+
 [node name="ColorRect2" type="TextureRect" parent="." node_paths=PackedStringArray("wheel")]
 layout_mode = 0
 offset_top = -65.0
 offset_right = 70.0
-texture = ExtResource("2_u2ep7")
 script = ExtResource("2_nkoln")
 id = 2
 transColor = Color(0.760784, 0.0705882, 0.47451, 1)
 initColor = Color(1, 1, 1, 1)
 wheel = NodePath("..")
 
+[node name="Label" type="Label" parent="ColorRect2"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_pyk2d")
+offset_left = 19.0
+offset_top = -12.0
+offset_right = 74.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("5_8awo5")
+text = "人"
+label_settings = SubResource("LabelSettings_oqcrj")
+horizontal_alignment = 3
+vertical_alignment = 1
+
 [node name="ColorRect1" type="TextureRect" parent="." node_paths=PackedStringArray("wheel")]
 layout_mode = 0
-offset_left = -70.0
-offset_top = -65.0
-texture = ExtResource("2_u2ep7")
+offset_left = -77.0
+offset_top = -74.0
+offset_right = -7.0
+offset_bottom = -9.0
 script = ExtResource("2_nkoln")
 id = 1
 transColor = Color(0.760784, 0.0705882, 0.47451, 1)
 initColor = Color(1, 1, 1, 1)
 wheel = NodePath("..")
 
+[node name="Label" type="Label" parent="ColorRect1"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_pyk2d")
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 65.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("5_8awo5")
+text = "树"
+label_settings = SubResource("LabelSettings_oqcrj")
+horizontal_alignment = 3
+vertical_alignment = 1
+
 [node name="ColorRect3" type="TextureRect" parent="." node_paths=PackedStringArray("wheel")]
 layout_mode = 0
 offset_left = -70.0
 offset_top = 1.0
 offset_bottom = 66.0
-texture = ExtResource("2_u2ep7")
 script = ExtResource("2_nkoln")
 id = 3
 transColor = Color(0.760784, 0.0705882, 0.47451, 1)
 initColor = Color(1, 1, 1, 1)
 wheel = NodePath("..")
+
+[node name="Label" type="Label" parent="ColorRect3"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_pyk2d")
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("5_8awo5")
+text = "树"
+label_settings = SubResource("LabelSettings_oqcrj")
+horizontal_alignment = 3
+vertical_alignment = 1
 
 [node name="Select" type="Control" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=34 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="10_xiu63"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
+[ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="11_yeklp"]
 [ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="14_kxjkl"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_05r5m"]
@@ -144,10 +145,28 @@ script = ExtResource("5_2730w")
 speed = 25.0
 autoSpeed = -10.0
 
+[node name="Background5" type="Sprite2D" parent="MainGame/Back"]
+z_index = -5
+position = Vector2(6792, -22)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_jwlpg")
+script = ExtResource("5_2730w")
+speed = 25.0
+autoSpeed = -10.0
+
 [node name="Background2" type="Sprite2D" parent="MainGame/Back"]
 z_index = -4
 position = Vector2(4507, -25)
 scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_05r5m")
+script = ExtResource("5_2730w")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Background4" type="Sprite2D" parent="MainGame/Back"]
+z_index = -4
+position = Vector2(5903, -25)
+scale = Vector2(-0.665406, 0.6)
 texture = ExtResource("6_05r5m")
 script = ExtResource("5_2730w")
 speed = 25.0
@@ -190,19 +209,16 @@ texture = ExtResource("8_jwlpg")
 
 [node name="Building" type="Node2D" parent="MainGame"]
 
-[node name="Area2D" parent="MainGame" instance=ExtResource("11_xiu63")]
-position = Vector2(549, 311)
-
 [node name="Area2D2" parent="MainGame" instance=ExtResource("11_xiu63")]
 position = Vector2(0, 311)
 
 [node name="Npc" type="Node2D" parent="MainGame"]
 
 [node name="NpcCreater2" parent="MainGame/Npc" instance=ExtResource("10_5n2gx")]
-position = Vector2(1346, 395)
+position = Vector2(2445, 410)
 
 [node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("12_2ty2s")]
-position = Vector2(866, 387)
+position = Vector2(1304, 417)
 
 [node name="Tower" type="Node2D" parent="MainGame"]
 
@@ -282,3 +298,6 @@ randomness = 1.0
 trail_enabled = true
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_j1k5u")
+
+[node name="BuildingCreater" parent="MainGame" instance=ExtResource("11_yeklp")]
+position = Vector2(726, 423)

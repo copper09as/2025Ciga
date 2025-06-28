@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://lq64w40yk0b4"]
+[gd_scene load_steps=19 format=3 uid="uid://lq64w40yk0b4"]
 
 [ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="1_wwk7w"]
 [ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="2_8au8i"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b4fv50b85wqjn" path="res://Art/Image/Tree/Tree10.png" id="10_x3y3o"]
 [ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="11_rlm7s"]
 [ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="12_v61yt"]
+[ext_resource type="PackedScene" uid="uid://rbtvcjb81ph6" path="res://Art/Shader/TestScene/Leaves.tscn" id="16_wwk7w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3j7fw"]
 animations = [{
@@ -66,6 +67,7 @@ size = Vector2(158, 141)
 [node name="BuildingCreater" type="Node2D"]
 
 [node name="Building" type="Node2D" parent="." node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
+visible = false
 script = ExtResource("2_kto5l")
 timer = NodePath("../Timer")
 area = NodePath("../Area2D")
@@ -85,6 +87,10 @@ animated = NodePath("AnimatedSprite2D")
 material = ExtResource("2_61e7t")
 sprite_frames = SubResource("SpriteFrames_3j7fw")
 animation = &"Grow"
+frame_progress = 0.74981
+
+[node name="Node2D" parent="Building/Node2D/AnimatedSprite2D" instance=ExtResource("16_wwk7w")]
+position = Vector2(50, 676.667)
 
 [node name="Area2D" type="Area2D" parent="." groups=["Building"]]
 

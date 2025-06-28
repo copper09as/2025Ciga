@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://f7hpsjxtes34"]
+[gd_scene load_steps=2 format=3 uid="uid://dl51f6vd5b8b8"]
 
 [ext_resource type="Script" uid="uid://bi5jr21rmj2kv" path="res://Script/Global/SmallGameManager.cs" id="1_qaspa"]
 
 [node name="SmallGameManager" type="Node"]
 script = ExtResource("1_qaspa")
+game1 = Vector2(863.59, 0)

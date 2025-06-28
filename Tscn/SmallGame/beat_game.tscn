@@ -5,12 +5,13 @@
 [ext_resource type="Environment" uid="uid://cwjevm8mxha4n" path="res://Water/default_env.tres" id="3_pm5hq"]
 
 [node name="BeatGame" type="Node2D" node_paths=PackedStringArray("timer", "stars")]
+scale = Vector2(2, 2)
 script = ExtResource("1_u8x3n")
 timer = NodePath("Timer")
 stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3"), NodePath("Star4")]
 starIndex = Array[int]([0, 1, 2, 3])
 initColor = Color(1, 1, 1, 0)
-transColor = Color(1, 1, 1, 1)
+transColor = Color(0, 0, 0, 1)
 winColor = Color(0.854902, 0, 0.682353, 1)
 
 [node name="Star1" type="Sprite2D" parent="."]
@@ -37,4 +38,3 @@ scale = Vector2(-2, -2)
 texture = ExtResource("2_pm5hq")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
