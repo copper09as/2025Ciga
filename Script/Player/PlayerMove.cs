@@ -11,7 +11,6 @@ public partial class PlayerMove : CharacterBody2D
         if (Instance == null)
         {
             Instance = this;
-            GetChild(0).QueueFree();
         }
         wallDetect.AreaEntered += OnWallEnter;
         wallDetect.AreaExited += OnWallExit;

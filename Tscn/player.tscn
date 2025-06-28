@@ -30,9 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://d2045rjqm5sm3" path="res://Art/Image/Character/WALK/Walk (23).png" id="28_0074v"]
 [ext_resource type="Texture2D" uid="uid://kbtas72pl8ru" path="res://Art/Image/Character/WALK/Walk (24).png" id="29_vjoqp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o78tl"]
-size = Vector2(112, 151)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35hdy"]
 radius = 27.0
 height = 132.0
@@ -128,22 +125,19 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o78tl"]
+size = Vector2(118, 151)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("wallDetect", "animated", "wallCollision", "machine")]
 script = ExtResource("1_a0fxs")
-wallDetect = NodePath("Area2D")
+wallDetect = NodePath("DetectWall")
 animated = NodePath("AnimatedSprite2D")
 speed = 200.0
-wallCollision = NodePath("DetectWall")
+wallCollision = NodePath("Area2D")
 machine = NodePath("StateMachine")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_o78tl")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -13)
+position = Vector2(4, -14)
 shape = SubResource("CapsuleShape2D_35hdy")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
@@ -177,3 +171,9 @@ position = Vector2(1, 0.999996)
 scale = Vector2(0.0556452, 0.0621437)
 sprite_frames = SubResource("SpriteFrames_va1xr")
 animation = &"Idle"
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -13.5)
+shape = SubResource("RectangleShape2D_o78tl")

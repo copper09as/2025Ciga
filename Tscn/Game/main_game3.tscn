@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="14_ici8m"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_bnlf5"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="16_4polq"]
-[ext_resource type="Shader" path="res://Tscn/Game/Smoke.gdshader" id="17_pkqbp"]
+[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="17_pkqbp"]
 [ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="18_e3a5n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5o6ea"]
