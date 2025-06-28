@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bu1oea2snm1rr" path="res://Water/Sprites/Background-1.png" id="2_17c6a"]
 [ext_resource type="Script" uid="uid://dd4uwh1drrf3i" path="res://Water/Main.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://dn80vpllwlxnv" path="res://Water/Sprites/Background-2.png" id="4_qwcrh"]
-[ext_resource type="Texture2D" uid="uid://bjmuia4pakc75" path="res://Water/Sprites/Background-3.png" id="5_cpqlm"]
+[ext_resource type="Texture2D" uid="uid://bjmuia4pakc75" path="res://Art/Image/Back/Background-3.png" id="5_cpqlm"]
 [ext_resource type="Texture2D" uid="uid://d35xg62vmw2y" path="res://Water/Sprites/Background-4.png" id="6_hyoq2"]
 
 [node name="Main" type="Node2D"]

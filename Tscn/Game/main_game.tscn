@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=10 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="2_4gfll"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
 [ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="4_mjouf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tw52"]
-size = Vector2(1271.5, 14)
+[ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="5_2fhvb"]
+[ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_2730w"]
+[ext_resource type="Texture2D" uid="uid://rx8yrje5hv1k" path="res://Art/Image/Back/Mount.png" id="6_y7c32"]
+[ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
+[ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Background.png" id="8_jwlpg"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -19,21 +21,13 @@ offset_right = 1055.0
 offset_bottom = 210.0
 script = ExtResource("3_mjouf")
 
-[node name="Player" parent="." instance=ExtResource("1_4tw52")]
-position = Vector2(210, 440)
-speed = 190.0
-Grivity = 200.0
-jumpHeight = 120.0
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(352, -102)
-
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 position = Vector2(211, 593)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(424.25, 2)
-shape = SubResource("RectangleShape2D_4tw52")
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(1864.14, -22.2814)
+scale = Vector2(1.40846, 0.793612)
+polygon = PackedVector2Array(544.471, -45.0077, 452.881, -225.197, 283.902, -148.333, 29.0131, -91.63, -125.056, -154.633, -299.005, -62.6486, -789.613, -21.0665, -969.952, -89.1099, -1090.65, -95.4102, -1177.98, -130.692, -1266.73, -150.853, -1462.69, -264.259, -1477.6, -58.8684, -809.493, -26.1068, -794.583, -26.1068)
 
 [node name="Water_Body" parent="." instance=ExtResource("4_mjouf")]
 position = Vector2(675, 564)
@@ -41,3 +35,44 @@ scale = Vector2(3, 3)
 
 [node name="BuildingCreater" parent="." instance=ExtResource("2_4gfll")]
 position = Vector2(904, 470)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2179, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_jwlpg")
+script = ExtResource("5_2730w")
+speed = 25.0
+autoSpeed = -10.0
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(2176, 45)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2g8v7")
+script = ExtResource("5_2730w")
+speed = 25.0
+
+[node name="Mount" type="Sprite2D" parent="."]
+position = Vector2(1446, 246)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_y7c32")
+script = ExtResource("5_2730w")
+
+[node name="Grass" parent="." instance=ExtResource("5_2fhvb")]
+position = Vector2(1411, 248)
+scale = Vector2(0.4, 0.4)
+
+[node name="Player" parent="." instance=ExtResource("1_4tw52")]
+position = Vector2(279, 285)
+speed = 190.0
+Grivity = 200.0
+jumpHeight = 120.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(689, -449)
+zoom = Vector2(0.6, 0.6)
+limit_left = 0
+limit_top = -421
+limit_bottom = 688
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1027, -102)
