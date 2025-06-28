@@ -14,6 +14,10 @@ public partial class PlayerMove : CharacterBody2D
             wallDetect.AreaEntered += OnWallEnter;
             wallDetect.AreaExited += OnWallExit;
         }
+        else
+        {
+            this.QueueFree();
+        }
 
     }
     public override void _ExitTree()
@@ -36,7 +40,7 @@ public partial class PlayerMove : CharacterBody2D
     [Export]
     private StateMachine machine;
     public static float dir;
-    public static bool isInTown = true;
+    public static bool isInTown = false;
     private bool isInWall;
     private float grivity;
     [Export]
