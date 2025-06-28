@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public partial class PlayerMove : CharacterBody2D
 {
-    public static PlayerMove Instance { get; private set; }
+    public static PlayerMove Instance { get; protected set; }
     public override void _Ready()
     {
         base._Ready();
