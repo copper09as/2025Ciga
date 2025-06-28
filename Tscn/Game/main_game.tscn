@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_05r5m"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="16_5o6ea"]
 [ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="17_05r5m"]
-[ext_resource type="PackedScene" uid="uid://bv2a746k04nye" path="res://Tscn/Game/tower.tscn" id="18_5o6ea"]
+[ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="18_5o6ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxjkl"]
 size = Vector2(545, 647)
@@ -40,7 +40,7 @@ polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.
 
 [node name="Player" parent="MainGame" instance=ExtResource("1_4tw52")]
 z_index = 7
-position = Vector2(2651, 372)
+position = Vector2(294, 397)
 scale = Vector2(0.8, 0.8)
 speed = 400.0
 Grivity = 200.0
@@ -132,7 +132,6 @@ position = Vector2(1346, 395)
 position = Vector2(866, 387)
 
 [node name="Tower" type="Node2D" parent="MainGame"]
-script = ExtResource("14_yeklp")
 
 [node name="DarkTower" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3741, -495)
@@ -162,7 +161,10 @@ shape = SubResource("RectangleShape2D_kxjkl")
 position = Vector2(3974.5, -65.5)
 shape = SubResource("RectangleShape2D_05r5m")
 
-[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("18_5o6ea")]
+[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("area", "areaWin", "player") instance=ExtResource("18_5o6ea")]
 position = Vector2(9370, -614)
+script = ExtResource("14_yeklp")
+area = NodePath("Area2D")
+areaWin = NodePath("Area2D2")
 player = NodePath("../Player")
 TowerPosition = Vector2(9525, 0.00012207)
