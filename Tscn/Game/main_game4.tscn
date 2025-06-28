@@ -70,7 +70,7 @@ scale_max = 1.8
 color_ramp = SubResource("GradientTexture1D_yn14k")
 color_initial_ramp = SubResource("GradientTexture1D_qgd5g")
 
-[node name="Node" type="Node2D"]
+[node name="Node2" type="Node2D"]
 
 [node name="MainGame" type="Node2D" parent="."]
 
@@ -88,11 +88,13 @@ scale = Vector2(1.40846, 0.793612)
 polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 829.275, -70.5635, 791.645, -55.4427, 725.615, -55.4427, 607.756, -112.146, 580.066, -128.526, 555.926, -132.306, 492.737, -120.966, 433.807, -75.6037, 303.168, 10.0804, 193.119, 2.52008, 4.25989, 8.82043, -36.2098, -40.322, -60.3496, -52.9226, -88.0394, -100.805, -121.409, -160.028, -133.479, -168.848, -239.268, -128.526, -252.758, -104.585, -276.898, -90.7245, -315.238, -85.6842, -350.738, -91.9845, -407.537, -35.2817, -527.527, -74.3437, -682.306, -144.907, -810.815, -142.387, -1006.77, -197.83, -1126.05, -254.532, -1282.25, -240.672, -1332.66, -270.913, -1400.11, -296.115, -1481.05, -307.455, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
 disabled = true
 
-[node name="Player" parent="MainGame" instance=ExtResource("1_3iqih")]
+[node name="Player" parent="MainGame" node_paths=PackedStringArray("wallDetect", "wallCollision") instance=ExtResource("1_3iqih")]
 z_index = 7
-position = Vector2(57, 433)
+position = Vector2(56, 433)
 scale = Vector2(0.8, 0.8)
+wallDetect = NodePath("Area2D")
 speed = 190.0
+wallCollision = NodePath("DetectWall")
 Grivity = 200.0
 jumpHeight = 120.0
 
@@ -160,6 +162,11 @@ script = ExtResource("5_pk67e")
 [node name="Grass" parent="MainGame/Back" instance=ExtResource("9_34y3w")]
 z_index = 7
 position = Vector2(1079, 311)
+scale = Vector2(0.3, 0.3)
+
+[node name="Grass2" parent="MainGame/Back" instance=ExtResource("9_34y3w")]
+z_index = 7
+position = Vector2(3262, 311)
 scale = Vector2(0.3, 0.3)
 
 [node name="Water_Body" parent="MainGame/Back" instance=ExtResource("10_obeew")]

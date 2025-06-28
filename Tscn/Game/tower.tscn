@@ -27,11 +27,13 @@ texture = ExtResource("2_5jr2b")
 polygon = PackedVector2Array(-1, 682, 294, 689, 578, 451, 392, 344, 341, 344, 343, 325, 391, 325, 480, 261, 1098, -68, 1120, -81, 415, -215, 416, -227, 441, -228, 464, -243, 493.386, -269.218, 744, -436, 1012, -603, 406, -766, 405, -779, 438, -787, 458, -809, 900, -1091, 963, -1133, 1003, -1159, 477, -1289, 470, -1298, 522, -1297, 964, -1184, 1012, -1166, 1042, -1165, 1043, -1155, 453, -779, 969, -638, 1033, -613, 1082, -612, 1082, -602, 484, -239, 450, -219, 1101, -106, 1136, -92, 1175, -90, 1176, -79, 426, 329, 604, 439, 713, 443, 707, 482, 604, 485, 338, 688, 252, 766)
 one_way_collision = true
 
-[node name="Player" parent="." instance=ExtResource("3_ygrgi")]
+[node name="Player" parent="." node_paths=PackedStringArray("wallDetect", "wallCollision") instance=ExtResource("3_ygrgi")]
 z_index = 7
 position = Vector2(227, 618)
 scale = Vector2(0.8, 0.8)
+wallDetect = NodePath("Area2D")
 speed = 190.0
+wallCollision = NodePath("DetectWall")
 Grivity = 200.0
 jumpHeight = 120.0
 
