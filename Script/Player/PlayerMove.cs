@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public partial class PlayerMove : CharacterBody2D
 {
+
     [Export]
     private AnimatedSprite2D animated;
     [Export]
@@ -27,17 +28,16 @@ public partial class PlayerMove : CharacterBody2D
     [Export]
     public float jumpHeight;
 
-    public override void _Ready()
-    {
-        base._Ready();
-    }
+
     public override void _Process(double delta)
     {
         base._Process(delta);
         machine.Update((float)delta);
         SetGrivity(IsOnFloor());
         MoveAndSlide();
+    
     }
+
     private void SetGrivity(bool inCeil)
     {
         if (inCeil)
@@ -47,8 +47,4 @@ public partial class PlayerMove : CharacterBody2D
         }
         UseGrivity = 1;
     }
-    private void Jump()
-    {
-    }
-
 }
