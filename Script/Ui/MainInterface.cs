@@ -10,6 +10,8 @@ public partial class MainInterface : Control
     [Export]
     private TextureButton Startbtn;
     [Export]
+    private TextureButton NetBtn;
+    [Export]
     private Timer timer;
     [Export]
     private Timer loadTimer;
@@ -25,7 +27,14 @@ public partial class MainInterface : Control
         shakeBtn();
         timer.Timeout += shakeBtn;
         loadTimer.Timeout += onLoad;
+        NetBtn.ButtonDown += OnNetBtnDown;
     }
+
+    private void OnNetBtnDown()
+    {
+       SceneChangeManager.Instance.ChangeScene("res://Tscn/StartPanel.tscn");
+    }
+
 
     private void onLoad()
     {

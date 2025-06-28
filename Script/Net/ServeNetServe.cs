@@ -26,8 +26,9 @@ public class ServeNetServe : NetServe
     {
         if (Multiplayer.IsServer())
         {
-            SceneChangeManager.Instance.ChangeScene("res://Tscn/Game/main_game.tscn");
             GD.Print(id);
+            SceneChangeManager.Instance.ChangeScene("res://Tscn/Game/main_game.tscn");
+            
         }
     }
     private void OnPlayerDisconnected(long id)
