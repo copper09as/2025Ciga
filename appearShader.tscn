@@ -1,20 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfip4qt35kfuv"]
 
-[ext_resource type="Shader" uid="uid://dpeuh02k67oir" path="res://appearShader.gdshader" id="1_e24s5"]
+[ext_resource type="Shader" uid="uid://d0fpq5uqpk2nk" path="res://WaveShader.gdshader" id="1_e24s5"]
 [ext_resource type="Texture2D" uid="uid://cr8tuta4k8h2e" path="res://Art/Image/TestChaara.png" id="2_fgjyg"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vn33p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgjyg"]
 shader = ExtResource("1_e24s5")
-shader_parameter/progress = 0.0
-shader_parameter/base_direction = Vector2(0, 0)
-shader_parameter/pixel_scale = 0.071
-shader_parameter/base_dir_rand_factor = 1.0
-shader_parameter/regionEnabled = false
+shader_parameter/strength = 100.0
+shader_parameter/speed = 2.0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_vn33p")
+texture_filter = 1
+material = SubResource("ShaderMaterial_fgjyg")
 position = Vector2(-529, -741)
 scale = Vector2(0.283714, 0.283714)
 texture = ExtResource("2_fgjyg")
