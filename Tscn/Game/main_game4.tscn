@@ -167,6 +167,12 @@ position = Vector2(1843, 483.205)
 scale = Vector2(2.825, 3.363)
 k = 0.01
 
+[node name="Background3" type="Sprite2D" parent="MainGame/Back"]
+z_index = 6
+position = Vector2(2516, 1556)
+scale = Vector2(0.692729, 1.03655)
+texture = ExtResource("4_pe046")
+
 [node name="Building" type="Node2D" parent="MainGame"]
 
 [node name="Area2D" parent="MainGame" instance=ExtResource("11_t0b1m")]
