@@ -29,6 +29,7 @@ public partial class SignalEventCenter : Node
         var callable = new Callable(ob, signalName);
         if (!IsConnected(signalName, callable))
         {
+            //Connect(signalName, callable, (uint)ConnectFlags.OneShot);
             Connect(signalName, callable, flags);
         }
     }

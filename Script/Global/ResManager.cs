@@ -32,10 +32,9 @@ public partial class ResManager : Node
             GD.PrintErr($"Failed to instantiate scene from path: {path}");
             return null;
         }
-        if(name!="")
+        if(name.Equals(string.Empty))
             instance.Name = name;
-        if(parent != null)
-            parent.AddChild(instance);
+        parent?.AddChild(instance);
         return instance;
     }
 }
