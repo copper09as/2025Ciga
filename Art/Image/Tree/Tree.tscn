@@ -1,0 +1,66 @@
+[gd_scene load_steps=14 format=3 uid="uid://cn4w1r5k5dp46"]
+
+[ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="1_vcf0q"]
+[ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="2_kn7oy"]
+[ext_resource type="Texture2D" uid="uid://ccf2dwm04mg8p" path="res://Art/Image/Tree/Tree3.png" id="3_bs1ai"]
+[ext_resource type="Texture2D" uid="uid://dku1xv343vr5o" path="res://Art/Image/Tree/Tree4.png" id="4_nxk8k"]
+[ext_resource type="Texture2D" uid="uid://uj705mo8jmms" path="res://Art/Image/Tree/Tree5.png" id="5_xmvjy"]
+[ext_resource type="Texture2D" uid="uid://bjv66k8bsh1rh" path="res://Art/Image/Tree/Tree6.png" id="6_8l55b"]
+[ext_resource type="Texture2D" uid="uid://bjjfe2ue6if5" path="res://Art/Image/Tree/Tree7.png" id="7_8akbk"]
+[ext_resource type="Texture2D" uid="uid://cue7tuwfh0uel" path="res://Art/Image/Tree/Tree8.png" id="8_k5d41"]
+[ext_resource type="Texture2D" uid="uid://q1gra7wgn3mq" path="res://Art/Image/Tree/Tree9.png" id="9_hwmg1"]
+[ext_resource type="Texture2D" uid="uid://b4fv50b85wqjn" path="res://Art/Image/Tree/Tree10.png" id="10_i3l8e"]
+[ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="11_pbruw"]
+[ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="12_wsp4o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eamiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vcf0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kn7oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bs1ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nxk8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xmvjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8l55b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8akbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k5d41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hwmg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i3l8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pbruw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wsp4o")
+}],
+"loop": true,
+"name": &"Grow",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eamiw")
+animation = &"Grow"
+frame = 7
+frame_progress = 0.870504
