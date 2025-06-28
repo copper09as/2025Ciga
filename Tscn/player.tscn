@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbmbqk7a4mfki"]
+[gd_scene load_steps=9 format=3 uid="uid://cbmbqk7a4mfki"]
 
 [ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
 [ext_resource type="Texture2D" uid="uid://duedxr6cj806q" path="res://Art/icon.svg" id="1_i1qcm"]
 [ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
 [ext_resource type="Script" uid="uid://0gqig1vjsnpd" path="res://Script/State/JumpState.cs" id="4_o78tl"]
 [ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o78tl"]
+size = Vector2(152, 151)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0fxs"]
 animations = [{
@@ -25,6 +28,12 @@ script = ExtResource("1_a0fxs")
 animated = NodePath("AnimatedSprite2D")
 speed = 200.0
 machine = NodePath("StateMachine")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_o78tl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a0fxs")
