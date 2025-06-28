@@ -41,7 +41,7 @@ script = ExtResource("3_mjouf")
 [node name="Player" parent="MainGame" instance=ExtResource("1_4tw52")]
 position = Vector2(410, 397)
 Grivity = 229.0
-jumpHeight = 230.0
+jumpHeight = 130.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 position = Vector2(2331, 293)

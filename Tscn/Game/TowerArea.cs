@@ -28,7 +28,6 @@ public partial class TowerArea : Area2D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        GD.Print(isInTown);
         if (isInTown)
         {
             if (Input.IsActionJustPressed("OnChose"))
