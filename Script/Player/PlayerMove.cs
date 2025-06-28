@@ -8,7 +8,7 @@ public partial class PlayerMove : CharacterBody2D
     [Export]
     private Area2D wallDetect;
     [Export]
-    private AnimatedSprite2D animated;
+    public AnimatedSprite2D animated;
     [Export]
     public float speed;
     [Export]

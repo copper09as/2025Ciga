@@ -5,7 +5,7 @@ public partial class MoveState : PlayerState
 {
     public override void Enter()
     {
-        
+        player.animated.Play("Walk");
     }
 
     public override void Exit()

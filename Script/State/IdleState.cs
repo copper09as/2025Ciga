@@ -5,6 +5,7 @@ public partial class IdleState : PlayerState
 {
     public override void Enter()
     {
+        player.animated.Play("Idle");
     }
 
     public override void Exit()
