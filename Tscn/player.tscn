@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cbmbqk7a4mfki"]
+[gd_scene load_steps=46 format=3 uid="uid://cbmbqk7a4mfki"]
 
 [ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
 [ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
@@ -6,18 +6,30 @@
 [ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
 [ext_resource type="Texture2D" uid="uid://o3lf3lvsxvjl" path="res://Art/Image/Character/WALK/Walk (1).png" id="6_35hdy"]
 [ext_resource type="Script" uid="uid://dybds5b230ret" path="res://Script/State/IdleState.cs" id="6_43qtk"]
+[ext_resource type="Texture2D" uid="uid://ddhjr77dtxvb6" path="res://Art/Image/Character/Poke/Poke (1).png" id="7_qbwk8"]
 [ext_resource type="Texture2D" uid="uid://d2v23moshtyef" path="res://Art/Image/Character/WALK/Walk (2).png" id="7_qgexl"]
+[ext_resource type="Texture2D" uid="uid://cf84hx7p2iwha" path="res://Art/Image/Character/Poke/Poke (2).png" id="8_aklxw"]
 [ext_resource type="Texture2D" uid="uid://dre8q6xq5sqp3" path="res://Art/Image/Character/WALK/Walk (3).png" id="8_hekeq"]
+[ext_resource type="Texture2D" uid="uid://xmbupdpsa34g" path="res://Art/Image/Character/Poke/Poke (3).png" id="9_rpk1v"]
 [ext_resource type="Texture2D" uid="uid://bxawqcm5g3uqk" path="res://Art/Image/Character/WALK/Walk (4).png" id="9_wt6bq"]
+[ext_resource type="Texture2D" uid="uid://qb23d3mqjqo1" path="res://Art/Image/Character/Poke/Poke (6).png" id="10_0e54k"]
 [ext_resource type="Texture2D" uid="uid://basucy8y1n7e4" path="res://Art/Image/Character/WALK/Walk (5).png" id="10_1qy0s"]
+[ext_resource type="Texture2D" uid="uid://d1brbg1oxxh4i" path="res://Art/Image/Character/Poke/Poke (7).png" id="11_14k4x"]
 [ext_resource type="Texture2D" uid="uid://bhkexogawpntb" path="res://Art/Image/Character/WALK/Walk (6).png" id="11_ru531"]
 [ext_resource type="Texture2D" uid="uid://cehitkpv5fev6" path="res://Art/Image/Character/WALK/Walk (7).png" id="12_jfihg"]
+[ext_resource type="Texture2D" uid="uid://bvjw0vg10nqir" path="res://Art/Image/Character/Poke/Poke (8).png" id="12_u0nah"]
 [ext_resource type="Texture2D" uid="uid://ltjtoig11a3e" path="res://Art/Image/Character/WALK/Walk (8).png" id="13_1kf5t"]
+[ext_resource type="Texture2D" uid="uid://quaeaotbgof5" path="res://Art/Image/Character/Poke/Poke (9).png" id="13_kb3y4"]
+[ext_resource type="Texture2D" uid="uid://bq34vaqcyxust" path="res://Art/Image/Character/Poke/Poke (4).png" id="14_2fbo3"]
 [ext_resource type="Texture2D" uid="uid://df3fdecun2coa" path="res://Art/Image/Character/WALK/Walk (9).png" id="14_fhsic"]
+[ext_resource type="Texture2D" uid="uid://b0ptch4wft22h" path="res://Art/Image/Character/Poke/Poke (5).png" id="15_8a8wr"]
 [ext_resource type="Texture2D" uid="uid://b7xpbfuqvfhmw" path="res://Art/Image/Character/WALK/Walk (10).png" id="15_n8kjq"]
 [ext_resource type="Texture2D" uid="uid://c6cd74sfsshtg" path="res://Art/Image/Character/WALK/Walk (11).png" id="16_3nqlp"]
+[ext_resource type="Texture2D" uid="uid://c5ntppygwp8eq" path="res://Art/Image/Character/Poke/Poke (10).png" id="16_cpm0g"]
 [ext_resource type="Texture2D" uid="uid://byqojw1donp42" path="res://Art/Image/Character/WALK/Walk (12).png" id="17_0mpve"]
+[ext_resource type="Texture2D" uid="uid://cr7dcgt0ambx1" path="res://Art/Image/Character/Poke/Poke (11).png" id="17_0074v"]
 [ext_resource type="Texture2D" uid="uid://cyctuxbiqkav4" path="res://Art/Image/Character/WALK/Walk (13).png" id="18_qbwk8"]
+[ext_resource type="Texture2D" uid="uid://dtvo8ju3f2ms1" path="res://Art/Image/Character/Poke/Poke (12).png" id="18_vjoqp"]
 [ext_resource type="Texture2D" uid="uid://c6hpwrb22vi2s" path="res://Art/Image/Character/WALK/Walk (14).png" id="19_aklxw"]
 [ext_resource type="Texture2D" uid="uid://4l3mrtdhkwvw" path="res://Art/Image/Character/WALK/Walk (15).png" id="20_rpk1v"]
 [ext_resource type="Texture2D" uid="uid://cx8re7mudlsdi" path="res://Art/Image/Character/WALK/Walk (16).png" id="21_0e54k"]
@@ -46,6 +58,47 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qbwk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aklxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rpk1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0e54k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_14k4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u0nah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kb3y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2fbo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8a8wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cpm0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0074v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vjoqp")
+}],
+"loop": true,
+"name": &"Poke",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,7 +223,8 @@ shape = SubResource("SeparationRayShape2D_43qtk")
 position = Vector2(1, 0.999996)
 scale = Vector2(0.0556452, 0.0621437)
 sprite_frames = SubResource("SpriteFrames_va1xr")
-animation = &"Idle"
+animation = &"Poke"
+frame_progress = 0.690226
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 
