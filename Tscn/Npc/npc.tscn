@@ -15,12 +15,12 @@ size = Vector2(158, 141)
 [node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
 script = ExtResource("1_7xg8k")
 diaLabel = NodePath("Diag")
-timer = NodePath("../Timer")
+timer = NodePath("../AudioStreamPlayer2D3")
 dialog = "我曾经和你一样是个勇者"
-area = NodePath("../Area2D")
+area = NodePath("../AudioStreamPlayer2D2")
 id = 1
 buildings = Array[int]([1, 2, 3, 4])
-progress = NodePath("../ProgressBar")
+progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
 
 [node name="NpcTest" type="Sprite2D" parent="Npc"]
@@ -40,17 +40,17 @@ theme_override_font_sizes/font_size = 40
 text = "111111111111111111111111111"
 autowrap_mode = 3
 
-[node name="Area2D" type="Area2D" parent="." groups=["Building"]]
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="." groups=["Building"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="AudioStreamPlayer2D2"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_owjfl")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="AudioStreamPlayer2D3" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="."]
 visible = false
 offset_left = -112.0
 offset_top = -132.0
