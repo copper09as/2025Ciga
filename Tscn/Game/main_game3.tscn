@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hqbx048u4vea"]
+[gd_scene load_steps=29 format=3 uid="uid://c0ue77caxnw0k"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_gkkte"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_ayk4g"]
@@ -24,6 +24,52 @@ shader = ExtResource("17_pkqbp")
 shader_parameter/color = Vector3(1, 1, 1)
 shader_parameter/OCTAVES = 5
 
+[sub_resource type="Gradient" id="Gradient_7jplg"]
+offsets = PackedFloat32Array(0, 0.498824, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5o6ea"]
+gradient = SubResource("Gradient_7jplg")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_yeklp"]
+offsets = PackedFloat32Array(0, 0.467192, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qgd5g"]
+gradient = SubResource("Gradient_yeklp")
+
+[sub_resource type="Gradient" id="Gradient_c1e8s"]
+offsets = PackedFloat32Array(0, 0.493438, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.459318)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yn14k"]
+gradient = SubResource("Gradient_c1e8s")
+
+[sub_resource type="Curve" id="Curve_buad0"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 11.1321), 0.0, 0.0, 0, 0, Vector2(0.12285, 25.849), 0.0, 0.0, 0, 0, Vector2(0.223587, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.331695, 25.849), 0.0, 0.0, 0, 0, Vector2(0.454545, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.584767, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.695332, -18.3019), 0.0, 0.0, 0, 0, Vector2(0.815725, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.906634, -18.3019), 0.0, 0.0, 0, 0, Vector2(1, 25.849), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[sub_resource type="CurveTexture" id="CurveTexture_brciq"]
+curve = SubResource("Curve_buad0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j1k5u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 6.0
+tangential_accel_curve = SubResource("CurveTexture_brciq")
+damping_max = 100.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_yn14k")
+color_initial_ramp = SubResource("GradientTexture1D_qgd5g")
+
 [node name="Node" type="Node2D"]
 
 [node name="MainGame" type="Node2D" parent="."]
@@ -36,17 +82,23 @@ position = Vector2(1871, 97)
 scale = Vector2(1.40846, 0.793612)
 polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 446.587, -250.752, 309.558, -248.232, 176.789, -262.093, 3.54993, -249.492, -32.6598, -304.935, -68.8696, -331.396, -128.509, -437.241, -237.139, -396.919, -255.598, -369.198, -290.388, -354.077, -348.608, -354.077, -391.917, -320.056, -448.007, -253.272, -871.164, -255.792, -1011.74, -252.012, -1239.65, -250.752, -1332.66, -258.313, -1397.98, -264.613, -1479.73, -257.958, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
 
+[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="MainGame/RigidBody2D"]
+position = Vector2(1871, -118)
+scale = Vector2(1.40846, 0.793612)
+polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 829.275, -70.5635, 791.645, -55.4427, 725.615, -55.4427, 607.756, -112.146, 580.066, -128.526, 555.926, -132.306, 492.737, -120.966, 433.807, -75.6037, 303.168, 10.0804, 193.119, 2.52008, 4.25989, 8.82043, -36.2098, -40.322, -60.3496, -52.9226, -88.0394, -100.805, -121.409, -160.028, -133.479, -168.848, -239.268, -128.526, -252.758, -104.585, -276.898, -90.7245, -315.238, -85.6842, -350.738, -91.9845, -407.537, -35.2817, -527.527, -74.3437, -682.306, -144.907, -810.815, -142.387, -1006.77, -197.83, -1126.05, -254.532, -1282.25, -240.672, -1332.66, -270.913, -1400.11, -296.115, -1481.05, -307.455, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
+disabled = true
+
 [node name="Player" parent="MainGame" instance=ExtResource("1_gkkte")]
 z_index = 7
-position = Vector2(151, 438)
+position = Vector2(57, 433)
 scale = Vector2(0.8, 0.8)
 speed = 190.0
 Grivity = 200.0
 jumpHeight = 120.0
 
 [node name="Camera2D" type="Camera2D" parent="MainGame/Player"]
-position = Vector2(502.5, -63.75)
-zoom = Vector2(0.7, 0.7)
+position = Vector2(492.5, -408.75)
+zoom = Vector2(0.8, 0.8)
 limit_left = 0
 limit_top = -421
 limit_bottom = 688
@@ -107,12 +159,13 @@ script = ExtResource("5_8wa2c")
 
 [node name="Grass" parent="MainGame/Back" instance=ExtResource("9_206em")]
 z_index = 7
-position = Vector2(2331, 205)
-scale = Vector2(0.65, 0.65)
+position = Vector2(1079, 311)
+scale = Vector2(0.3, 0.3)
 
 [node name="Water_Body" parent="MainGame/Back" instance=ExtResource("10_ruo7d")]
-position = Vector2(1879, 460)
-scale = Vector2(3, 3)
+position = Vector2(1843, 483.205)
+scale = Vector2(2.825, 3.363)
+k = 0.01
 
 [node name="Building" type="Node2D" parent="MainGame"]
 
@@ -146,6 +199,44 @@ texture = ExtResource("16_4polq")
 
 [node name="Smoke" type="Sprite2D" parent="MainGame"]
 material = SubResource("ShaderMaterial_5o6ea")
-position = Vector2(2116, -124)
+position = Vector2(2113, -136)
 scale = Vector2(-8.285, 3.101)
 texture = ExtResource("18_e3a5n")
+
+[node name="Winds" type="Node2D" parent="MainGame"]
+
+[node name="BlowWind" type="GPUParticles2D" parent="MainGame/Winds"]
+position = Vector2(141, 163)
+rotation = -0.825541
+amount = 20
+texture = SubResource("GradientTexture2D_5o6ea")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_j1k5u")
+
+[node name="BlowWind2" type="GPUParticles2D" parent="MainGame/Winds"]
+position = Vector2(1556, 189)
+rotation = -0.825541
+amount = 20
+texture = SubResource("GradientTexture2D_5o6ea")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_j1k5u")
+
+[node name="BlowWind3" type="GPUParticles2D" parent="MainGame/Winds"]
+position = Vector2(2536, 203)
+rotation = -0.825541
+amount = 20
+texture = SubResource("GradientTexture2D_5o6ea")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_j1k5u")
