@@ -23,8 +23,11 @@ public partial class Npc : Node2D
     private ProgressBar progress;
     [Export]
     private AppearShader appearShader;
+    [Export]
     private bool isChose;
+    [Export]
     private bool inStay;
+    [Export]
     public bool isFinishGame;
     [Export]
     public GameType gameType;
@@ -39,14 +42,20 @@ public partial class Npc : Node2D
     private void timerOut()
     {
         if (SmallGameManager.Instance.isStartSmallGame)
+        {
+            GD.Print("小游戏未结束");
             return;
+        }
+
         if (!isFinishGame)
         {
+            GD.Print(id.ToString() + "可以开始小游戏");
             SmallGameManager.Instance.CreateSmallGame(this.gameType, this);
         }
         else if (!isFinish && isFinishGame)
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
+            GD.Print(id.ToString() + "可以开始轮盘");
             wheel.Position = new Vector2(this.Position.X, this.Position.Y);
             wheel.rightId = id;
             wheel.buildings = buildings;

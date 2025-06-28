@@ -23,7 +23,11 @@ public partial class SmallGameManager : Node
     public void CreateSmallGame(GameType gameType, Npc npc)
     {
         if (isStartSmallGame)
+        {
+            GD.Print("小游戏正在进行");
             return;
+        }
+        GD.Print("小游戏开始");
         switch (gameType)
         {
             case GameType.Beat:
