@@ -19,7 +19,10 @@ public partial class TowerArea : Area2D
 
     private void OnPlayerExit(Area2D area)
     {
-        isInTown = false;
+        if (area.IsInGroup("Player"))
+        {
+            isInTown = false;
+        }
     }
 
     public override void _Process(double delta)
