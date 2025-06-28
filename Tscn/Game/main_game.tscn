@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=20 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="2_4gfll"]
@@ -9,9 +9,64 @@
 [ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
 [ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="7_2730w"]
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Background.png" id="8_jwlpg"]
-[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
+[ext_resource type="PackedScene" uid="uid://rbtvcjb81ph6" path="res://Art/Shader/TestScene/Leaves.tscn" id="10_5n2gx"]
+
+[sub_resource type="Gradient" id="Gradient_3vldt"]
+offsets = PackedFloat32Array(0, 0.498824, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xiu63"]
+gradient = SubResource("Gradient_3vldt")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_nble0"]
+offsets = PackedFloat32Array(0, 0.467192, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3vldt"]
+gradient = SubResource("Gradient_nble0")
+
+[sub_resource type="Gradient" id="Gradient_2ty2s"]
+offsets = PackedFloat32Array(0, 0.493438, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.459318)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ggq1"]
+gradient = SubResource("Gradient_2ty2s")
+
+[sub_resource type="Curve" id="Curve_sy6wn"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 11.1321), 0.0, 0.0, 0, 0, Vector2(0.12285, 25.849), 0.0, 0.0, 0, 0, Vector2(0.223587, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.331695, 25.849), 0.0, 0.0, 0, 0, Vector2(0.454545, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.584767, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.695332, -18.3019), 0.0, 0.0, 0, 0, Vector2(0.815725, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.906634, -18.3019), 0.0, 0.0, 0, 0, Vector2(1, 25.849), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[sub_resource type="CurveTexture" id="CurveTexture_uvh0v"]
+curve = SubResource("Curve_sy6wn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jdxug"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 6.0
+tangential_accel_curve = SubResource("CurveTexture_uvh0v")
+damping_max = 100.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_4ggq1")
+color_initial_ramp = SubResource("GradientTexture1D_3vldt")
 
 [node name="MainGame" type="Node2D"]
+
+[node name="UiContain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1015.0
+offset_top = 170.0
+offset_right = 1055.0
+offset_bottom = 210.0
+script = ExtResource("3_mjouf")
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 position = Vector2(211, 593)
@@ -53,18 +108,19 @@ script = ExtResource("5_2730w")
 
 [node name="Grass" parent="." instance=ExtResource("5_2fhvb")]
 z_index = 7
-position = Vector2(2331, 205)
-scale = Vector2(0.65, 0.65)
+position = Vector2(539, 395)
+scale = Vector2(0.15, 0.15)
 
 [node name="Player" parent="." instance=ExtResource("1_4tw52")]
-position = Vector2(147, 415)
+position = Vector2(49, 460)
+scale = Vector2(0.279991, 0.279991)
 speed = 190.0
 Grivity = 200.0
 jumpHeight = 120.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(689, -435)
-zoom = Vector2(0.6, 0.6)
+position = Vector2(689.308, -542.875)
+zoom = Vector2(1.715, 1.715)
 limit_left = 0
 limit_top = -421
 limit_bottom = 688
@@ -72,14 +128,18 @@ limit_bottom = 688
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1027, -102)
 
-[node name="NpcCreater" parent="." instance=ExtResource("10_5n2gx")]
-position = Vector2(891, 342)
+[node name="BlowShader" type="GPUParticles2D" parent="."]
+position = Vector2(736, 358)
+rotation = 2.04029
+amount = 20
+texture = SubResource("GradientTexture2D_xiu63")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_jdxug")
 
-[node name="UiContain" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1017.0
-offset_top = 345.0
-offset_right = 1017.0
-offset_bottom = 345.0
-script = ExtResource("3_mjouf")
+[node name="Node2D2" parent="." instance=ExtResource("10_5n2gx")]
+position = Vector2(874, 451)
+scale = Vector2(1.72, 1.72)
