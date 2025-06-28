@@ -76,15 +76,15 @@ void fragment() {
 
 	vec2 uv = UV;
 
-	uv = (UV - pivot )/region_rate ;
+	uv = (UV - pivot )/region_rate ; 
 
 	vec2 direction = vec2(0.0);
 
-	vec2 pixel_uv = vec2(uv.x - mod(uv.x, TEXTURE_PIXEL_SIZE_fixed.x * pixel_scale) + eps,
+	vec2 pixel_uv = vec2(uv.x - mod(uv.x, TEXTURE_PIXEL_SIZE_fixed.x * pixel_scale) + eps, 
 
 						uv.y - mod(uv.y, TEXTURE_PIXEL_SIZE_fixed.y * pixel_scale) + eps);
 
-	//vec2 pixel_uv = vec2(uv.x - mod(uv.x, TEXTURE_PIXEL_SIZE.x * pixel_scale) + eps,
+	//vec2 pixel_uv = vec2(uv.x - mod(uv.x, TEXTURE_PIXEL_SIZE.x * pixel_scale) + eps, 
 
 						//uv.y - mod(uv.y, TEXTURE_PIXEL_SIZE.y * pixel_scale) + eps);
 
