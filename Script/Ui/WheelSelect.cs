@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class WheelSelect : ColorRect
+public partial class WheelSelect : TextureRect
 {
     private static bool inChose = false;
     private static int selectId;
@@ -16,7 +16,7 @@ public partial class WheelSelect : ColorRect
     public override void _Ready()
     {
         base._Ready();
-        initColor = this.Color;
+        initColor = this.Modulate;
         MouseEntered += OnMouseEnter;
         MouseExited += OnMouseExit;
         

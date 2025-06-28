@@ -25,6 +25,7 @@ public partial class StateMachine : Node
 public enum State
 {
     MoveState,
-    JumpState
+    JumpState,
+    IdleState
 
 }

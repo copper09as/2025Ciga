@@ -4,7 +4,6 @@ using System;
 public partial class FlowUi : Node
 {
     [Export] private Control TextContainer; // 包含文本的容器
-    [Export] private Button ToggleButton;   // 触发显示的按钮
     // 动画参数
     private Vector2 _hiddenPosition;
     private Vector2 _visiblePosition;
@@ -13,7 +12,7 @@ public partial class FlowUi : Node
     public override void _Ready()
     {
         // 确保所有必要节点都已设置
-        if (TextContainer == null || ToggleButton == null)
+        if (TextContainer == null)
         {
             GD.PrintErr("TextContainer or ToggleButton not assigned!");
             return;
@@ -31,7 +30,15 @@ public partial class FlowUi : Node
         TextContainer.Position = _hiddenPosition;
         TextContainer.Visible = true; // 确保容器可见（但位置在屏幕外）
         // 连接按钮信号
-        ToggleButton.Pressed += OnToggleButtonPressed;
+        //ToggleButton.Pressed += OnToggleButtonPressed;
+    }
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (Input.IsActionJustPressed("ShowBag"))
+        {
+            OnToggleButtonPressed();
+        }
     }
 
     private void OnToggleButtonPressed()
@@ -62,7 +69,7 @@ public partial class FlowUi : Node
     }
     protected virtual void UpdateUi()
     {
-
+        
     }
 
 }

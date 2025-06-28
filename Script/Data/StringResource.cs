@@ -7,4 +7,5 @@ public static class StringResource
     public const string UpControl = "Up";
     public const string RightControl = "Right";
     public const string DownControl = "Down";
+    public const string GameManagerPath = "";
 }

@@ -26,7 +26,12 @@ public partial class JumpState : PlayerState
             curretnHeight -= player.Grivity * delta;
         if (player.IsOnFloor() && curretnHeight <0)
         {
-            stateMachine.TransState(State.MoveState);
+            if (dir == 0)
+            {
+                stateMachine.TransState(State.IdleState);
+            }
+            else
+                stateMachine.TransState(State.MoveState);
         }
     }
 }

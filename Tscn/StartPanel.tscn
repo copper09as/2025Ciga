@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb0unmxujyr3w"]
+
+[ext_resource type="Script" uid="uid://blou1h6eb3xey" path="res://Script/SceneNode/StartUi.cs" id="1_cxl7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ji8al"]
+
+[node name="StartUi" type="Control" node_paths=PackedStringArray("ServeBtn", "ClientBtn", "CreateCardBtn", "Iptxt", "PortTxt")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxl7g")
+ServeBtn = NodePath("ServeButton")
+ClientBtn = NodePath("ClientButton")
+CreateCardBtn = NodePath("")
+Iptxt = NodePath("Ip")
+PortTxt = NodePath("Port")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(6.54578e-06, 0.785527, 0.840718, 1)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ji8al")
+
+[node name="ServeButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 79.0
+text = "我是主机"
+
+[node name="ClientButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 155.0
+offset_right = 1152.0
+offset_bottom = 233.0
+text = "我是客户端"
+
+[node name="Ip" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 372.0
+offset_right = 1152.0
+offset_bottom = 429.0
+placeholder_text = "IP:"
+
+[node name="Port" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 493.0
+offset_right = 1152.0
+offset_bottom = 550.0
+placeholder_text = "端口:"

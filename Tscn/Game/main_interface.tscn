@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bct5xyglm6fia"]
+[gd_scene load_steps=8 format=3 uid="uid://bct5xyglm6fia"]
 
 [ext_resource type="Script" uid="uid://cxkmukn1e4d8p" path="res://Script/Ui/MainInterface.cs" id="1_t8r0r"]
 [ext_resource type="Texture2D" uid="uid://d5rerqrhh18b" path="res://Art/公主战车/ui 啊/gear.png" id="1_tjnn2"]
-[ext_resource type="Texture2D" uid="uid://d04v2yd0pf0k1" path="res://Resource/Ui.tres" id="2_7fdkm"]
 [ext_resource type="Texture2D" uid="uid://b3fqrh5i5q50t" path="res://Resource/Start.tres" id="3_e5f70"]
-[ext_resource type="Texture2D" uid="uid://cp8i5d7ut75la" path="res://Art/公主战车/背景/ebg2_01_001_02.png" id="3_o77j0"]
+[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="6_crfyq"]
+[ext_resource type="FontFile" uid="uid://c266urr842yej" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Medium.ttf" id="7_elx5s"]
+[ext_resource type="Texture2D" uid="uid://dx5g3lxpb1gw6" path="res://Art/Ui/a78fde7f03e245bf12a57bb964c7b03.png" id="7_fvcix"]
 
-[node name="MainInterface" type="Control" node_paths=PackedStringArray("Startbtn")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8r0r"]
+bg_color = Color(0.849681, 0.483344, 0.428602, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.698039, 0, 0.301961, 0.996078)
+border_blend = true
+
+[node name="MainInterface" type="Control" node_paths=PackedStringArray("progressBar", "loadPanel", "Startbtn", "timer", "loadTimer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,16 +24,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8r0r")
+progressBar = NodePath("LoadPanel/ProgressBar")
+loadPanel = NodePath("LoadPanel")
 Startbtn = NodePath("StartBen")
+timer = NodePath("Timer")
+loadTimer = NodePath("LoadTimer")
+initColor = Color(1, 1, 1, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Back" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1099.0
-offset_bottom = 1028.0
-scale = Vector2(1.04788, 0.64)
-texture = ExtResource("3_o77j0")
+offset_right = 1694.0
+offset_bottom = 720.0
+scale = Vector2(0.680002, 0.92)
+texture = ExtResource("7_fvcix")
 
 [node name="SetBtn" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 260.0
 offset_bottom = 260.0
@@ -31,17 +47,70 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_tjnn2")
 
 [node name="StartBen" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 375.0
-offset_top = 323.0
-offset_right = 540.0
-offset_bottom = 392.0
-scale = Vector2(2, 2)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 82.0
+offset_right = 79.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_e5f70")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="StartBen2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 180.0
+offset_right = 79.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_e5f70")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.2
+autostart = true
+
+[node name="LoadTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="LoadPanel" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="LoadPanel"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 658.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8r0r")
+
+[node name="Label" type="Label" parent="LoadPanel"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 434.0
+offset_right = 672.0
+offset_bottom = 504.0
+theme_override_fonts/font = ExtResource("6_crfyq")
+theme_override_font_sizes/font_size = 69
+text = "加载中"
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadPanel"]
 layout_mode = 0
 offset_left = 315.0
-offset_right = 802.0
-offset_bottom = 104.0
-texture = ExtResource("2_7fdkm")
+offset_top = 282.0
+offset_right = 837.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("7_elx5s")
+theme_override_font_sizes/font_size = 39
+rounded = true
