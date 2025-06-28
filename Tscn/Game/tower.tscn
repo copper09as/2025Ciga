@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv2a746k04nye"]
+[gd_scene load_steps=6 format=3 uid="uid://ucqtj38uahbs"]
 
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="1_fyvrb"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="2_5jr2b"]
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="3_ygrgi"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="4_fvy18"]
+[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="5_fvy18"]
 
 [node name="Tower" type="StaticBody2D"]
 
@@ -16,7 +17,7 @@ position = Vector2(725, -307)
 texture = ExtResource("2_5jr2b")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1, 682, 294, 689, 578, 451, 397, 339, 341, 341, 1098, -68, 1120, -81, 423, -202, 1000, -602, 399, -782, 1010, -1144, 461, -1296, 364, -1299, 585, -1292, 1048, -1161, 468, -768, 1100, -612, 506, -226, 1179, -102, 431, 324, 594, 427, 713, 443, 707, 482, 604, 485, 338, 688, 252, 766)
+polygon = PackedVector2Array(-1, 682, 294, 689, 578, 451, 392, 344, 341, 344, 343, 325, 391, 325, 480, 261, 1098, -68, 1120, -81, 415, -215, 416, -227, 441, -228, 464, -243, 493.386, -269.218, 744, -436, 1012, -603, 406, -766, 405, -779, 438, -787, 458, -809, 900, -1091, 963, -1133, 1003, -1159, 477, -1289, 470, -1298, 522, -1297, 964, -1184, 1012, -1166, 1042, -1165, 1043, -1155, 453, -779, 969, -638, 1033, -613, 1082, -612, 1082, -602, 484, -239, 450, -219, 1101, -106, 1136, -92, 1175, -90, 1176, -79, 426, 329, 604, 439, 713, 443, 707, 482, 604, 485, 338, 688, 252, 766)
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource("3_ygrgi")]
@@ -43,3 +44,33 @@ scale = Vector2(0.6, 0.6)
 textures = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Player"]
+
+[node name="WallCheck" type="Node2D" parent="."]
+
+[node name="Area2D" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(406, -298)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D5" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(1092, -686)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D6" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(395, -861)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D7" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(1052, -1239)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D2" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(1188, -163)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D3" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(331, 265)
+scale = Vector2(1, 0.5)
+
+[node name="Area2D4" parent="WallCheck" instance=ExtResource("5_fvy18")]
+position = Vector2(726, 371)
+scale = Vector2(1, 0.5)
