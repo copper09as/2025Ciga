@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=14 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
@@ -9,21 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
 [ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="7_2730w"]
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Image/Back/Background.png" id="8_jwlpg"]
-[ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="10_kxjkl"]
+[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="10_xiu63"]
-[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="11_05r5m"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
-[ext_resource type="Texture2D" uid="uid://bon50i4d6ogj3" path="res://Art/Image/Npc/NpcTres/Npcs3.tres" id="12_5o6ea"]
-[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="13_yeklp"]
-[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="14_c1e8s"]
-[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="15_buad0"]
-[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="18_5o6ea"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
-size = Vector2(135, 238)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
-size = Vector2(158, 141)
+[ext_resource type="PackedScene" uid="uid://bvejm6m32sgx2" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
 
 [node name="Node" type="Node2D"]
 
@@ -117,123 +106,16 @@ scale = Vector2(3, 3)
 
 [node name="Building" type="Node2D" parent="MainGame"]
 
-[node name="Npc" type="Node2D" parent="MainGame"]
-position = Vector2(542, 36)
-
-[node name="NpcCreater" type="Node2D" parent="MainGame/Npc"]
-position = Vector2(802, 341)
-
-[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater" node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
-script = ExtResource("10_kxjkl")
-timer = NodePath("../Timer")
-area = NodePath("../Area2D")
-id = 1
-buildings = Array[int]([1, 2, 3, 4])
-progress = NodePath("../ProgressBar")
-appearShader = NodePath("NpcTest")
-
-[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater/Npc"]
-material = ExtResource("11_05r5m")
-position = Vector2(1, 10)
-texture = ExtResource("12_5o6ea")
-script = ExtResource("13_yeklp")
-shaderMaterial = ExtResource("11_05r5m")
-
-[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater/Npc"]
-visible = false
-offset_left = 86.0
-offset_top = -184.0
-offset_right = 249.0
-offset_bottom = -55.0
-theme_override_fonts/font = ExtResource("14_c1e8s")
-theme_override_font_sizes/font_size = 40
-text = "111111111111111111111111111"
-autowrap_mode = 3
-
-[node name="Area2D" type="Area2D" parent="MainGame/Npc/NpcCreater" groups=["Building"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater/Area2D"]
-position = Vector2(1.5, 49)
-shape = SubResource("RectangleShape2D_owjfl")
-
-[node name="Timer" type="Timer" parent="MainGame/Npc/NpcCreater"]
-wait_time = 0.5
-one_shot = true
-
-[node name="ProgressBar" type="ProgressBar" parent="MainGame/Npc/NpcCreater"]
-visible = false
-offset_left = -112.0
-offset_top = -132.0
-offset_right = 123.0
-offset_bottom = -105.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater"]
-position = Vector2(-1, 2)
-stream = ExtResource("15_buad0")
-volume_db = 24.0
-autoplay = true
-max_distance = 300.0
-
 [node name="Area2D" parent="MainGame" instance=ExtResource("11_xiu63")]
 position = Vector2(549, 311)
 
 [node name="Area2D2" parent="MainGame" instance=ExtResource("11_xiu63")]
 position = Vector2(0, 311)
 
-[node name="NpcCreater" type="Node2D" parent="MainGame"]
-position = Vector2(782, 431)
+[node name="Npc" type="Node2D" parent="MainGame"]
 
-[node name="Npc" type="Node2D" parent="MainGame/NpcCreater" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
-script = ExtResource("10_kxjkl")
-diaLabel = NodePath("Diag")
-timer = NodePath("../AudioStreamPlayer2D3")
-dialog = "我曾经和你一样是个勇者"
-area = NodePath("../AudioStreamPlayer2D2")
-id = 1
-buildings = Array[int]([1, 2, 3, 4])
-progress = NodePath("../AudioStreamPlayer2D4")
-appearShader = NodePath("NpcTest")
+[node name="NpcCreater2" parent="MainGame/Npc" instance=ExtResource("10_5n2gx")]
+position = Vector2(1346, 395)
 
-[node name="NpcTest" type="Sprite2D" parent="MainGame/NpcCreater/Npc"]
-z_index = 4
-material = ExtResource("11_05r5m")
-position = Vector2(-5, 5)
-scale = Vector2(0.3927, 0.3927)
-texture = ExtResource("18_5o6ea")
-script = ExtResource("13_yeklp")
-shaderMaterial = ExtResource("11_05r5m")
-
-[node name="Diag" type="Label" parent="MainGame/NpcCreater/Npc"]
-visible = false
-offset_left = 86.0
-offset_top = -184.0
-offset_right = 249.0
-offset_bottom = -55.0
-theme_override_fonts/font = ExtResource("14_c1e8s")
-theme_override_font_sizes/font_size = 40
-text = "111111111111111111111111111"
-autowrap_mode = 3
-
-[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/NpcCreater" groups=["Building"]]
-
-[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/NpcCreater/AudioStreamPlayer2D2"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_yeklp")
-
-[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/NpcCreater"]
-wait_time = 0.5
-one_shot = true
-
-[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/NpcCreater"]
-visible = false
-offset_left = -112.0
-offset_top = -132.0
-offset_right = 123.0
-offset_bottom = -105.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/NpcCreater"]
-position = Vector2(-1, 2)
-stream = ExtResource("15_buad0")
-volume_db = 24.0
-autoplay = true
-max_distance = 300.0
+[node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("12_2ty2s")]
+position = Vector2(866, 387)

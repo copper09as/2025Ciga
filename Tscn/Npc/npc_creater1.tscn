@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dun70wqa8e3p8"]
+[gd_scene load_steps=8 format=3 uid="uid://bvejm6m32sgx2"]
 
 [ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="1_d3c20"]
-[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="2_ob11b"]
 [ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="3_h4cwu"]
 [ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="4_knqam"]
 [ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="5_arl1f"]
+[ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="5_ob11b"]
 [ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="6_y2jj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
@@ -12,22 +12,23 @@ size = Vector2(158, 141)
 
 [node name="NpcCreater" type="Node2D"]
 
-[node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+[node name="Npc" type="Node2D" parent="." node_paths=PackedStringArray("audioStreamPlayer", "diaLabel", "timer", "area", "progress", "appearShader")]
 script = ExtResource("1_d3c20")
+audioStreamPlayer = NodePath("../AudioStreamPlayer2D")
 diaLabel = NodePath("Diag")
 timer = NodePath("../AudioStreamPlayer2D3")
 dialog = "我曾经和你一样是个勇者"
 area = NodePath("../AudioStreamPlayer2D2")
 id = 1
-buildings = Array[int]([1, 2, 3, 4])
+buildings = Array[int]([1, 2, 5, 4])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
 
 [node name="NpcTest" type="Sprite2D" parent="Npc"]
-material = ExtResource("2_ob11b")
+material = ExtResource("5_ob11b")
 texture = ExtResource("3_h4cwu")
 script = ExtResource("4_knqam")
-shaderMaterial = ExtResource("2_ob11b")
+shaderMaterial = ExtResource("5_ob11b")
 
 [node name="Diag" type="Label" parent="Npc"]
 visible = false
