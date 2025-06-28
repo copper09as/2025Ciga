@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbqveepie624e"]
+
+[ext_resource type="Script" uid="uid://baiot42im5y04" path="res://Script/Building/BuildingManager.cs" id="1_8skkk"]
+
+[node name="BuildingManager" type="Node" node_paths=PackedStringArray("buildings")]
+script = ExtResource("1_8skkk")
+buildings = []

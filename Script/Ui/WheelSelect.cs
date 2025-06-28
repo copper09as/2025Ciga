@@ -6,7 +6,7 @@ public partial class WheelSelect : ColorRect
     private static bool inChose = false;
     private static int selectId;
     [Export]
-    private int id;
+    public int id;
     [Export]
     private Color transColor;
     [Export]
@@ -19,18 +19,23 @@ public partial class WheelSelect : ColorRect
         initColor = this.Color;
         MouseEntered += OnMouseEnter;
         MouseExited += OnMouseExit;
+        
     }
     public override void _Process(double delta)
     {
         base._Process(delta);
         if (Input.IsActionPressed("Confirm") && selectId == id)
         {
-            GD.Print(this.id);
-            selectId = -1;
-            wheel.Delete();
+            FinishChose(id);
         }
     }
-
+    public void FinishChose(int id)
+    {
+        GD.Print(this.id);
+        selectId = -1;
+        SignalEventCenter.Instance.TriggerEvent("FinishChose",id);
+        wheel.Delete();
+    }
     public void OnMouseExit()
     {
         inChose = false;

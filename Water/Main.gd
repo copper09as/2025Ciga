@@ -1,7 +1,7 @@
 extends Node2D
 
 #loads the stone scene
-var stone = preload("res://Scenes/Stone.tscn")
+var stone = preload("res://Water/Scenes/Stone.tscn")
 
 #called when there's an input
 func _input(event):

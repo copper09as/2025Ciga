@@ -2,16 +2,21 @@ using Godot;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-public partial class Building : Sprite2D
+public partial class Building : Node2D
 {
     [Export]
     private Timer timer;
     [Export]
     private Area2D area;
+    private bool isFinish = false;
     [Export]
-    private Godot.Collections.Array<int> items;
+    private int id;
+    [Export]
+    private Godot.Collections.Array<int> buildings;
     [Export]
     private ProgressBar progress;
+    [Export]
+    private AppearShader appearShader;
     private bool isChose;
     private bool inStay;
     public override void _Ready()
@@ -20,17 +25,32 @@ public partial class Building : Sprite2D
         area.AreaEntered += onAreaEnter;
         area.AreaExited += onAreaExit;
         timer.Timeout += timerOut;
+        SignalEventCenter.Instance.RegisterEvent(this, MethodName.FinishChose);
     }
     private void timerOut()
     {
         var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
         wheel.Position = Vector2.Zero;
+        wheel.rightId = id;
+        wheel.buildings = buildings;
+        wheel.Init();
+    }
+    public void FinishChose(int id)
+    {
+        if (id == this.id)
+        {
+            StartAppear();
+            isFinish = true;
+            progress.Hide();
+        }
     }
     public override void _Process(double delta)
     {
         base._Process(delta);
-        if (!inStay)
+        if (isFinish)
             return;
+        if (!inStay)
+                return;
         if (Input.IsActionJustPressed("OnChose"))
         {
             timer.Start();
@@ -57,5 +77,10 @@ public partial class Building : Sprite2D
             inStay = true;
             GD.Print(area.Name + "进入");
         }
+    }
+    public void StartAppear()
+    {
+        this.Show();
+        appearShader.Show = true;
     }
 }

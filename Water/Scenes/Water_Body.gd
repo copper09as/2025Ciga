@@ -21,7 +21,7 @@ var passes = 12
 var water_lenght = distance_between_springs * spring_number
 
 #spring scene reference
-@onready var water_spring = preload("res://Scenes/Water_Spring.tscn")
+@onready var water_spring = preload("res://Water/Scenes/Water_Spring.tscn")
 
 #the body of water depth
 @export var depth = 1000
@@ -42,7 +42,7 @@ var bottom = target_height + depth
 @onready var water_body_area = $Water_Body_Area
 
 #reference to the particle we just created
-@onready var splash_particle = preload("res://Scenes/splash_particles.tscn")
+@onready var splash_particle = preload("res://Water/Scenes/splash_particles.tscn")
 
 #initializes the spring array and all the springs
 func _ready():
@@ -170,11 +170,9 @@ func splash(index, speed):
 	pass
 
 func _on_Water_Body_Area_body_entered(body):
-	body.in_water()
-	
+	#body.in_water()
 	#creates a instace of the particle system
 	var s = splash_particle.instantiate()
-	
 	#adds the particle to the scene
 	get_tree().current_scene.add_child(s)
 	
