@@ -12,7 +12,7 @@ stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3"), NodePath("Star
 starIndex = Array[int]([0, 1, 2, 3])
 initColor = Color(1, 1, 1, 0)
 transColor = Color(0, 0, 0, 1)
-winColor = Color(0.854902, 0, 0.682353, 1)
+winColor = Color(0.226707, 0.226707, 0.226707, 0.741176)
 
 [node name="Star1" type="Sprite2D" parent="."]
 position = Vector2(-33, -1)
