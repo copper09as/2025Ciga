@@ -26,6 +26,8 @@ public partial class Npc : Node2D
     [Export]
     private bool isChose;
     [Export]
+    private int item;
+    [Export]
     private bool inStay;
     [Export]
     public bool isFinishGame;
@@ -76,6 +78,10 @@ public partial class Npc : Node2D
             StartAppear();
             isFinish = true;
             progress.Hide();
+            if (item != -1)
+            {
+                BagFlowUi.Instance.items[item] = true;
+            }
         }
     }
     public override void _Process(double delta)

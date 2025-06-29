@@ -24,13 +24,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8r0r")
+initColor = Color(1, 1, 1, 1)
 progressBar = NodePath("LoadPanel/ProgressBar")
 loadPanel = NodePath("LoadPanel")
 Startbtn = NodePath("StartBen")
 NetBtn = NodePath("StartBen2")
 timer = NodePath("Timer")
 loadTimer = NodePath("LoadTimer")
-initColor = Color(1, 1, 1, 1)
 
 [node name="Back" type="TextureRect" parent="."]
 z_index = -2
