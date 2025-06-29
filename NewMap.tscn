@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b2rvugohgrg88" path="res://Art/Image/NewWorld/TreeGrow (9).png" id="24_1833d"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="25_3e7pu"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="26_6weq5"]
-[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="27_aqbie"]
+[ext_resource type="Texture2D" uid="uid://b8rj6kvkapg4u" path="res://Art/Image/NewWorld/NewTower.png" id="27_mndfc"]
 [ext_resource type="Texture2D" uid="uid://b6vxy48g3l1pf" path="res://Art/Image/NewBack.tres" id="28_6weq5"]
 [ext_resource type="Texture2D" uid="uid://c6hpwrb22vi2s" path="res://Art/Image/Character/WALK/Walk (14).png" id="29_aqbie"]
 [ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="30_mndfc"]
@@ -178,19 +178,20 @@ animation = &"Grow"
 frame = 20
 frame_progress = 0.0510171
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Tower" type="Sprite2D" parent="."]
 
-[node name="DarkTower" type="Sprite2D" parent="Sprite2D"]
+[node name="DarkTower" type="Sprite2D" parent="Tower"]
 position = Vector2(2634, -234)
 texture = ExtResource("25_3e7pu")
 
-[node name="Tower道路" type="Sprite2D" parent="Sprite2D"]
+[node name="Tower道路" type="Sprite2D" parent="Tower"]
 position = Vector2(2591, -237)
 texture = ExtResource("26_6weq5")
 
-[node name="Tower" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(2634, -231)
-texture = ExtResource("27_aqbie")
+[node name="Tower" type="Sprite2D" parent="Tower"]
+position = Vector2(2858, -557)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("27_mndfc")
 
 [node name="NewBack" type="Sprite2D" parent="."]
 z_index = -1
@@ -236,8 +237,9 @@ trail_enabled = true
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_6qh11")
 
-[node name="Walk(14)" type="Sprite2D" parent="."]
-position = Vector2(2368, -1350)
+[node name="PLAYER" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2679, -1361)
 scale = Vector2(-0.161, 0.161)
 texture = ExtResource("29_aqbie")
 
