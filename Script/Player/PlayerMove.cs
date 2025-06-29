@@ -42,7 +42,7 @@ public partial class PlayerMove : CharacterBody2D
     public static float dir;
     public bool isInTown = true;
     public bool isEnterTown = false;
-    public bool isInWall;
+    private bool isInWall;
     private float grivity;
     private bool isIntree;
     [Export]
@@ -85,9 +85,13 @@ public partial class PlayerMove : CharacterBody2D
         {
             SoundManager.Instance.Play("res://Art/Sound/敲击木头_耳聆网_[声音ID：18757].ogg");
         }
-
+        else if (isEnterTown)
+        {
+            SoundManager.Instance.Play("res://Art/Sound/这是两根棍子敲在一起的声音_耳聆网_[声音ID：11208].wav");
+        }
         else
         {
+            //SoundManager.Instance.Play("res://Art/Sound/Up10_B.ogg");
         }
         if (!isLoop)
         {

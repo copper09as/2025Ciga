@@ -230,8 +230,6 @@ position = Vector2(1, 0.999996)
 scale = Vector2(0.0556452, 0.0621437)
 sprite_frames = SubResource("SpriteFrames_va1xr")
 animation = &"Poke"
-frame = 11
-frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 
