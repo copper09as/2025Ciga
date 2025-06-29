@@ -89,10 +89,6 @@ public partial class PlayerMove : CharacterBody2D
         {
             SoundManager.Instance.Play("res://Art/Sound/这是两根棍子敲在一起的声音_耳聆网_[声音ID：11208].wav");
         }
-        else
-        {
-            SoundManager.Instance.Play("res://Art/Sound/敲击木头_耳聆网_[声音ID：18757].ogg", volume);
-        }
         if (!isLoop)
         {
             SoundManager.Instance.StopMusic();

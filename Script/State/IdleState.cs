@@ -10,6 +10,7 @@ public partial class IdleState : PlayerState
 
     public override void Exit()
     {
+        
     }
 
     public override void Update(float delta)
