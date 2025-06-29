@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://087d1vk7lrqr"]
+
+[ext_resource type="Shader" uid="uid://b135dhaqaqigf" path="res://Tscn/Cane.gdshader" id="1_sk23u"]
+
+[resource]
+shader = ExtResource("1_sk23u")
+shader_parameter/is_active = false
+shader_parameter/speed = 5.0
+shader_parameter/intensity = 0.5
+shader_parameter/glow_color = Vector4(1, 0.8, 1, 1)

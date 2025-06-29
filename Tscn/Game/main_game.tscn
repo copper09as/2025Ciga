@@ -1,7 +1,8 @@
-[gd_scene load_steps=83 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=84 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_3sipc"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_efyt3"]
+[ext_resource type="PackedScene" uid="uid://dpvgt212vx3e2" path="res://Tscn/Cane.tscn" id="3_4gaoe"]
 [ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_hjq6r"]
 [ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Image/Back/Background.png" id="4_2semg"]
 [ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_sbbwv"]
@@ -297,14 +298,19 @@ limit_left = 0
 limit_top = -421
 limit_bottom = 688
 
-[node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("2_efyt3")]
+[node name="Bag" parent="MainGame/Player/Camera2D" node_paths=PackedStringArray("sprites") instance=ExtResource("2_efyt3")]
 z_index = 3
 offset_left = -743.75
 offset_top = -470.0
 offset_right = -743.75
 offset_bottom = -470.0
 scale = Vector2(1.3, 1.3)
-items = Array[bool]([false, false, false])
+items = Array[bool]([true, true, true])
+sprites = []
+
+[node name="拐杖" parent="MainGame/Player/Camera2D" instance=ExtResource("3_4gaoe")]
+position = Vector2(768.75, 25)
+scale = Vector2(0.1, 0.1)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
