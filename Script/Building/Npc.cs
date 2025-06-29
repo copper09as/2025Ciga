@@ -70,7 +70,7 @@ public partial class Npc : Node2D
             diaLabel.Show();
             diaLabel.Text = dialogs[index];
             index += 1;
-            if (dialogs.Count == index+1)
+            if (dialogs.Count == index)
             {
                 index = 0;
             }
