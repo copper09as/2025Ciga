@@ -91,7 +91,7 @@ public partial class PlayerMove : CharacterBody2D
         }
         else
         {
-            SoundManager.Instance.Play("res://Art/Sound/Up10_B.ogg");
+            //SoundManager.Instance.Play("res://Art/Sound/Up10_B.ogg");
         }
         if (!isLoop)
         {
