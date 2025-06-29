@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=82 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_3sipc"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_efyt3"]
@@ -13,39 +13,145 @@
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_0ev3k"]
 [ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="12_e0m0m"]
 [ext_resource type="Material" uid="uid://cgq0g6lctcv0c" path="res://Art/Shader/appearShader4.tres" id="13_j5kyq"]
-[ext_resource type="Texture2D" uid="uid://cpnd652pln20v" path="res://Art/Image/Npc/NpcTres/Npcs.tres" id="14_ljw8i"]
+[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="13_r6jro"]
 [ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="15_j5kyq"]
 [ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="16_ecbij"]
+[ext_resource type="Texture2D" uid="uid://b2weix76u6tol" path="res://Art/Image/NPCSAnim/订书机 (1).png" id="16_v835s"]
 [ext_resource type="AudioStream" uid="uid://cvfpjuk18qltg" path="res://Art/Sound/白炽灯蜂鸣_耳聆网_[声音ID：15778].wav" id="17_0skt6"]
-[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="18_jkdjq"]
+[ext_resource type="Texture2D" uid="uid://cg8phiumnjds2" path="res://Art/Image/NPCSAnim/订书机 (2).png" id="17_gwylu"]
+[ext_resource type="Texture2D" uid="uid://c0ex450l5w7nd" path="res://Art/Image/NPCSAnim/订书机 (3).png" id="18_0c4ke"]
+[ext_resource type="Texture2D" uid="uid://dysnvf1uhcjq0" path="res://Art/Image/NPCSAnim/订书机 (4).png" id="19_5qxm4"]
 [ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="19_l43r6"]
-[ext_resource type="Texture2D" uid="uid://dw5dubsy4ur5i" path="res://Art/Image/Npc/NpcTres/Npcs2.tres" id="20_nfnai"]
+[ext_resource type="Texture2D" uid="uid://okk70e2t880k" path="res://Art/Image/NPCSAnim/订书机 (5).png" id="20_uhp8k"]
+[ext_resource type="Texture2D" uid="uid://chpabttydbyjk" path="res://Art/Image/NPCSAnim/订书机 (6).png" id="21_qlra3"]
 [ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="21_v835s"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="22_gwylu"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="23_0c4ke"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="24_5qxm4"]
+[ext_resource type="Texture2D" uid="uid://buutvdebgp5kl" path="res://Art/Image/NPCSAnim/插头 (1).png" id="24_itrdu"]
+[ext_resource type="Texture2D" uid="uid://bi5y5im8nbgrm" path="res://Art/Image/NPCSAnim/插头 (2).png" id="25_2lqy6"]
 [ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="25_uhp8k"]
+[ext_resource type="Texture2D" uid="uid://d05yls5itdfr1" path="res://Art/Image/NPCSAnim/插头 (3).png" id="26_gt848"]
 [ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="26_qlra3"]
 [ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="27_l1s0u"]
+[ext_resource type="Texture2D" uid="uid://bx41pxsc0g4f" path="res://Art/Image/NPCSAnim/插头 (4).png" id="27_pg3hk"]
 [ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="28_itrdu"]
+[ext_resource type="Texture2D" uid="uid://caunk1cprvsk0" path="res://Art/Image/NPCSAnim/插头 (5).png" id="28_kcago"]
 [ext_resource type="Script" uid="uid://dkqk7xvkie4fx" path="res://Script/Building/Building.cs" id="29_j5kyq"]
+[ext_resource type="Texture2D" uid="uid://bidyt8a6n64a7" path="res://Art/Image/NPCSAnim/插头 (6).png" id="29_k2ewa"]
+[ext_resource type="Texture2D" uid="uid://dtmcf56k2xnfr" path="res://Art/Image/NPCSAnim/插头 (7).png" id="30_7r6p7"]
 [ext_resource type="Material" uid="uid://c88uqyisv0tcv" path="res://Art/Shader/appearShader3.tres" id="30_ecbij"]
 [ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="31_0skt6"]
+[ext_resource type="Texture2D" uid="uid://b2wbbnsyfe87p" path="res://Art/Image/NPCSAnim/插头 (8).png" id="31_jjdi8"]
+[ext_resource type="Texture2D" uid="uid://cfky24ojgk57v" path="res://Art/Image/NPCSAnim/插头 (9).png" id="32_4gaoe"]
 [ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="32_jkdjq"]
 [ext_resource type="Texture2D" uid="uid://ccf2dwm04mg8p" path="res://Art/Image/Tree/Tree3.png" id="33_l43r6"]
+[ext_resource type="Texture2D" uid="uid://m7hww4ygavok" path="res://Art/Image/NPCSAnim/灯泡 (1).png" id="34_7r6p7"]
 [ext_resource type="Texture2D" uid="uid://dku1xv343vr5o" path="res://Art/Image/Tree/Tree4.png" id="34_nfnai"]
+[ext_resource type="Texture2D" uid="uid://bvl58ku8jx0bp" path="res://Art/Image/NPCSAnim/灯泡 (2).png" id="35_jjdi8"]
 [ext_resource type="Texture2D" uid="uid://uj705mo8jmms" path="res://Art/Image/Tree/Tree5.png" id="35_v835s"]
+[ext_resource type="Texture2D" uid="uid://d14iv431xradx" path="res://Art/Image/NPCSAnim/灯泡 (3).png" id="36_4gaoe"]
 [ext_resource type="Texture2D" uid="uid://bjv66k8bsh1rh" path="res://Art/Image/Tree/Tree6.png" id="36_gwylu"]
 [ext_resource type="Texture2D" uid="uid://bjjfe2ue6if5" path="res://Art/Image/Tree/Tree7.png" id="37_0c4ke"]
+[ext_resource type="Texture2D" uid="uid://bqol8io6rq04v" path="res://Art/Image/NPCSAnim/灯泡 (4).png" id="37_ju02o"]
 [ext_resource type="Texture2D" uid="uid://cue7tuwfh0uel" path="res://Art/Image/Tree/Tree8.png" id="38_5qxm4"]
+[ext_resource type="Texture2D" uid="uid://cnjfo8tk6tv77" path="res://Art/Image/NPCSAnim/灯泡 (5).png" id="38_747ij"]
+[ext_resource type="Texture2D" uid="uid://oju5pll4s5nm" path="res://Art/Image/NPCSAnim/灯泡 (6).png" id="39_envta"]
 [ext_resource type="Texture2D" uid="uid://q1gra7wgn3mq" path="res://Art/Image/Tree/Tree9.png" id="39_uhp8k"]
 [ext_resource type="Texture2D" uid="uid://b4fv50b85wqjn" path="res://Art/Image/Tree/Tree10.png" id="40_qlra3"]
 [ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="41_l1s0u"]
 [ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="42_itrdu"]
 [ext_resource type="PackedScene" uid="uid://rbtvcjb81ph6" path="res://Art/Shader/TestScene/Leaves.tscn" id="43_2lqy6"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1s0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_v835s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gwylu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0c4ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5qxm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uhp8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qlra3")
+}],
+"loop": true,
+"name": &"Grow",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
 size = Vector2(158, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ju02o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_itrdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2lqy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gt848")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_pg3hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_kcago")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_k2ewa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7r6p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jjdi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4gaoe")
+}],
+"loop": true,
+"name": &"Grow",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w35ra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_7r6p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jjdi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4gaoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ju02o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_747ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_envta")
+}],
+"loop": true,
+"name": &"Grow",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
 size = Vector2(158, 141)
@@ -195,6 +301,7 @@ offset_top = -353.75
 offset_right = -566.25
 offset_bottom = -353.75
 scale = Vector2(0.6, 0.6)
+items = Array[bool]([false, false, false])
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
@@ -302,15 +409,22 @@ id = 3
 buildings = Array[int]([5, 2, 3, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = 2
 gameType = 1
 
-[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+[node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc" node_paths=PackedStringArray("animated")]
 material = ExtResource("13_j5kyq")
 position = Vector2(209.523, 47.619)
 rotation = 0.127409
-texture = ExtResource("14_ljw8i")
 script = ExtResource("15_j5kyq")
 shaderMaterial = ExtResource("13_j5kyq")
+animated = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+material = ExtResource("13_j5kyq")
+sprite_frames = SubResource("SpriteFrames_l1s0u")
+animation = &"Grow"
+frame_progress = 0.260348
 
 [node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
 visible = false
@@ -347,7 +461,7 @@ autoplay = true
 max_distance = 300.0
 
 [node name="NpcCreater3—向导" type="Node2D" parent="MainGame/Npc"]
-position = Vector2(164, 457)
+position = Vector2(211, 413)
 
 [node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
 script = ExtResource("12_e0m0m")
@@ -358,15 +472,23 @@ area = NodePath("../AudioStreamPlayer2D2")
 buildings = Array[int]([5, 0, 4, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = -1
 gameType = 2
 
-[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+[node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导/Npc" node_paths=PackedStringArray("animated")]
 z_index = 8
 material = ExtResource("13_j5kyq")
 scale = Vector2(0.495, 0.495)
-texture = ExtResource("18_jkdjq")
 script = ExtResource("15_j5kyq")
-shaderMaterial = ExtResource("13_j5kyq")
+shaderMaterial = ExtResource("30_ecbij")
+animated = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+material = ExtResource("30_ecbij")
+scale = Vector2(0.495, 0.495)
+sprite_frames = SubResource("SpriteFrames_ju02o")
+animation = &"Grow"
+frame_progress = 0.237558
 
 [node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
 visible = false
@@ -417,12 +539,18 @@ id = 2
 buildings = Array[int]([2, 4, 5, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = 1
 
-[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
-material = ExtResource("19_l43r6")
-texture = ExtResource("20_nfnai")
+[node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc" node_paths=PackedStringArray("animated")]
 script = ExtResource("15_j5kyq")
 shaderMaterial = ExtResource("19_l43r6")
+animated = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
+material = ExtResource("19_l43r6")
+sprite_frames = SubResource("SpriteFrames_w35ra")
+animation = &"Grow"
+frame_progress = 0.966316
 
 [node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
 visible = false
@@ -546,7 +674,6 @@ process_material = SubResource("ParticleProcessMaterial_j1k5u")
 position = Vector2(726, 423)
 
 [node name="Building" type="Node2D" parent="MainGame/BuildingCreater—Tree" node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
-visible = false
 script = ExtResource("29_j5kyq")
 timer = NodePath("../Timer")
 area = NodePath("../Area2D")
@@ -559,11 +686,11 @@ appearShader = NodePath("Node2D")
 position = Vector2(1, -231)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("15_j5kyq")
-shaderMaterial = ExtResource("30_ecbij")
+shaderMaterial = ExtResource("13_r6jro")
 animated = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainGame/BuildingCreater—Tree/Building/Node2D"]
-material = ExtResource("30_ecbij")
+material = ExtResource("13_r6jro")
 sprite_frames = SubResource("SpriteFrames_3j7fw")
 animation = &"Grow"
 frame_progress = 0.74981

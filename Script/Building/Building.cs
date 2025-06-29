@@ -43,6 +43,7 @@ public partial class Building : Node2D
             StartAppear();
             isFinish = true;
             progress.Hide();
+            BagFlowUi.Instance.items[0] = true;
         }
     }
     public override void _Process(double delta)
