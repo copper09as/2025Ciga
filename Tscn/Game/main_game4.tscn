@@ -129,11 +129,12 @@ limit_top = -421
 limit_bottom = 688
 
 [node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("2_2nnmy")]
-offset_left = -566.25
-offset_top = -353.75
-offset_right = -566.25
-offset_bottom = -353.75
-scale = Vector2(0.6, 0.6)
+offset_left = -262.5
+offset_top = -321.25
+offset_right = -262.5
+offset_bottom = -321.25
+scale = Vector2(1.08436, 1.08436)
+items = Array[bool]([true, true, true])
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
