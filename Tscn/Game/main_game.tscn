@@ -412,6 +412,7 @@ id = 3
 buildings = Array[int]([5, 2, 3, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = 2
 gameType = 1
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc" node_paths=PackedStringArray("animated")]
@@ -476,6 +477,7 @@ area = NodePath("../AudioStreamPlayer2D2")
 buildings = Array[int]([5, 0, 4, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = -1
 gameType = 2
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导/Npc" node_paths=PackedStringArray("animated")]
@@ -542,6 +544,7 @@ id = 2
 buildings = Array[int]([2, 4, 5, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
+item = 1
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc" node_paths=PackedStringArray("animated")]
 script = ExtResource("15_j5kyq")
