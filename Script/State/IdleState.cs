@@ -10,7 +10,10 @@ public partial class IdleState : PlayerState
 
     public override void Exit()
     {
-        
+        if (player.isEnterTown)
+        {
+            SoundManager.Instance.Play("res://Art/Sound/这是两根棍子敲在一起的声音_耳聆网_[声音ID：11208].wav");
+        }
     }
 
     public override void Update(float delta)
