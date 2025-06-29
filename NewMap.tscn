@@ -1,7 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://drs0wbr1gjr1r"]
+[gd_scene load_steps=43 format=3 uid="uid://bb0aw850xv7cw"]
 
 [ext_resource type="Texture2D" uid="uid://vsrjposgod1q" path="res://Art/Image/NewBack.jpg" id="1_c7p3n"]
-[ext_resource type="Script" uid="uid://bffub1n7c4ihs" path="res://NewMap.cs" id="1_vjmww"]
 [ext_resource type="Texture2D" uid="uid://bibownnicwjfh" path="res://Art/Image/NewWorld/TreeGrow (21).png" id="2_0m5yd"]
 [ext_resource type="Texture2D" uid="uid://dp4wctj8kfvo4" path="res://Art/Image/NewWorld/TreeGrow (4).png" id="3_qorxw"]
 [ext_resource type="Texture2D" uid="uid://d3osnm3m0vmwt" path="res://Art/Image/NewWorld/TreeGrow (20).png" id="4_3e7pu"]
@@ -27,8 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://b2rvugohgrg88" path="res://Art/Image/NewWorld/TreeGrow (9).png" id="24_1833d"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="25_3e7pu"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="26_6weq5"]
-[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="27_aqbie"]
-[ext_resource type="Texture2D" path="res://Art/Image/NewBack.tres" id="28_6weq5"]
+[ext_resource type="Texture2D" uid="uid://b8rj6kvkapg4u" path="res://Art/Image/NewWorld/NewTower.png" id="27_mndfc"]
+[ext_resource type="Texture2D" uid="uid://b6vxy48g3l1pf" path="res://Art/Image/NewBack.tres" id="28_6weq5"]
 [ext_resource type="Texture2D" uid="uid://c6hpwrb22vi2s" path="res://Art/Image/Character/WALK/Walk (14).png" id="29_aqbie"]
 [ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="30_mndfc"]
 [ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="31_vjmww"]
@@ -105,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("24_1833d")
 }],
-"loop": false,
+"loop": true,
 "name": &"Grow",
 "speed": 10.0
 }]
@@ -161,13 +160,7 @@ shader = ExtResource("30_mndfc")
 shader_parameter/color = Vector3(1, 1, 1)
 shader_parameter/OCTAVES = 5
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("camera", "animated")]
-script = ExtResource("1_vjmww")
-camera = NodePath("Camera2D")
-animated = NodePath("AnimatedSprite2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2322, -1423)
+[node name="Node2D" type="Node2D"]
 
 [node name="Back" type="Sprite2D" parent="."]
 position = Vector2(-6, 19)
@@ -182,20 +175,23 @@ position = Vector2(-894, -443)
 scale = Vector2(1.20536, 1.20536)
 sprite_frames = SubResource("SpriteFrames_11j72")
 animation = &"Grow"
+frame = 20
+frame_progress = 0.0510171
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Tower" type="Sprite2D" parent="."]
 
-[node name="DarkTower" type="Sprite2D" parent="Sprite2D"]
+[node name="DarkTower" type="Sprite2D" parent="Tower"]
 position = Vector2(2634, -234)
 texture = ExtResource("25_3e7pu")
 
-[node name="Tower道路" type="Sprite2D" parent="Sprite2D"]
+[node name="Tower道路" type="Sprite2D" parent="Tower"]
 position = Vector2(2591, -237)
 texture = ExtResource("26_6weq5")
 
-[node name="Tower" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(2634, -231)
-texture = ExtResource("27_aqbie")
+[node name="Tower" type="Sprite2D" parent="Tower"]
+position = Vector2(2858, -557)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("27_mndfc")
 
 [node name="NewBack" type="Sprite2D" parent="."]
 z_index = -1
@@ -241,8 +237,9 @@ trail_enabled = true
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_6qh11")
 
-[node name="Walk(14)" type="Sprite2D" parent="."]
-position = Vector2(2368, -1350)
+[node name="PLAYER" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2679, -1361)
 scale = Vector2(-0.161, 0.161)
 texture = ExtResource("29_aqbie")
 
@@ -251,3 +248,6 @@ material = SubResource("ShaderMaterial_6qh11")
 position = Vector2(1565, -4833)
 scale = Vector2(32.395, 22.608)
 texture = ExtResource("31_vjmww")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2384, -1417)
