@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxkmukn1e4d8p" path="res://Script/Ui/MainInterface.cs" id="1_t8r0r"]
 [ext_resource type="Texture2D" uid="uid://d5rerqrhh18b" path="res://Art/公主战车/ui 啊/gear.png" id="1_tjnn2"]
-[ext_resource type="Texture2D" uid="uid://b3fqrh5i5q50t" path="res://Resource/Start.tres" id="3_e5f70"]
+[ext_resource type="Texture2D" uid="uid://cue32rxmcr6ql" path="res://Art/Ui/CoverUi/CoverBackground.jpg" id="2_crfyq"]
 [ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="6_crfyq"]
+[ext_resource type="Texture2D" uid="uid://bto5gkkvms4os" path="res://Art/Ui/CoverUi/Title and Begin.png" id="6_elx5s"]
 [ext_resource type="FontFile" uid="uid://c266urr842yej" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Medium.ttf" id="7_elx5s"]
-[ext_resource type="Texture2D" uid="uid://dx5g3lxpb1gw6" path="res://Art/Ui/BoxUi/a78fde7f03e245bf12a57bb964c7b03.png" id="7_fvcix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8r0r"]
 bg_color = Color(0.849681, 0.483344, 0.428602, 1)
@@ -33,11 +33,12 @@ loadTimer = NodePath("LoadTimer")
 initColor = Color(1, 1, 1, 1)
 
 [node name="Back" type="TextureRect" parent="."]
+z_index = -2
 layout_mode = 0
 offset_right = 1694.0
 offset_bottom = 720.0
 scale = Vector2(0.680002, 0.92)
-texture = ExtResource("7_fvcix")
+texture = ExtResource("2_crfyq")
 
 [node name="SetBtn" type="TextureButton" parent="."]
 visible = false
@@ -60,7 +61,6 @@ offset_right = 79.0
 offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_e5f70")
 
 [node name="StartBen2" type="TextureButton" parent="."]
 layout_mode = 1
@@ -70,12 +70,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -86.0
-offset_top = 180.0
+offset_top = 179.0
 offset_right = 79.0
-offset_bottom = 249.0
+offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_e5f70")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.2
@@ -115,3 +114,8 @@ offset_bottom = 309.0
 theme_override_fonts/font = ExtResource("7_elx5s")
 theme_override_font_sizes/font_size = 39
 rounded = true
+
+[node name="BeginUi" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(567, 336)
+texture = ExtResource("6_elx5s")
