@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjky7xf5eb13o" path="res://Tscn/Game/Tower.cs" id="1_044tg"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="1_fyvrb"]
-[ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="2_5jr2b"]
+[ext_resource type="Texture2D" uid="uid://c11ifklcvu6k3" path="res://Art/Image/Tower/203FA63F0FCEF5585377F34E70A2A5A8.png" id="5_044tg"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="5_fvy18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjcsd"]
@@ -24,10 +24,9 @@ texture = ExtResource("1_fyvrb")
 
 [node name="Road" type="Sprite2D" parent="."]
 position = Vector2(725, -307)
-texture = ExtResource("2_5jr2b")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1, 682, 294, 689, 578, 451, 392, 344, 341, 344, 343, 325, 391, 325, 480, 261, 1098, -68, 1120, -81, 413, -215, 413, -226, 441, -228, 464, -243, 493.386, -269.218, 744, -436, 1012, -603, 402, -767, 402, -779, 438, -790, 462, -809, 900, -1091, 963, -1133, 1003, -1159, 477, -1289, 470, -1298, 522, -1297, 964, -1184, 1012, -1166, 1043, -1165, 1043, -1155, 453, -779, 969, -638, 1033, -613, 1085, -611, 1085, -603, 484, -239, 450, -219, 1100, -103, 1136, -92, 1177, -90, 1177, -81, 426, 329, 604, 439, 713, 443, 707, 482, 604, 485, 338, 688, 252, 766)
+polygon = PackedVector2Array(-1, 682, 294, 689, 563, 464, 388, 352, 341, 352, 337, 331, 391, 325, 480, 261, 1098, -68, 1120, -81, 414, -209, 415, -225, 441, -229, 462, -245, 493.386, -269.218, 746, -433, 1012, -603, 402, -770, 402, -793, 433, -795, 463, -820, 895, -1094, 954, -1136, 994, -1162, 462, -1292, 460, -1304, 545, -1304, 980, -1188, 1012, -1171, 1047, -1172, 1047, -1157, 455, -780, 967, -639, 1036, -615, 1088, -616, 1086, -603, 484, -239, 451, -220, 1100, -106, 1136, -92, 1183, -89, 1181, -79, 426, 329, 612, 451, 709, 449, 716, 481, 604, 485, 338, 688, 252, 766)
 one_way_collision = true
 
 [node name="WallCheck" type="Node2D" parent="."]
@@ -71,3 +70,8 @@ shape = SubResource("RectangleShape2D_yjcsd")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(406, -1392)
 polygon = PackedVector2Array(-198, 165, 65, 169, -51, 226, -69, 659, 13, 659, -82, 877, -66, 1220, 43, 1230, 43, 1282, -111, 1506, -112, 1829, -406.738, 2059.09, -406, 2256, -26, 2205, 199, 1969, 309, 2005, 1288, 2293, 595, 2073, 355, 1900, 630, 1886, 762, 1353, 841, 1352, 809, 1189, 640, 849, 721, 812, 687, 403, 626, 278, 698, 254, 673, 15, 768, -202, 1759, 886, 1747, 2507, 267, 2623, -1232, 2220, -718, 55)
+
+[node name="203fa63f0fcef5585377f34e70a2a5a8" type="Sprite2D" parent="."]
+position = Vector2(810, -468)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_044tg")

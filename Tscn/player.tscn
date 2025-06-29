@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://cbmbqk7a4mfki"]
+[gd_scene load_steps=49 format=3 uid="uid://cbmbqk7a4mfki"]
 
 [ext_resource type="Script" uid="uid://cqwpa2kt5fco5" path="res://Script/Player/PlayerMove.cs" id="1_a0fxs"]
+[ext_resource type="Shader" uid="uid://dr47jf7upn87a" path="res://Tscn/BW.gdshader" id="1_rpk1v"]
 [ext_resource type="Script" uid="uid://cn0dsltmrf60t" path="res://Script/State/StateMachine.cs" id="3_pgo6l"]
 [ext_resource type="Script" uid="uid://0gqig1vjsnpd" path="res://Script/State/JumpState.cs" id="4_o78tl"]
 [ext_resource type="Script" uid="uid://bsb7rc3cxkmsq" path="res://Script/State/MoveState.cs" id="5_43qtk"]
@@ -42,6 +43,12 @@
 [ext_resource type="Texture2D" uid="uid://cuyxxifcqeivr" path="res://Art/Image/Character/WALK/Walk (22).png" id="27_cpm0g"]
 [ext_resource type="Texture2D" uid="uid://d2045rjqm5sm3" path="res://Art/Image/Character/WALK/Walk (23).png" id="28_0074v"]
 [ext_resource type="Texture2D" uid="uid://kbtas72pl8ru" path="res://Art/Image/Character/WALK/Walk (24).png" id="29_vjoqp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e54k"]
+shader = ExtResource("1_rpk1v")
+shader_parameter/outline_size = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/fill_color = Vector4(0, 0, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35hdy"]
 radius = 27.0
@@ -183,6 +190,7 @@ animations = [{
 size = Vector2(118, 151)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("wallDetect", "animated", "wallCollision", "machine")]
+material = SubResource("ShaderMaterial_0e54k")
 script = ExtResource("1_a0fxs")
 wallDetect = NodePath("DetectWall")
 animated = NodePath("AnimatedSprite2D")
