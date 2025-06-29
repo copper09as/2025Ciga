@@ -1,0 +1,248 @@
+[gd_scene load_steps=43 format=3 uid="uid://bb0aw850xv7cw"]
+
+[ext_resource type="Texture2D" uid="uid://vsrjposgod1q" path="res://Art/Image/NewBack.jpg" id="1_c7p3n"]
+[ext_resource type="Texture2D" uid="uid://bibownnicwjfh" path="res://Art/Image/NewWorld/TreeGrow (21).png" id="2_0m5yd"]
+[ext_resource type="Texture2D" uid="uid://dp4wctj8kfvo4" path="res://Art/Image/NewWorld/TreeGrow (4).png" id="3_qorxw"]
+[ext_resource type="Texture2D" uid="uid://d3osnm3m0vmwt" path="res://Art/Image/NewWorld/TreeGrow (20).png" id="4_3e7pu"]
+[ext_resource type="Texture2D" uid="uid://bai238mae7s3g" path="res://Art/Image/NewWorld/TreeGrow (7).png" id="5_6weq5"]
+[ext_resource type="Texture2D" uid="uid://d06co5diudiar" path="res://Art/Image/NewWorld/TreeGrow (8).png" id="6_aqbie"]
+[ext_resource type="Texture2D" uid="uid://bv5xc26v4gwt1" path="res://Art/Image/NewWorld/TreeGrow (17).png" id="7_s6806"]
+[ext_resource type="Texture2D" uid="uid://bvvawprecr5uv" path="res://Art/Image/NewWorld/TreeGrow (18).png" id="8_mndfc"]
+[ext_resource type="Texture2D" uid="uid://cfd5ryr1g4ny" path="res://Art/Image/NewWorld/TreeGrow (11).png" id="9_vjmww"]
+[ext_resource type="Texture2D" uid="uid://dpfuysgd3vtek" path="res://Art/Image/NewWorld/TreeGrow (16).png" id="10_6qh11"]
+[ext_resource type="Texture2D" uid="uid://coh0ej4kd00q8" path="res://Art/Image/NewWorld/TreeGrow (22).png" id="11_sp1g8"]
+[ext_resource type="Texture2D" uid="uid://b51h6jhj7pjft" path="res://Art/Image/NewWorld/TreeGrow (6).png" id="12_46quw"]
+[ext_resource type="Texture2D" uid="uid://43puw30ok06b" path="res://Art/Image/NewWorld/TreeGrow (23).png" id="13_ld1te"]
+[ext_resource type="Texture2D" uid="uid://co7i8vk331bln" path="res://Art/Image/NewWorld/TreeGrow (12).png" id="14_umlby"]
+[ext_resource type="Texture2D" uid="uid://bi62qaqgn4lfp" path="res://Art/Image/NewWorld/TreeGrow (5).png" id="15_csqw5"]
+[ext_resource type="Texture2D" uid="uid://d2nfhf6dpgxi" path="res://Art/Image/NewWorld/TreeGrow (10).png" id="16_wv8ib"]
+[ext_resource type="Texture2D" uid="uid://cc7erawenjeru" path="res://Art/Image/NewWorld/TreeGrow (3).png" id="17_nths2"]
+[ext_resource type="Texture2D" uid="uid://bi6mftpttyucg" path="res://Art/Image/NewWorld/TreeGrow (2).png" id="18_fos3a"]
+[ext_resource type="Texture2D" uid="uid://coynf57ubfs3b" path="res://Art/Image/NewWorld/TreeGrow (19).png" id="19_fhofy"]
+[ext_resource type="Texture2D" uid="uid://kvp7hisvcwnt" path="res://Art/Image/NewWorld/TreeGrow (1).png" id="20_tru3o"]
+[ext_resource type="Texture2D" uid="uid://bkbsey8fsm7i0" path="res://Art/Image/NewWorld/TreeGrow (15).png" id="21_lvs0x"]
+[ext_resource type="Texture2D" uid="uid://c0yiseghhjunj" path="res://Art/Image/NewWorld/TreeGrow (14).png" id="22_g43wr"]
+[ext_resource type="Texture2D" uid="uid://bn2umqkogev7k" path="res://Art/Image/NewWorld/TreeGrow (13).png" id="23_bo2rg"]
+[ext_resource type="Texture2D" uid="uid://b2rvugohgrg88" path="res://Art/Image/NewWorld/TreeGrow (9).png" id="24_1833d"]
+[ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="25_3e7pu"]
+[ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="26_6weq5"]
+[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="27_aqbie"]
+[ext_resource type="Texture2D" uid="uid://b6vxy48g3l1pf" path="res://Art/Image/NewBack.tres" id="28_6weq5"]
+[ext_resource type="Texture2D" uid="uid://c6hpwrb22vi2s" path="res://Art/Image/Character/WALK/Walk (14).png" id="29_aqbie"]
+[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="30_mndfc"]
+[ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="31_vjmww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11j72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0m5yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qorxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3e7pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6weq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aqbie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s6806")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mndfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vjmww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6qh11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sp1g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_46quw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ld1te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_umlby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_csqw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wv8ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nths2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fos3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fhofy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tru3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lvs0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g43wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bo2rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1833d")
+}],
+"loop": true,
+"name": &"Grow",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_7jplg"]
+offsets = PackedFloat32Array(0, 0.498824, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aqbie"]
+gradient = SubResource("Gradient_7jplg")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_s6806"]
+offsets = PackedFloat32Array(0, 0.467192, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qgd5g"]
+gradient = SubResource("Gradient_s6806")
+
+[sub_resource type="Gradient" id="Gradient_mndfc"]
+offsets = PackedFloat32Array(0, 0.493438, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.459318)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yn14k"]
+gradient = SubResource("Gradient_mndfc")
+
+[sub_resource type="Curve" id="Curve_vjmww"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 11.1321), 0.0, 0.0, 0, 0, Vector2(0.12285, 25.849), 0.0, 0.0, 0, 0, Vector2(0.223587, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.331695, 25.849), 0.0, 0.0, 0, 0, Vector2(0.454545, -15.8491), 0.0, 0.0, 0, 0, Vector2(0.584767, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.695332, -18.3019), 0.0, 0.0, 0, 0, Vector2(0.815725, 30.7547), 0.0, 0.0, 0, 0, Vector2(0.906634, -18.3019), 0.0, 0.0, 0, 0, Vector2(1, 25.849), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[sub_resource type="CurveTexture" id="CurveTexture_brciq"]
+curve = SubResource("Curve_vjmww")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6qh11"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 6.0
+tangential_accel_curve = SubResource("CurveTexture_brciq")
+damping_max = 100.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_yn14k")
+color_initial_ramp = SubResource("GradientTexture1D_qgd5g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qh11"]
+shader = ExtResource("30_mndfc")
+shader_parameter/color = Vector3(1, 1, 1)
+shader_parameter/OCTAVES = 5
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(-6, 19)
+texture = ExtResource("1_c7p3n")
+
+[node name="Back2" type="Sprite2D" parent="."]
+position = Vector2(6486, 19)
+texture = ExtResource("1_c7p3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-894, -443)
+scale = Vector2(1.20536, 1.20536)
+sprite_frames = SubResource("SpriteFrames_11j72")
+animation = &"Grow"
+frame = 20
+frame_progress = 0.0510171
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="DarkTower" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2634, -234)
+texture = ExtResource("25_3e7pu")
+
+[node name="Tower道路" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2591, -237)
+texture = ExtResource("26_6weq5")
+
+[node name="Tower" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2634, -231)
+texture = ExtResource("27_aqbie")
+
+[node name="NewBack" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3773, -4161)
+scale = Vector2(-2.04192, -34.265)
+texture = ExtResource("28_6weq5")
+
+[node name="NewBack2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-5, -1622)
+scale = Vector2(1, 9.66)
+texture = ExtResource("28_6weq5")
+
+[node name="NewBack3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(6465, -1622)
+scale = Vector2(1, 9.66)
+texture = ExtResource("28_6weq5")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-2109, -667)
+rotation = 2.04029
+scale = Vector2(7.26475, 7.26475)
+amount = 20
+texture = SubResource("GradientTexture2D_aqbie")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_6qh11")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(-335, -881)
+rotation = 2.04029
+scale = Vector2(7.26475, 7.26475)
+amount = 20
+texture = SubResource("GradientTexture2D_aqbie")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_6qh11")
+
+[node name="Walk(14)" type="Sprite2D" parent="."]
+position = Vector2(2368, -1350)
+scale = Vector2(-0.161, 0.161)
+texture = ExtResource("29_aqbie")
+
+[node name="Smoke" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6qh11")
+position = Vector2(1565, -4833)
+scale = Vector2(32.395, 22.608)
+texture = ExtResource("31_vjmww")
