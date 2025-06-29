@@ -41,7 +41,7 @@ grow_vertical = 2
 script = ExtResource("1_7tju1")
 animated = NodePath("Control/AnimatedSprite2D")
 quitSprite = NodePath("Control/BoxUi(5)")
-items = Array[bool]([true, false, true])
+items = Array[bool]([false, false, false])
 sprites = [NodePath("Control/Item/Item"), NodePath("Control/Item/Item2"), NodePath("Control/Item/Item3")]
 TextContainer = NodePath("Control")
 
