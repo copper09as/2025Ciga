@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bqq8lhd0u864p"]
+[gd_scene load_steps=44 format=3 uid="uid://bqq8lhd0u864p"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_3iqih"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_2nnmy"]
@@ -11,22 +11,36 @@
 [ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="9_34y3w"]
 [ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="10_obeew"]
 [ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_t0b1m"]
-[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="12_iogkh"]
-[ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="13_50cdx"]
+[ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="13_obeew"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="14_i0277"]
+[ext_resource type="Texture2D" uid="uid://cpnd652pln20v" path="res://Art/Image/Npc/NpcTres/Npcs.tres" id="14_iogkh"]
+[ext_resource type="Material" uid="uid://cepc45vc3tdp1" path="res://Art/Shader/appearShader.tres" id="14_t0b1m"]
+[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="15_iogkh"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_wxy4h"]
+[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="16_50cdx"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="16_ojbaq"]
 [ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="17_3vne6"]
 [ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="17_baufd"]
+[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="17_i0277"]
 [ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="18_7bhy4"]
 [ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="18_pe046"]
+[ext_resource type="AudioStream" uid="uid://cvfpjuk18qltg" path="res://Art/Sound/白炽灯蜂鸣_耳聆网_[声音ID：15778].wav" id="18_wxy4h"]
+[ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="19_iogkh"]
+[ext_resource type="Texture2D" uid="uid://dw5dubsy4ur5i" path="res://Art/Image/Npc/NpcTres/Npcs2.tres" id="20_50cdx"]
+[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="21_i0277"]
 [ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="21_pe046"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
+size = Vector2(158, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
+size = Vector2(158, 141)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk67e"]
 size = Vector2(777, 739)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6i2e"]
-size = Vector2(767, 1119)
+size = Vector2(59.5, 323.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5o6ea"]
 shader = ExtResource("17_3vne6")
@@ -99,7 +113,7 @@ disabled = true
 
 [node name="Player" parent="MainGame" node_paths=PackedStringArray("wallDetect", "wallCollision") instance=ExtResource("1_3iqih")]
 z_index = 7
-position = Vector2(56, 433)
+position = Vector2(46, 436)
 scale = Vector2(0.8, 0.8)
 wallDetect = NodePath("Area2D")
 speed = 190.0
@@ -114,13 +128,12 @@ limit_left = 0
 limit_top = -421
 limit_bottom = 688
 
-[node name="Bag" parent="MainGame/Player/Camera2D" node_paths=PackedStringArray("textures") instance=ExtResource("2_2nnmy")]
+[node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("2_2nnmy")]
 offset_left = -566.25
 offset_top = -353.75
 offset_right = -566.25
 offset_bottom = -353.75
 scale = Vector2(0.6, 0.6)
-textures = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
@@ -214,11 +227,176 @@ position = Vector2(0, 311)
 
 [node name="Npc" type="Node2D" parent="MainGame"]
 
-[node name="NpcCreater2" parent="MainGame/Npc" instance=ExtResource("12_iogkh")]
-position = Vector2(2445, 410)
+[node name="NpcCreater2-订书机" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(2431, 396)
+scale = Vector2(0.315, 0.315)
 
-[node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("13_50cdx")]
-position = Vector2(1304, 417)
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("13_obeew")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+dialog = "我曾经和你一样是个勇者"
+area = NodePath("../AudioStreamPlayer2D2")
+id = 3
+buildings = Array[int]([5, 2, 3, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+material = ExtResource("14_t0b1m")
+position = Vector2(209.523, 47.619)
+rotation = 0.127409
+texture = ExtResource("14_iogkh")
+script = ExtResource("16_50cdx")
+shaderMaterial = ExtResource("14_t0b1m")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("17_i0277")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater2-订书机" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater2-订书机/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_owjfl")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater2-订书机"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater2-订书机"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater2-订书机"]
+position = Vector2(-1, 2)
+stream = ExtResource("18_wxy4h")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
+
+[node name="NpcCreater3—向导" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(164, 457)
+
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("13_obeew")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+dialog = "我曾经和你一样是个勇者"
+area = NodePath("../AudioStreamPlayer2D2")
+id = 3
+buildings = Array[int]([5, 2, 3, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+gameType = 2
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+z_index = 8
+material = ExtResource("14_t0b1m")
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("15_iogkh")
+script = ExtResource("16_50cdx")
+shaderMaterial = ExtResource("14_t0b1m")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("17_i0277")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater3—向导" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater3—向导/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_owjfl")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater3—向导"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater3—向导"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater3—向导"]
+position = Vector2(-1, 2)
+stream = ExtResource("18_wxy4h")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
+
+[node name="NpcCreater—灯泡" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(1777, 310)
+scale = Vector2(0.655, 0.655)
+
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡" node_paths=PackedStringArray("audioStreamPlayer", "diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("13_obeew")
+audioStreamPlayer = NodePath("../AudioStreamPlayer2D")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+area = NodePath("../AudioStreamPlayer2D2")
+buildings = Array[int]([5, 4, 0, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
+material = ExtResource("19_iogkh")
+texture = ExtResource("20_50cdx")
+script = ExtResource("16_50cdx")
+shaderMaterial = ExtResource("19_iogkh")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("17_i0277")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater—灯泡" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater—灯泡/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_yeklp")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater—灯泡"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater—灯泡"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater—灯泡"]
+position = Vector2(-1, 2)
+stream = ExtResource("21_i0277")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
 
 [node name="Tower" type="Node2D" parent="MainGame"]
 
@@ -248,6 +426,10 @@ shape = SubResource("RectangleShape2D_pk67e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
 position = Vector2(3643, -65.5)
+shape = SubResource("RectangleShape2D_v6i2e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
+position = Vector2(-20, 349)
 shape = SubResource("RectangleShape2D_v6i2e")
 
 [node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("18_pe046")]
@@ -299,5 +481,5 @@ trail_enabled = true
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_j1k5u")
 
-[node name="BuildingCreater" parent="MainGame" instance=ExtResource("21_pe046")]
+[node name="BuildingCreater—Tree" parent="MainGame" instance=ExtResource("21_pe046")]
 position = Vector2(726, 423)

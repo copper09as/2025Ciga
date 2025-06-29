@@ -52,13 +52,12 @@ limit_left = 0
 limit_top = -421
 limit_bottom = 688
 
-[node name="Bag" parent="MainGame/Player/Camera2D" node_paths=PackedStringArray("textures") instance=ExtResource("2_q2d45")]
+[node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("2_q2d45")]
 offset_left = -696.25
 offset_top = -455.0
 offset_right = -696.25
 offset_bottom = -455.0
 scale = Vector2(0.6, 0.6)
-textures = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
