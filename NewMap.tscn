@@ -246,3 +246,6 @@ material = SubResource("ShaderMaterial_6qh11")
 position = Vector2(1565, -4833)
 scale = Vector2(32.395, 22.608)
 texture = ExtResource("31_vjmww")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2384, -1417)
