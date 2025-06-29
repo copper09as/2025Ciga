@@ -63,6 +63,10 @@ public partial class MainInterface : Control
         {
             OnStartBtnPress();
         }
+        if (Input.IsActionJustPressed("Net"))
+        {
+            OnNetBtnDown();
+        }
         progressBar.Value = 100 * (1 - loadTimer.TimeLeft / loadTimer.WaitTime);
     }
     private void OnStartBtnPress()
