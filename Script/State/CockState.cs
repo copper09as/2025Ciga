@@ -8,6 +8,7 @@ public partial class CockState : PlayerState
     {
         player.animated.Play("Poke");
         player.animated.AnimationFinished += TransState;
+        player.Velocity = Vector2.Zero;
         player.PlaySound(true);
     }
 

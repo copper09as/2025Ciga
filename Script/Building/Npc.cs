@@ -46,13 +46,12 @@ public partial class Npc : Node2D
             GD.Print("小游戏未结束");
             return;
         }
-
-        if (!isFinishGame)
+        if (!isFinishGame && gameType != GameType.None)
         {
             GD.Print(id.ToString() + "可以开始小游戏");
             SmallGameManager.Instance.CreateSmallGame(this.gameType, this);
         }
-        else if (!isFinish && isFinishGame)
+        else if (!isFinish && (isFinishGame||gameType == GameType.None))
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
             GD.Print(id.ToString() + "可以开始轮盘");

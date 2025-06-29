@@ -48,5 +48,6 @@ public partial class SmallGameManager : Node
 public enum GameType
 {
     Beat,
-    Listen
+    Listen,
+    None
 }
