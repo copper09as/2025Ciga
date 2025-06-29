@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=83 format=3 uid="uid://fgumvla6y52r"]
 
 [ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_3sipc"]
 [ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_efyt3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://chpabttydbyjk" path="res://Art/Image/NPCSAnim/订书机 (6).png" id="21_qlra3"]
 [ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="21_v835s"]
 [ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="22_gwylu"]
+[ext_resource type="AudioStream" uid="uid://dwo8a7pthc822" path="res://Art/Sound/小订书机压下并释放_耳聆网_[声音ID：20646].wav" id="22_jjdi8"]
 [ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="23_0c4ke"]
 [ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="24_5qxm4"]
 [ext_resource type="Texture2D" uid="uid://buutvdebgp5kl" path="res://Art/Image/NPCSAnim/插头 (1).png" id="24_itrdu"]
@@ -86,11 +87,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"Grow",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
-size = Vector2(158, 141)
+size = Vector2(415.872, 336.667)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ju02o"]
 animations = [{
@@ -400,6 +401,8 @@ position = Vector2(2431, 396)
 scale = Vector2(0.315, 0.315)
 
 [node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+position = Vector2(0, 673.016)
+scale = Vector2(2.67, 2.67)
 script = ExtResource("12_e0m0m")
 diaLabel = NodePath("Diag")
 timer = NodePath("../AudioStreamPlayer2D3")
@@ -409,7 +412,6 @@ id = 3
 buildings = Array[int]([5, 2, 3, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
-item = 2
 gameType = 1
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc" node_paths=PackedStringArray("animated")]
@@ -424,7 +426,7 @@ animated = NodePath("../AnimatedSprite2D")
 material = ExtResource("13_j5kyq")
 sprite_frames = SubResource("SpriteFrames_l1s0u")
 animation = &"Grow"
-frame_progress = 0.260348
+frame_progress = 0.666223
 
 [node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
 visible = false
@@ -440,7 +442,8 @@ autowrap_mode = 3
 [node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater2-订书机" groups=["Building"]]
 
 [node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater2-订书机/AudioStreamPlayer2D2"]
-position = Vector2(0, 0.5)
+position = Vector2(-4.76221, 98.3333)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_owjfl")
 
 [node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater2-订书机"]
@@ -455,7 +458,7 @@ offset_bottom = -105.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater2-订书机"]
 position = Vector2(-1, 2)
-stream = ExtResource("17_0skt6")
+stream = ExtResource("22_jjdi8")
 volume_db = 24.0
 autoplay = true
 max_distance = 300.0
@@ -464,6 +467,8 @@ max_distance = 300.0
 position = Vector2(211, 413)
 
 [node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+z_index = 6
+position = Vector2(38, 38)
 script = ExtResource("12_e0m0m")
 diaLabel = NodePath("Diag")
 timer = NodePath("../AudioStreamPlayer2D3")
@@ -472,7 +477,6 @@ area = NodePath("../AudioStreamPlayer2D2")
 buildings = Array[int]([5, 0, 4, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
-item = -1
 gameType = 2
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导/Npc" node_paths=PackedStringArray("animated")]
@@ -526,7 +530,7 @@ autoplay = true
 max_distance = 300.0
 
 [node name="NpcCreater—灯泡" type="Node2D" parent="MainGame/Npc"]
-position = Vector2(1777, 310)
+position = Vector2(1678, 360)
 scale = Vector2(0.655, 0.655)
 
 [node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡" node_paths=PackedStringArray("audioStreamPlayer", "diaLabel", "timer", "area", "progress", "appearShader")]
@@ -539,7 +543,6 @@ id = 2
 buildings = Array[int]([2, 4, 5, 6])
 progress = NodePath("../AudioStreamPlayer2D4")
 appearShader = NodePath("NpcTest")
-item = 1
 
 [node name="NpcTest" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc" node_paths=PackedStringArray("animated")]
 script = ExtResource("15_j5kyq")
