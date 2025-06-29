@@ -7,7 +7,10 @@ public partial class MoveState : PlayerState
     {
         player.animated.Play("Walk");
         if (player.isEnterTown)
+        {
             SoundManager.Instance.Play("res://Art/Sound/这是两根棍子敲在一起的声音_耳聆网_[声音ID：11208].wav");
+        }
+
         else
         {
             SoundManager.Instance.Play("res://Art/Sound/脚步声与树叶的泥土-自然环境_爱给网_aigei_com.mp3");

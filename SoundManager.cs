@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using System.IO;
 
 public partial class SoundManager : AudioStreamPlayer
 {
     public static SoundManager Instance { get; private set; }
 
-    private AudioStreamPlayer soundPlayer;
+    public AudioStreamPlayer soundPlayer;
+    public string currentPath;
     public override void _Ready()
     {
         base._Ready();
@@ -19,19 +21,38 @@ public partial class SoundManager : AudioStreamPlayer
         {
             this.QueueFree();
         }
+        soundPlayer.Finished +=Loop;
     }
-    public void Play(string path,int volume = 0)
+
+    private void Loop()
+    {
+        if (currentPath != "")
+        {
+            var path = currentPath;
+            var sound = ResourceLoader.Load<AudioStream>(path);
+            currentPath = path;
+            soundPlayer.Stream = sound;
+            soundPlayer.Playing = true;
+            soundPlayer.Play(); 
+        }
+    }
+
+
+    public void Play(string path, int volume = 0)
     {
         var sound = ResourceLoader.Load<AudioStream>(path);
+        currentPath = path;
         soundPlayer.Stream = sound;
         soundPlayer.VolumeDb = volume;
         soundPlayer.Playing = true;
         soundPlayer.Play();
-        
+
     }
     public void StopMusic()
     {
         soundPlayer.Stop();
+        currentPath = "";
     }
+    
 
 }

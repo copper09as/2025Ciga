@@ -61,11 +61,14 @@ public partial class FlowUi : Node
 
         // 执行滑动动画
         _currentTween.TweenProperty(TextContainer, "position", targetPosition, 0.7f);
-
+        if(!_isVisible)
+            TextContainer.Show();
         // 在ToggleTextVisibility中添加：
         _currentTween.Parallel().TweenProperty(TextContainer, "modulate:a", _isVisible ? 0f : 1f, 0.5f);
+        if(_isVisible)
+            TextContainer.Hide();
         // 更新状态
-        _isVisible = !_isVisible;
+            _isVisible = !_isVisible;
     }
     protected virtual void UpdateUi()
     {
