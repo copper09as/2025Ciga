@@ -32,7 +32,7 @@ public partial class TowerArea : Area2D
         {
             if (Input.IsActionJustPressed("OnChose"))
             {
-                if (BagFlowUi.Instance.bag.Contains(false))
+                if (BagFlowUi.Instance.items.Contains(false))
                     return;
                 player.isEnterTown = true;
                 player.Position = TowerPosition;
