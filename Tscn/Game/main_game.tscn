@@ -1,35 +1,63 @@
-[gd_scene load_steps=34 format=3 uid="uid://fgumvla6y52r"]
+[gd_scene load_steps=60 format=3 uid="uid://fgumvla6y52r"]
 
-[ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_4tw52"]
-[ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_mjouf"]
-[ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="4_mjouf"]
-[ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="5_2fhvb"]
-[ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_2730w"]
-[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="5_y7c32"]
-[ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="6_2g8v7"]
-[ext_resource type="Texture2D" uid="uid://c4by7t8ul3rvr" path="res://Art/Image/Back/Background3.tres" id="6_05r5m"]
-[ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_2g8v7"]
-[ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="7_2730w"]
-[ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Image/Back/Background.png" id="8_jwlpg"]
-[ext_resource type="PackedScene" uid="uid://cykvplmv8p0e" path="res://Tscn/Npc/npc.tscn" id="10_5n2gx"]
-[ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="10_xiu63"]
-[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_xiu63"]
-[ext_resource type="PackedScene" uid="uid://lq64w40yk0b4" path="res://Tscn/Building/buildingFather.tscn" id="11_yeklp"]
-[ext_resource type="PackedScene" uid="uid://dun70wqa8e3p8" path="res://Tscn/Npc/npc_creater1.tscn" id="12_2ty2s"]
-[ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="14_kxjkl"]
-[ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="15_05r5m"]
-[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="16_5o6ea"]
-[ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="17_05r5m"]
-[ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="18_5o6ea"]
+[ext_resource type="PackedScene" uid="uid://cbmbqk7a4mfki" path="res://Tscn/player.tscn" id="1_3sipc"]
+[ext_resource type="PackedScene" uid="uid://wboy5cdqdtmg" path="res://Tscn/Ui/bag.tscn" id="2_efyt3"]
+[ext_resource type="Script" uid="uid://cxvclfb37hiq2" path="res://Script/Ui/UiContain.cs" id="3_hjq6r"]
+[ext_resource type="Texture2D" uid="uid://b5qpd4sgk6djp" path="res://Art/Image/Back/Background.png" id="4_2semg"]
+[ext_resource type="Script" uid="uid://bil2p5natjg00" path="res://Script/Back/Background.cs" id="5_sbbwv"]
+[ext_resource type="Texture2D" uid="uid://c4by7t8ul3rvr" path="res://Art/Image/Back/Background3.tres" id="6_cw36m"]
+[ext_resource type="Texture2D" uid="uid://clw5wegvtokv7" path="res://Art/Image/Back/Ground.png" id="7_qx21n"]
+[ext_resource type="Texture2D" uid="uid://bs0kruvkvkj76" path="res://Art/Image/Back/Mountain withoutNpc.png" id="8_3oil0"]
+[ext_resource type="PackedScene" uid="uid://bfkumrnbgodlx" path="res://Art/Shader/TestScene/WaveGrass.tscn" id="9_rmokb"]
+[ext_resource type="PackedScene" uid="uid://b61sv0c27ro27" path="res://Water/Scenes/Water_Body.tscn" id="10_38wi3"]
+[ext_resource type="PackedScene" uid="uid://psrg4ik0q0tw" path="res://Tscn/Building/wall.tscn" id="11_0ev3k"]
+[ext_resource type="Script" uid="uid://f5i2eondoscq" path="res://Script/Building/Npc.cs" id="12_e0m0m"]
+[ext_resource type="Material" uid="uid://cgq0g6lctcv0c" path="res://Art/Shader/appearShader4.tres" id="13_j5kyq"]
+[ext_resource type="Texture2D" uid="uid://cpnd652pln20v" path="res://Art/Image/Npc/NpcTres/Npcs.tres" id="14_ljw8i"]
+[ext_resource type="Script" uid="uid://cpp08vh3gidw0" path="res://Art/Shader/TestScene/AppearShader.cs" id="15_j5kyq"]
+[ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="16_ecbij"]
+[ext_resource type="AudioStream" uid="uid://cvfpjuk18qltg" path="res://Art/Sound/白炽灯蜂鸣_耳聆网_[声音ID：15778].wav" id="17_0skt6"]
+[ext_resource type="Texture2D" uid="uid://bluxkwotwdiya" path="res://Art/Image/Npc/NpcTres/Npcs1.tres" id="18_jkdjq"]
+[ext_resource type="Material" uid="uid://dcbk6nmy64mhp" path="res://Art/Shader/appearShader2.tres" id="19_l43r6"]
+[ext_resource type="Texture2D" uid="uid://dw5dubsy4ur5i" path="res://Art/Image/Npc/NpcTres/Npcs2.tres" id="20_nfnai"]
+[ext_resource type="AudioStream" uid="uid://co2vxwuopcnbd" path="res://Art/Sound/BlowTree.wav" id="21_v835s"]
+[ext_resource type="Texture2D" uid="uid://co5ex4waj6d5n" path="res://Art/Image/Tower/DarkTower.png" id="22_gwylu"]
+[ext_resource type="Texture2D" uid="uid://bhfc2j8d1cyci" path="res://Art/Image/Tower/Tower道路.png" id="23_0c4ke"]
+[ext_resource type="Texture2D" uid="uid://c7k75pjl13dd6" path="res://Art/Image/Tower/TOWER.png" id="24_5qxm4"]
+[ext_resource type="Script" uid="uid://blyg2378r67xv" path="res://Tscn/Game/TowerArea.cs" id="25_uhp8k"]
+[ext_resource type="PackedScene" uid="uid://ucqtj38uahbs" path="res://Tscn/Game/tower.tscn" id="26_qlra3"]
+[ext_resource type="Shader" uid="uid://dyom04p4iw2yo" path="res://Tscn/Game/Smoke.gdshader" id="27_l1s0u"]
+[ext_resource type="Texture2D" uid="uid://574ri6mg3dxw" path="res://Art/Image/SmokeNoise.jpg" id="28_itrdu"]
+[ext_resource type="Script" uid="uid://dkqk7xvkie4fx" path="res://Script/Building/Building.cs" id="29_j5kyq"]
+[ext_resource type="Material" uid="uid://c88uqyisv0tcv" path="res://Art/Shader/appearShader3.tres" id="30_ecbij"]
+[ext_resource type="Texture2D" uid="uid://bip6dpqv5j4pa" path="res://Art/Image/Tree/Tree1.png" id="31_0skt6"]
+[ext_resource type="Texture2D" uid="uid://l8s27dphcbcj" path="res://Art/Image/Tree/Tree2.png" id="32_jkdjq"]
+[ext_resource type="Texture2D" uid="uid://ccf2dwm04mg8p" path="res://Art/Image/Tree/Tree3.png" id="33_l43r6"]
+[ext_resource type="Texture2D" uid="uid://dku1xv343vr5o" path="res://Art/Image/Tree/Tree4.png" id="34_nfnai"]
+[ext_resource type="Texture2D" uid="uid://uj705mo8jmms" path="res://Art/Image/Tree/Tree5.png" id="35_v835s"]
+[ext_resource type="Texture2D" uid="uid://bjv66k8bsh1rh" path="res://Art/Image/Tree/Tree6.png" id="36_gwylu"]
+[ext_resource type="Texture2D" uid="uid://bjjfe2ue6if5" path="res://Art/Image/Tree/Tree7.png" id="37_0c4ke"]
+[ext_resource type="Texture2D" uid="uid://cue7tuwfh0uel" path="res://Art/Image/Tree/Tree8.png" id="38_5qxm4"]
+[ext_resource type="Texture2D" uid="uid://q1gra7wgn3mq" path="res://Art/Image/Tree/Tree9.png" id="39_uhp8k"]
+[ext_resource type="Texture2D" uid="uid://b4fv50b85wqjn" path="res://Art/Image/Tree/Tree10.png" id="40_qlra3"]
+[ext_resource type="Texture2D" uid="uid://c3ax2na7wke76" path="res://Art/Image/Tree/Tree11.png" id="41_l1s0u"]
+[ext_resource type="Texture2D" uid="uid://46unci7ha6s4" path="res://Art/Image/Tree/Tree12.png" id="42_itrdu"]
+[ext_resource type="PackedScene" uid="uid://rbtvcjb81ph6" path="res://Art/Shader/TestScene/Leaves.tscn" id="43_2lqy6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owjfl"]
+size = Vector2(158, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeklp"]
+size = Vector2(158, 141)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk67e"]
 size = Vector2(777, 739)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6i2e"]
-size = Vector2(767, 1119)
+size = Vector2(59.5, 323.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5o6ea"]
-shader = ExtResource("5_y7c32")
+shader = ExtResource("27_l1s0u")
 shader_parameter/color = Vector3(1, 1, 1)
 shader_parameter/OCTAVES = 5
 
@@ -79,6 +107,53 @@ scale_max = 1.8
 color_ramp = SubResource("GradientTexture1D_yn14k")
 color_initial_ramp = SubResource("GradientTexture1D_qgd5g")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j7fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_0skt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jkdjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_l43r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_nfnai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_v835s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_gwylu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0c4ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5qxm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uhp8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qlra3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_l1s0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_itrdu")
+}],
+"loop": false,
+"name": &"Grow",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt848"]
+size = Vector2(158, 141)
+
 [node name="Node2" type="Node2D"]
 
 [node name="MainGame" type="Node2D" parent="."]
@@ -97,9 +172,9 @@ scale = Vector2(1.40846, 0.793612)
 polygon = PackedVector2Array(1617.37, -40.322, 1610.98, -248.232, 1557.73, -244.452, 829.275, -70.5635, 791.645, -55.4427, 725.615, -55.4427, 607.756, -112.146, 580.066, -128.526, 555.926, -132.306, 492.737, -120.966, 433.807, -75.6037, 303.168, 10.0804, 193.119, 2.52008, 4.25989, 8.82043, -36.2098, -40.322, -60.3496, -52.9226, -88.0394, -100.805, -121.409, -160.028, -133.479, -168.848, -239.268, -128.526, -252.758, -104.585, -276.898, -90.7245, -315.238, -85.6842, -350.738, -91.9845, -407.537, -35.2817, -527.527, -74.3437, -682.306, -144.907, -810.815, -142.387, -1006.77, -197.83, -1126.05, -254.532, -1282.25, -240.672, -1332.66, -270.913, -1400.11, -296.115, -1481.05, -307.455, -1477.6, -58.8684, -822.885, -32.7616, -776.735, -34.0217)
 disabled = true
 
-[node name="Player" parent="MainGame" node_paths=PackedStringArray("wallDetect", "wallCollision") instance=ExtResource("1_4tw52")]
+[node name="Player" parent="MainGame" node_paths=PackedStringArray("wallDetect", "wallCollision") instance=ExtResource("1_3sipc")]
 z_index = 7
-position = Vector2(56, 433)
+position = Vector2(46, 436)
 scale = Vector2(0.8, 0.8)
 wallDetect = NodePath("Area2D")
 speed = 190.0
@@ -114,13 +189,12 @@ limit_left = 0
 limit_top = -421
 limit_bottom = 688
 
-[node name="Bag" parent="MainGame/Player/Camera2D" node_paths=PackedStringArray("sprites") instance=ExtResource("10_xiu63")]
-offset_left = -75.0
-offset_top = -336.25
-offset_right = -75.0
-offset_bottom = -336.25
+[node name="Bag" parent="MainGame/Player/Camera2D" instance=ExtResource("2_efyt3")]
+offset_left = -566.25
+offset_top = -353.75
+offset_right = -566.25
+offset_bottom = -353.75
 scale = Vector2(0.6, 0.6)
-sprites = []
 
 [node name="AudioListener2D" type="AudioListener2D" parent="MainGame/Player"]
 current = true
@@ -132,7 +206,7 @@ offset_left = 1017.0
 offset_top = 345.0
 offset_right = 1017.0
 offset_bottom = 345.0
-script = ExtResource("3_mjouf")
+script = ExtResource("3_hjq6r")
 
 [node name="Back" type="Node2D" parent="MainGame"]
 
@@ -140,8 +214,8 @@ script = ExtResource("3_mjouf")
 z_index = -5
 position = Vector2(2180, 0)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_jwlpg")
-script = ExtResource("5_2730w")
+texture = ExtResource("4_2semg")
+script = ExtResource("5_sbbwv")
 speed = 25.0
 autoSpeed = -10.0
 
@@ -149,8 +223,8 @@ autoSpeed = -10.0
 z_index = -5
 position = Vector2(6792, -22)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_jwlpg")
-script = ExtResource("5_2730w")
+texture = ExtResource("4_2semg")
+script = ExtResource("5_sbbwv")
 speed = 25.0
 autoSpeed = -10.0
 
@@ -158,8 +232,8 @@ autoSpeed = -10.0
 z_index = -4
 position = Vector2(4507, -25)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_05r5m")
-script = ExtResource("5_2730w")
+texture = ExtResource("6_cw36m")
+script = ExtResource("5_sbbwv")
 speed = 25.0
 autoSpeed = -10.0
 
@@ -167,8 +241,8 @@ autoSpeed = -10.0
 z_index = -4
 position = Vector2(5903, -25)
 scale = Vector2(-0.665406, 0.6)
-texture = ExtResource("6_05r5m")
-script = ExtResource("5_2730w")
+texture = ExtResource("6_cw36m")
+script = ExtResource("5_sbbwv")
 speed = 25.0
 autoSpeed = -10.0
 
@@ -176,27 +250,27 @@ autoSpeed = -10.0
 z_index = 6
 position = Vector2(2176, 55)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_2g8v7")
-script = ExtResource("5_2730w")
+texture = ExtResource("7_qx21n")
+script = ExtResource("5_sbbwv")
 
 [node name="Mount" type="Sprite2D" parent="MainGame/Back"]
 z_index = -4
 position = Vector2(2180, 53)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_2730w")
-script = ExtResource("5_2730w")
+texture = ExtResource("8_3oil0")
+script = ExtResource("5_sbbwv")
 
-[node name="Grass" parent="MainGame/Back" instance=ExtResource("5_2fhvb")]
+[node name="Grass" parent="MainGame/Back" instance=ExtResource("9_rmokb")]
 z_index = 7
 position = Vector2(1079, 311)
 scale = Vector2(0.3, 0.3)
 
-[node name="Grass2" parent="MainGame/Back" instance=ExtResource("5_2fhvb")]
+[node name="Grass2" parent="MainGame/Back" instance=ExtResource("9_rmokb")]
 z_index = 7
 position = Vector2(3262, 311)
 scale = Vector2(0.3, 0.3)
 
-[node name="Water_Body" parent="MainGame/Back" instance=ExtResource("4_mjouf")]
+[node name="Water_Body" parent="MainGame/Back" instance=ExtResource("10_38wi3")]
 position = Vector2(1843, 483.205)
 scale = Vector2(2.825, 3.363)
 k = 0.01
@@ -205,37 +279,202 @@ k = 0.01
 z_index = 6
 position = Vector2(2516, 1556)
 scale = Vector2(0.692729, 1.03655)
-texture = ExtResource("8_jwlpg")
+texture = ExtResource("4_2semg")
 
 [node name="Building" type="Node2D" parent="MainGame"]
 
-[node name="Area2D2" parent="MainGame" instance=ExtResource("11_xiu63")]
+[node name="Area2D2" parent="MainGame" instance=ExtResource("11_0ev3k")]
 position = Vector2(0, 311)
 
 [node name="Npc" type="Node2D" parent="MainGame"]
 
-[node name="NpcCreater2" parent="MainGame/Npc" instance=ExtResource("10_5n2gx")]
-position = Vector2(2445, 410)
+[node name="NpcCreater2-订书机" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(2431, 396)
+scale = Vector2(0.315, 0.315)
 
-[node name="NpcCreater" parent="MainGame/Npc" instance=ExtResource("12_2ty2s")]
-position = Vector2(1304, 417)
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater2-订书机" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("12_e0m0m")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+dialog = "我曾经和你一样是个勇者"
+area = NodePath("../AudioStreamPlayer2D2")
+id = 3
+buildings = Array[int]([5, 2, 3, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+gameType = 1
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+material = ExtResource("13_j5kyq")
+position = Vector2(209.523, 47.619)
+rotation = 0.127409
+texture = ExtResource("14_ljw8i")
+script = ExtResource("15_j5kyq")
+shaderMaterial = ExtResource("13_j5kyq")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater2-订书机/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("16_ecbij")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater2-订书机" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater2-订书机/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_owjfl")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater2-订书机"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater2-订书机"]
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater2-订书机"]
+position = Vector2(-1, 2)
+stream = ExtResource("17_0skt6")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
+
+[node name="NpcCreater3—向导" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(164, 457)
+
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater3—向导" node_paths=PackedStringArray("diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("12_e0m0m")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+dialog = "我曾经和你一样是个勇者"
+area = NodePath("../AudioStreamPlayer2D2")
+buildings = Array[int]([5, 0, 4, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+gameType = 2
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+z_index = 8
+material = ExtResource("13_j5kyq")
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("18_jkdjq")
+script = ExtResource("15_j5kyq")
+shaderMaterial = ExtResource("13_j5kyq")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater3—向导/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("16_ecbij")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater3—向导" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater3—向导/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_owjfl")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater3—向导"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater3—向导"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater3—向导"]
+position = Vector2(-1, 2)
+stream = ExtResource("17_0skt6")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
+
+[node name="NpcCreater—灯泡" type="Node2D" parent="MainGame/Npc"]
+position = Vector2(1777, 310)
+scale = Vector2(0.655, 0.655)
+
+[node name="Npc" type="Node2D" parent="MainGame/Npc/NpcCreater—灯泡" node_paths=PackedStringArray("audioStreamPlayer", "diaLabel", "timer", "area", "progress", "appearShader")]
+script = ExtResource("12_e0m0m")
+audioStreamPlayer = NodePath("../AudioStreamPlayer2D")
+diaLabel = NodePath("Diag")
+timer = NodePath("../AudioStreamPlayer2D3")
+area = NodePath("../AudioStreamPlayer2D2")
+id = 2
+buildings = Array[int]([2, 4, 5, 6])
+progress = NodePath("../AudioStreamPlayer2D4")
+appearShader = NodePath("NpcTest")
+
+[node name="NpcTest" type="Sprite2D" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
+material = ExtResource("19_l43r6")
+texture = ExtResource("20_nfnai")
+script = ExtResource("15_j5kyq")
+shaderMaterial = ExtResource("19_l43r6")
+
+[node name="Diag" type="Label" parent="MainGame/Npc/NpcCreater—灯泡/Npc"]
+visible = false
+offset_left = 86.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("16_ecbij")
+theme_override_font_sizes/font_size = 40
+text = "111111111111111111111111111"
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D2" type="Area2D" parent="MainGame/Npc/NpcCreater—灯泡" groups=["Building"]]
+
+[node name="AudioStreamPlayer2D" type="CollisionShape2D" parent="MainGame/Npc/NpcCreater—灯泡/AudioStreamPlayer2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_yeklp")
+
+[node name="AudioStreamPlayer2D3" type="Timer" parent="MainGame/Npc/NpcCreater—灯泡"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D4" type="ProgressBar" parent="MainGame/Npc/NpcCreater—灯泡"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/Npc/NpcCreater—灯泡"]
+position = Vector2(-1, 2)
+stream = ExtResource("21_v835s")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0
 
 [node name="Tower" type="Node2D" parent="MainGame"]
 
 [node name="DarkTower" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3741, -495)
-texture = ExtResource("14_kxjkl")
+texture = ExtResource("22_gwylu")
 
 [node name="Tower道路" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3698, -505)
-texture = ExtResource("15_05r5m")
+texture = ExtResource("23_0c4ke")
 
 [node name="Tower" type="Sprite2D" parent="MainGame/Tower"]
 position = Vector2(3737, -488)
-texture = ExtResource("16_5o6ea")
+texture = ExtResource("24_5qxm4")
 
 [node name="Area2D" type="Area2D" parent="MainGame/Tower" node_paths=PackedStringArray("camera", "player")]
-script = ExtResource("17_05r5m")
+script = ExtResource("25_uhp8k")
 camera = NodePath("../../Player/Camera2D")
 player = NodePath("../../Player")
 TowerPosition = Vector2(9609.69, 73.198)
@@ -247,10 +486,14 @@ shape = SubResource("RectangleShape2D_pk67e")
 [node name="StaticBody2D" type="StaticBody2D" parent="MainGame/Tower"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
-position = Vector2(3974.5, -65.5)
+position = Vector2(3643, -65.5)
 shape = SubResource("RectangleShape2D_v6i2e")
 
-[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("18_5o6ea")]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainGame/Tower/StaticBody2D"]
+position = Vector2(-20, 349)
+shape = SubResource("RectangleShape2D_v6i2e")
+
+[node name="Tower2" parent="MainGame" node_paths=PackedStringArray("player") instance=ExtResource("26_qlra3")]
 position = Vector2(9327, -574)
 player = NodePath("../Player")
 TowerPosition = Vector2(9609.69, 73.198)
@@ -259,7 +502,7 @@ TowerPosition = Vector2(9609.69, 73.198)
 material = SubResource("ShaderMaterial_5o6ea")
 position = Vector2(2113, -136)
 scale = Vector2(-8.285, 3.101)
-texture = ExtResource("6_2g8v7")
+texture = ExtResource("28_itrdu")
 
 [node name="Winds" type="Node2D" parent="MainGame"]
 
@@ -299,5 +542,55 @@ trail_enabled = true
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_j1k5u")
 
-[node name="BuildingCreater" parent="MainGame" instance=ExtResource("11_yeklp")]
+[node name="BuildingCreater—Tree" type="Node2D" parent="MainGame"]
 position = Vector2(726, 423)
+
+[node name="Building" type="Node2D" parent="MainGame/BuildingCreater—Tree" node_paths=PackedStringArray("timer", "area", "progress", "appearShader")]
+visible = false
+script = ExtResource("29_j5kyq")
+timer = NodePath("../Timer")
+area = NodePath("../Area2D")
+id = 1
+buildings = Array[int]([6, 4, 5, 1])
+progress = NodePath("../ProgressBar")
+appearShader = NodePath("Node2D")
+
+[node name="Node2D" type="Node2D" parent="MainGame/BuildingCreater—Tree/Building" node_paths=PackedStringArray("animated")]
+position = Vector2(1, -231)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("15_j5kyq")
+shaderMaterial = ExtResource("30_ecbij")
+animated = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainGame/BuildingCreater—Tree/Building/Node2D"]
+material = ExtResource("30_ecbij")
+sprite_frames = SubResource("SpriteFrames_3j7fw")
+animation = &"Grow"
+frame_progress = 0.74981
+
+[node name="Node2D" parent="MainGame/BuildingCreater—Tree/Building/Node2D/AnimatedSprite2D" instance=ExtResource("43_2lqy6")]
+position = Vector2(50, 676.667)
+
+[node name="Area2D" type="Area2D" parent="MainGame/BuildingCreater—Tree" groups=["Building", "Tree"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainGame/BuildingCreater—Tree/Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_gt848")
+
+[node name="Timer" type="Timer" parent="MainGame/BuildingCreater—Tree"]
+wait_time = 0.5
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="MainGame/BuildingCreater—Tree"]
+visible = false
+offset_left = -112.0
+offset_top = -132.0
+offset_right = 123.0
+offset_bottom = -105.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainGame/BuildingCreater—Tree"]
+position = Vector2(-1, 2)
+stream = ExtResource("21_v835s")
+volume_db = 24.0
+autoplay = true
+max_distance = 300.0

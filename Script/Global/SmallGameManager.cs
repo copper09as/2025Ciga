@@ -34,7 +34,9 @@ public partial class SmallGameManager : Node
                 var beat_game = ResManager.Instance.CreateInstance<BeatGame>(StringResource.BeatGame, this);
                 beat_game.Position = game1;
                 break;
-            case GameType.Listen: break;
+            case GameType.Listen:
+                ResManager.Instance.CreateInstance<LisGame>("res://Tscn/SmallGame/lis_game.tscn",this);
+                break;
         }
         isStartSmallGame = true;
         currentGameNpc = npc;

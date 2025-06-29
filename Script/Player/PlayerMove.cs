@@ -79,7 +79,7 @@ public partial class PlayerMove : CharacterBody2D
             isIntree = true;
         }
     }
-    public void PlaySound(bool isLoop = false)
+    public void PlaySound(bool isLoop = false,int volume = 0)
     {
         if (isIntree)
         {
@@ -91,7 +91,7 @@ public partial class PlayerMove : CharacterBody2D
         }
         else
         {
-            //SoundManager.Instance.Play("res://Art/Sound/Up10_B.ogg");
+            SoundManager.Instance.Play("res://Art/Sound/敲击木头_耳聆网_[声音ID：18757].ogg", volume);
         }
         if (!isLoop)
         {

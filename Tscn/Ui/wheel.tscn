@@ -45,7 +45,7 @@ texture = ExtResource("3_oqcrj")
 script = ExtResource("2_nkoln")
 id = 4
 transColor = Color(0.760784, 0.0705882, 0.47451, 1)
-initColor = Color(1, 1, 1, 0.0980392)
+initColor = Color(1, 1, 1, 0)
 wheel = NodePath("..")
 
 [node name="ColorRect2" type="TextureRect" parent="." node_paths=PackedStringArray("wheel")]

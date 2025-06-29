@@ -20,11 +20,14 @@ public partial class SoundManager : AudioStreamPlayer
             this.QueueFree();
         }
     }
-    public void Play(string path)
+    public void Play(string path,int volume = 0)
     {
         var sound = ResourceLoader.Load<AudioStream>(path);
         soundPlayer.Stream = sound;
+        soundPlayer.VolumeDb = volume;
+        soundPlayer.Playing = true;
         soundPlayer.Play();
+        
     }
     public void StopMusic()
     {

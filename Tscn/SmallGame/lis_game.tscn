@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c18luchemy2vu"]
+
+[ext_resource type="Script" uid="uid://c848nejuoc0d2" path="res://Script/SmallGame/LisGame.cs" id="1_qyx10"]
+[ext_resource type="AudioStream" uid="uid://6khsxbqlj3sj" path="res://Art/Sound/脚步声与树叶的泥土-自然环境_爱给网_aigei_com.mp3" id="2_84wvk"]
+[ext_resource type="FontFile" uid="uid://txgoitlk84su" path="res://Art/Font/阿里巴巴普惠体/Alibaba-PuHuiTi-Light.ttf" id="3_7g160"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyx10"]
+size = Vector2(149, 275)
+
+[node name="LisGame" type="Node2D" node_paths=PackedStringArray("diagLabel", "area")]
+script = ExtResource("1_qyx10")
+diagLabel = NodePath("Label")
+digs = Array[String](["你好", "我不好", "你很好"])
+area = NodePath("Area2D")
+pos = Array[Vector2]([Vector2(-221, 0), Vector2(242, 0), Vector2(-221, 0), Vector2(2371, 291)])
+metadata/_edit_pinned_properties_ = [&"diagLabel", &"area"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qyx10")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("2_84wvk")
+max_distance = 300.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0.054902, 0.054902, 1)
+offset_top = -152.0
+offset_right = 40.0
+offset_bottom = -129.0
+theme_override_fonts/font = ExtResource("3_7g160")
+theme_override_font_sizes/font_size = 40
+text = "哈哈"

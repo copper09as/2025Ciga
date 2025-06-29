@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cgq0g6lctcv0c"]
+
+[ext_resource type="Shader" uid="uid://dpeuh02k67oir" path="res://Art/Shader/appearShader.gdshader" id="1_22bmh"]
+
+[resource]
+shader = ExtResource("1_22bmh")
+shader_parameter/progress = 2.0
+shader_parameter/base_direction = Vector2(0, 0)
+shader_parameter/pixel_scale = 0.347
+shader_parameter/base_dir_rand_factor = 0.355
+shader_parameter/regionEnabled = false
