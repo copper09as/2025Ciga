@@ -42,7 +42,7 @@ public partial class PlayerMove : CharacterBody2D
     public static float dir;
     public bool isInTown = true;
     public bool isEnterTown = false;
-    private bool isInWall;
+    public bool isInWall;
     private float grivity;
     private bool isIntree;
     [Export]
