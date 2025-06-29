@@ -4,7 +4,7 @@ using System;
 public partial class WheelSelect : TextureRect
 {
     private static bool inChose = false;
-    private static int selectId;
+    public static int selectId = -1;
     [Export]
     public int id;
     [Export]
