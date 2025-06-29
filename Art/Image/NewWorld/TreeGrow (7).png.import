@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4wctj8kfvo4"
-path="res://.godot/imported/TreeGrow (4).png-4ff248a810d01e95a7f3067dbad8ef65.ctex"
+uid="uid://bai238mae7s3g"
+path="res://.godot/imported/TreeGrow (7).png-232e19475fbefdb135dcd972b497c23c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Image/NewMap/TreeGrow (4).png"
-dest_files=["res://.godot/imported/TreeGrow (4).png-4ff248a810d01e95a7f3067dbad8ef65.ctex"]
+source_file="res://Art/Image/NewWorld/TreeGrow (7).png"
+dest_files=["res://.godot/imported/TreeGrow (7).png-232e19475fbefdb135dcd972b497c23c.ctex"]
 
 [params]
 

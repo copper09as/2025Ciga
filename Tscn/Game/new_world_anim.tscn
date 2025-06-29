@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckujklwf6uap"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x85v0"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NewWorldAnim" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x85v0")
+frame_progress = 1.0
