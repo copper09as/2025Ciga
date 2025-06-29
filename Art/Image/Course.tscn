@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://s80uaoksxtoa"]
+
+[ext_resource type="Texture2D" uid="uid://c0xdmj1ux2bwb" path="res://Art/Ui/BoxUi/BoxUi (3).png" id="1_uex5n"]
+[ext_resource type="Texture2D" uid="uid://jc8sn2eet7kh" path="res://Art/Image/Gray.png" id="2_1smqo"]
+[ext_resource type="FontFile" uid="uid://bsg6mrwtmvom7" path="res://Art/Font/京華老宋体.ttf" id="3_8c3rn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BoxUi(3)" type="Sprite2D" parent="."]
+position = Vector2(435, -127)
+texture = ExtResource("1_uex5n")
+
+[node name="Gray" type="Sprite2D" parent="."]
+position = Vector2(357, 357)
+rotation = -0.0350051
+scale = Vector2(47.1875, 24.4375)
+texture = ExtResource("2_1smqo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 150.0
+offset_top = 254.0
+offset_right = 190.0
+offset_bottom = 294.0
+scale = Vector2(15.1989, 5.26993)
+tooltip_text = "wwwwwww"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 4.14505
+offset_top = -12.1444
+offset_right = 68.1451
+offset_bottom = 10.8556
+scale = Vector2(0.30012, 0.78022)
+theme_override_fonts/font = ExtResource("3_8c3rn")
+text = "操作提示"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -2.10542
+offset_top = 5.1234
+offset_right = 157.895
+offset_bottom = 86.1234
+scale = Vector2(0.20965, 0.545027)
+theme_override_fonts/font = ExtResource("3_8c3rn")
+text = "按下A、D键左右移动
+按E戳一戳前方物体
+左键探测前方地势
+长按右键选择环境物体"

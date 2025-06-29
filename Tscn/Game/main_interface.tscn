@@ -1,19 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bct5xyglm6fia"]
+[gd_scene load_steps=9 format=3 uid="uid://bct5xyglm6fia"]
 
 [ext_resource type="Script" uid="uid://cxkmukn1e4d8p" path="res://Script/Ui/MainInterface.cs" id="1_t8r0r"]
 [ext_resource type="Texture2D" uid="uid://d5rerqrhh18b" path="res://Art/公主战车/ui 啊/gear.png" id="1_tjnn2"]
 [ext_resource type="Texture2D" uid="uid://cue32rxmcr6ql" path="res://Art/Ui/CoverUi/CoverBackground.jpg" id="2_crfyq"]
 [ext_resource type="FontFile" uid="uid://djqrsfgnxee0o" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Bold.ttf" id="6_crfyq"]
 [ext_resource type="Texture2D" uid="uid://bto5gkkvms4os" path="res://Art/Ui/CoverUi/Title and Begin.png" id="6_elx5s"]
+[ext_resource type="PackedScene" uid="uid://s80uaoksxtoa" path="res://Art/Image/Course.tscn" id="6_fvcix"]
 [ext_resource type="FontFile" uid="uid://c266urr842yej" path="res://Art/Font/有爱魔兽黑体/有爱魔兽黑体-Medium.ttf" id="7_elx5s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8r0r"]
-bg_color = Color(0.849681, 0.483344, 0.428602, 1)
+bg_color = Color(0.25098, 0.219608, 0.243137, 0.843137)
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color(0.698039, 0, 0.301961, 0.996078)
+border_color = Color(0, 0, 0, 0.996078)
 border_blend = true
 
 [node name="MainInterface" type="Control" node_paths=PackedStringArray("progressBar", "loadPanel", "Startbtn", "NetBtn", "timer", "loadTimer")]
@@ -41,7 +42,6 @@ scale = Vector2(0.680002, 0.92)
 texture = ExtResource("2_crfyq")
 
 [node name="SetBtn" type="TextureButton" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 260.0
 offset_bottom = 260.0
@@ -107,13 +107,17 @@ text = "加载中"
 
 [node name="ProgressBar" type="ProgressBar" parent="LoadPanel"]
 layout_mode = 0
-offset_left = 315.0
-offset_top = 282.0
-offset_right = 837.0
-offset_bottom = 309.0
+offset_left = 313.0
+offset_top = 446.0
+offset_right = 835.0
+offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("7_elx5s")
 theme_override_font_sizes/font_size = 39
 rounded = true
+
+[node name="Node2D" parent="LoadPanel" instance=ExtResource("6_fvcix")]
+position = Vector2(397, 274)
+scale = Vector2(0.431769, 0.431769)
 
 [node name="BeginUi" type="Sprite2D" parent="."]
 z_index = -1
