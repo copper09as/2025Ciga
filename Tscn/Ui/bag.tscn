@@ -1,9 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://wboy5cdqdtmg"]
+[gd_scene load_steps=12 format=3 uid="uid://wboy5cdqdtmg"]
 
 [ext_resource type="Script" uid="uid://bh3m5b7f4no6f" path="res://Script/Ui/BagFlowUi.cs" id="1_7tju1"]
-[ext_resource type="Texture2D" uid="uid://3rm3lstg3erm" path="res://Art/Ui/Wheel.png" id="2_32vmc"]
+[ext_resource type="Texture2D" uid="uid://xlh1x8p7qpxt" path="res://Art/Ui/BoxUi/BoxUi (9).png" id="2_sco2j"]
+[ext_resource type="Texture2D" uid="uid://c5dtvuydm08ba" path="res://Art/Ui/BoxUi/BoxUi (1).png" id="3_te1i7"]
+[ext_resource type="Texture2D" uid="uid://lgnlh2w6418c" path="res://Art/Ui/BoxUi/BoxUi (8).png" id="4_nk0kf"]
+[ext_resource type="Texture2D" uid="uid://c0xdmj1ux2bwb" path="res://Art/Ui/BoxUi/BoxUi (3).png" id="5_trjlk"]
+[ext_resource type="Texture2D" uid="uid://8wpqvry2q4vi" path="res://Art/Ui/BoxUi/BoxUi (5).png" id="6_kchht"]
+[ext_resource type="Texture2D" uid="uid://cmvh135m4d631" path="res://Art/Ui/BoxUi/Item.tres" id="6_trjlk"]
+[ext_resource type="Texture2D" uid="uid://htt4fwn7qdd6" path="res://Art/Ui/BoxUi/Item3.tres" id="7_kchht"]
+[ext_resource type="Texture2D" uid="uid://df1nbtsytmdv0" path="res://Art/Ui/BoxUi/Item2.tres" id="8_f8q3v"]
+[ext_resource type="Script" uid="uid://hjyxb55oxuj1" path="res://Tscn/Ui/QuitBtn.cs" id="10_f8q3v"]
 
-[node name="Bag" type="Control" node_paths=PackedStringArray("textures", "TextContainer")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kchht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sco2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_te1i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nk0kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_trjlk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bag" type="Control" node_paths=PackedStringArray("animated", "quitSprite", "sprites", "TextContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,34 +39,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7tju1")
-bag = Array[bool]([true, true, true])
-textures = [NodePath("Panel/TextureRect"), NodePath("Panel/TextureRect2"), NodePath("Panel/TextureRect3")]
-initColor = Color(0, 0, 0, 0.2)
-transColor = Color(1, 1, 1, 1)
-TextContainer = NodePath("Panel")
+animated = NodePath("Control/AnimatedSprite2D")
+quitSprite = NodePath("Control/BoxUi(5)")
+items = Array[bool]([true, false, true])
+sprites = [NodePath("Control/Item/Item"), NodePath("Control/Item/Item2"), NodePath("Control/Item/Item3")]
+TextContainer = NodePath("Control")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 499.0
-offset_bottom = 648.0
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 0
-offset_right = 226.0
-offset_bottom = 230.0
-texture = ExtResource("2_32vmc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(606, 254)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_kchht")
+frame = 3
+frame_progress = 1.0
 
-[node name="TextureRect2" type="TextureRect" parent="Panel"]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 230.0
-offset_right = 355.0
-offset_bottom = 460.0
-texture = ExtResource("2_32vmc")
+[node name="BoxUi(5)" type="Sprite2D" parent="Control"]
+position = Vector2(626, 272)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_kchht")
 
-[node name="TextureRect3" type="TextureRect" parent="Panel"]
+[node name="Item" type="Node2D" parent="Control"]
+
+[node name="Item" type="Sprite2D" parent="Control/Item"]
+visible = false
+position = Vector2(446.342, 516.708)
+rotation = 0.0663232
+scale = Vector2(0.344454, 0.337967)
+texture = ExtResource("6_trjlk")
+
+[node name="Item2" type="Sprite2D" parent="Control/Item"]
+visible = false
+position = Vector2(573.785, 510.367)
+rotation = -0.0550697
+scale = Vector2(0.351594, 0.333793)
+texture = ExtResource("8_f8q3v")
+
+[node name="Item3" type="Sprite2D" parent="Control/Item"]
+visible = false
+position = Vector2(702.08, 503.08)
+rotation = -0.094627
+scale = Vector2(0.381595, 0.332441)
+texture = ExtResource("7_kchht")
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 266.0
-offset_right = 492.0
-offset_bottom = 230.0
-texture = ExtResource("2_32vmc")
+offset_left = 372.0
+offset_top = 80.0
+offset_right = 779.0
+offset_bottom = 309.0
+script = ExtResource("10_f8q3v")

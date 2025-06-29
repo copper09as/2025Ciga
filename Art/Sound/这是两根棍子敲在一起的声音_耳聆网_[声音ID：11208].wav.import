@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c76t4pggormay"
+uid="uid://5n0323gvu56t"
 path="res://.godot/imported/这是两根棍子敲在一起的声音_耳聆网_[声音ID：11208].wav-7cbba7f4801f0afaf1eb22ae57f27b24.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=2

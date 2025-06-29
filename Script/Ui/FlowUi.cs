@@ -3,7 +3,7 @@ using System;
 
 public partial class FlowUi : Node
 {
-    [Export] private Control TextContainer; // 包含文本的容器
+    [Export] protected Control TextContainer; // 包含文本的容器
     // 动画参数
     private Vector2 _hiddenPosition;
     private Vector2 _visiblePosition;

@@ -4,6 +4,18 @@ using System;
 public partial class BagFlowUi : FlowUi
 {
     public static BagFlowUi Instance { get; private set; }
+    [Export]
+    private Color initCOlor;
+    [Export]
+    private Color transColor;
+    [Export]
+    public AnimatedSprite2D animated;
+    [Export]
+    private Sprite2D quitSprite;
+    [Export]
+    public Godot.Collections.Array<bool> items = new Godot.Collections.Array<bool>();
+    [Export]
+    public Godot.Collections.Array<Sprite2D> sprites = new Godot.Collections.Array<Sprite2D>();
     public override void _Ready()
     {
         base._Ready();
@@ -11,6 +23,33 @@ public partial class BagFlowUi : FlowUi
         {
             Instance = this;
         }
+        else
+            this.QueueFree();
+        animated.AnimationFinished += animatedFinish;
+        foreach (var i in sprites)
+        {
+            i.Hide();
+        }
+        GD.Print(items.Count);
+        GD.Print(sprites.Count);
+    }
+
+    private void animatedFinish()
+    {
+
+        animated.Frame = 3; 
+        for (int i = 0; i < 3; i++)
+        {
+            if (items[i])
+            {
+                sprites[i].Show();
+            }
+            else
+            {
+                sprites[i].Hide();
+            }
+        }
+        quitSprite.Show();
     }
     public override void _ExitTree()
     {
@@ -20,25 +59,16 @@ public partial class BagFlowUi : FlowUi
             Instance = null;
         }
     }
-    [Export]
-    public Godot.Collections.Array<bool> bag;
-    [Export]
-    public Godot.Collections.Array<TextureRect> textures;
-    [Export]
-    private Color initColor;
-    [Export]
-    private Color transColor;
     protected override void UpdateUi()
     {
         base.UpdateUi();
-        for (int i = 0; i < 3; i++)
+        quitSprite.Hide();
+        foreach (var i in sprites)
         {
-            if (bag[i])
-                textures[i].Modulate = transColor;
-            else
-                textures[i].Modulate = initColor;
+            i.Hide();
         }
-        
+        animated.Frame = 0;
+        animated.Play("default");
     }
 
 }
