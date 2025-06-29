@@ -130,6 +130,10 @@ public partial class PlayerMove : CharacterBody2D
             {
                 GD.Print("前面没路了");
             }
+            else
+            {
+                GD.Print("前面还有路");
+            }
             PlaySound();
         }
         MoveAndSlide();
