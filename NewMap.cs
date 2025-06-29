@@ -12,6 +12,7 @@ public partial class NewMap : Node2D
     public override void _Ready()
     {
         base._Ready();
+        SoundManager.Instance.Play("res://Art/Tower.mp3");
         //2054.0
         //-2312.0
         var tween = GetTree().CreateTween();

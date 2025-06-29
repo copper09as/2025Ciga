@@ -11,7 +11,9 @@ public partial class Npc : Node2D
     [Export]
     private Timer timer;
     [Export(PropertyHint.MultilineText)]
-    private string dialog;
+    private int index;
+    [Export]
+    private Godot.Collections.Array<string> dialogs;
     [Export]
     private Area2D area;
     private bool isFinish = false;
@@ -53,11 +55,11 @@ public partial class Npc : Node2D
             GD.Print(id.ToString() + "可以开始小游戏");
             SmallGameManager.Instance.CreateSmallGame(this.gameType, this);
         }
-        else if (!isFinish && (isFinishGame||gameType == GameType.None))
+        else if (!isFinish && (isFinishGame || gameType == GameType.None))
         {
             var wheel = ResManager.Instance.CreateInstance<Wheel>("res://Tscn/Ui/wheel.tscn", UiContain.instance, "Wheel");
             GD.Print(id.ToString() + "可以开始轮盘");
-            wheel.Position = wheel.Position = new Vector2(PlayerMove.Instance.Position.X-1000, PlayerMove.Instance.Position.Y-600);
+            wheel.Position = wheel.Position = new Vector2(PlayerMove.Instance.Position.X - 1000, PlayerMove.Instance.Position.Y - 600);
             wheel.rightId = id;
             wheel.buildings = buildings;
             wheel.Init();
@@ -66,9 +68,13 @@ public partial class Npc : Node2D
         {
             GD.Print("发起对话");
             diaLabel.Show();
-            diaLabel.Text = dialog;
+            diaLabel.Text = dialogs[index];
+            index += 1;
+            if (dialogs.Count == index+1)
+            {
+                index = 0;
+            }
         }
-
     }
     public void FinishChose(int id)
     {
