@@ -46,9 +46,7 @@ public partial class Tower : Node2D
             }
             else
             {
-                GD.Print("Win");
-                var camera = (Camera2D)player.GetChild(0);
-                camera.Enabled = false;
+                SceneChangeManager.Instance.ChangeScene("res://NewMap.tscn");
             }
         }
     }
